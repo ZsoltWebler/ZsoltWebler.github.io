@@ -1,0 +1,1194 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../java_se_4_5/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Öröklődés az objektum orientált programozásban - Junior Java Backend jegyzet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#oroklodes-az-objektum-orientalt-programozasban" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-header__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Junior Java Backend jegyzet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Öröklődés az objektum orientált programozásban
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-nav__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Junior Java Backend jegyzet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Bevezető
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_1/" class="md-nav__link">
+        Java alapok
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_4_5/" class="md-nav__link">
+        Konzol io
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Öröklődés az objektum orientált programozásban
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Öröklődés az objektum orientált programozásban
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#az-oroklodes-alapjai" class="md-nav__link">
+    Az öröklődés alapjai
+  </a>
+  
+    <nav class="md-nav" aria-label="Az öröklődés alapjai">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osztalyvaltozok-oroklese" class="md-nav__link">
+    Osztályváltozók öröklése
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodusok-oroklese" class="md-nav__link">
+    Metódusok öröklése.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tobbszoros-oroklodes" class="md-nav__link">
+    Többszörös öröklődés
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konstruktorok" class="md-nav__link">
+    Konstruktorok
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hozzaferes-modositok" class="md-nav__link">
+    Hozzáférés módosítók
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polimorfizmus" class="md-nav__link">
+    Polimorfizmus
+  </a>
+  
+    <nav class="md-nav" aria-label="Polimorfizmus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-annotacio" class="md-nav__link">
+    @Override annotáció
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instaceof-operator" class="md-nav__link">
+    Instaceof operátor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-kulcsszo" class="md-nav__link">
+    Final kulcsszó
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#super-kulcsszo" class="md-nav__link">
+    Super kulcsszó
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-osztaly" class="md-nav__link">
+    Object osztály
+  </a>
+  
+    <nav class="md-nav" aria-label="Object osztály">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tostring-metodus" class="md-nav__link">
+    toString() metódus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equals-metodus" class="md-nav__link">
+    equals() metódus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladatok" class="md-nav__link">
+    Feladatok
+  </a>
+  
+    <nav class="md-nav" aria-label="Feladatok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-feladat" class="md-nav__link">
+    1. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-feladat" class="md-nav__link">
+    2. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-feladat" class="md-nav__link">
+    3. Feladat
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Feladat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-feladat" class="md-nav__link">
+    3.1. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-feladat" class="md-nav__link">
+    3.2. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-feladat" class="md-nav__link">
+    3.3. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-feladat" class="md-nav__link">
+    3.4. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-feladat" class="md-nav__link">
+    3.5. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-feladat" class="md-nav__link">
+    3.6. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-feladat" class="md-nav__link">
+    3.7. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-feladat" class="md-nav__link">
+    3.8. Feladat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#az-oroklodes-alapjai" class="md-nav__link">
+    Az öröklődés alapjai
+  </a>
+  
+    <nav class="md-nav" aria-label="Az öröklődés alapjai">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#osztalyvaltozok-oroklese" class="md-nav__link">
+    Osztályváltozók öröklése
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metodusok-oroklese" class="md-nav__link">
+    Metódusok öröklése.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tobbszoros-oroklodes" class="md-nav__link">
+    Többszörös öröklődés
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konstruktorok" class="md-nav__link">
+    Konstruktorok
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hozzaferes-modositok" class="md-nav__link">
+    Hozzáférés módosítók
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#polimorfizmus" class="md-nav__link">
+    Polimorfizmus
+  </a>
+  
+    <nav class="md-nav" aria-label="Polimorfizmus">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#override-annotacio" class="md-nav__link">
+    @Override annotáció
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instaceof-operator" class="md-nav__link">
+    Instaceof operátor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#final-kulcsszo" class="md-nav__link">
+    Final kulcsszó
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#super-kulcsszo" class="md-nav__link">
+    Super kulcsszó
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-osztaly" class="md-nav__link">
+    Object osztály
+  </a>
+  
+    <nav class="md-nav" aria-label="Object osztály">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tostring-metodus" class="md-nav__link">
+    toString() metódus
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equals-metodus" class="md-nav__link">
+    equals() metódus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladatok" class="md-nav__link">
+    Feladatok
+  </a>
+  
+    <nav class="md-nav" aria-label="Feladatok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-feladat" class="md-nav__link">
+    1. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-feladat" class="md-nav__link">
+    2. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-feladat" class="md-nav__link">
+    3. Feladat
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Feladat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-feladat" class="md-nav__link">
+    3.1. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-feladat" class="md-nav__link">
+    3.2. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-feladat" class="md-nav__link">
+    3.3. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-feladat" class="md-nav__link">
+    3.4. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-feladat" class="md-nav__link">
+    3.5. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-feladat" class="md-nav__link">
+    3.6. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-feladat" class="md-nav__link">
+    3.7. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#38-feladat" class="md-nav__link">
+    3.8. Feladat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="oroklodes-az-objektum-orientalt-programozasban">Öröklődés az objektum orientált programozásban</h1>
+<h2 id="bevezetes">Bevezetés</h2>
+<p>Ebben a szekcióban az objektumorientált programozás egyik legfontosabb eszközével, az öröklődéssel fogunk megismerkedni.
+Az öröklődés segítségével a programunkban tovább tudjuk csökkenteni a kód duplikációt ezáltal a programunk
+flexibilisebb,
+rendezettebb lesz. Az öröklődés lehetővé teszi számunkra, hogy a meglévő funkcionalitást kibővítsük, illetve mi magunk
+is
+bővíthető kódot hozzunk létre, ezzel megalapozva a komplex, moduláris rendszerekben való munkát</p>
+<h2 id="az-oroklodes-alapjai">Az öröklődés alapjai</h2>
+<p>Az öröklődés az objektum orientált elméletben azt jelenti, hogy az osztály alosztálya lehet egy másik osztálynak. Az
+alosztály megörökli az szülő osztály összes adattagját és metódusát. Az öröklődés tehát típus-altípus között van. Jármú
+-Állat, Állat-Háziállat-Kutya, stb...</p>
+<h3 id="osztalyvaltozok-oroklese">Osztályváltozók öröklése</h3>
+<p>A java nyelvben egy osztálynak több alosztálya is lehet, de minden osztálynak csak egy ősosztálya van. Ez az úgynevezett
+többszörös öröklődés kiküszöbölésére van. Az öröklődés felfogható az őszosztály kibővítéseként is, ezért használja a
+java
+az <code>extends</code> kulcsszót az öröklődés során.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span> <span class="nc">Szamitogep</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">gyarto</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">modell</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">processzorMagok</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">memoria</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">hattertar</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="p">}</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="kd">class</span> <span class="nc">Laptop</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Szamitogep</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tomeg</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">akkumulatorKapacitas</span><span class="p">;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A fenti példában létrehozott <code>Laptop</code> a <code>Szamitogep</code> osztályt bővíti ki, ami azt jelenti, hogy ebben a példában,
+a <code>Szamitogep</code>
+az ősosztály és a <code>Laptop</code> a leszármazott, vagy gyerek osztály. A <code>Laptop</code> osztály megörökli, a <code>Szamitogep</code> osztály
+összes
+attribútumát.</p>
+<h3 id="metodusok-oroklese">Metódusok öröklése.</h3>
+<p>A kibővített osztályból nem csak osztály változókat, hanem metódusokat is öröklünk, tehát a lenti példában, miután
+hozzáadtunk egy új <code>bekapcsol()</code> metódust a <code>Szamitogep</code>, az automatikusan öröklődik a <code>Laptop</code> osztályba, ahol azt majd
+minden példányon meg lehet hívni, ugyan úgy, mint ha eleve a <code>Laptop</code> osztályban lett volna deklarálva.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">class</span> <span class="nc">Szamitogep</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">bekapcsol</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Betoltes ... &quot;</span><span class="p">);</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="kd">class</span> <span class="nc">Laptop</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Szamitogep</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="tobbszoros-oroklodes">Többszörös öröklődés</h3>
+<p>Azért, mert egy osztály egy másik osztály alosztálya, attól még belőle további alosztályok is létrehozhatóak.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">class</span> <span class="nc">Szamitogep</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kd">class</span> <span class="nc">Laptop</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Szamitogep</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kd">class</span> <span class="nc">TwoInOne</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Laptop</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A fenti példában létrehozott <code>Laptop</code> a <code>Szamitogep</code> osztályt öröklő, ami azt jelenti, hogy a saját <code>tomeg</code> es
+<code>akkumulatorKapacitas</code> változói mellett örökölte a <code>Szamitogep</code> osztály összes változóját is.</p>
+<h2 id="konstruktorok">Konstruktorok</h2>
+<p>Ha a szülő osztály konstruktorának vannak paraméterei, akkor azokat a paramétereket az alosztályban ki kell elégíteni.
+Erre a <code>super</code> kulcs szót használjuk, aminek segítségével a szülő osztály konstruktorát hívjuk meg. A lenti példában a
+<code>Teglalap</code> osztály konstruktora két paramétert kér (<code>magassag</code>, <code>szelesseg</code>), igy a <code>Negyzet</code> alosztály konstruktorában
+kötelező ezt a két érteket megadni. Mivel egy négyzet minden oldala egyenlő hosszú lesz, a <code>Negyzet</code> konstruktorában
+csak
+egy számot kérünk be, es azt a számot adjuk meg a <code>Teglalap</code> konstruktor mindkét értekének.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">class</span> <span class="nc">Teglalap</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">Teglalap</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kd">class</span> <span class="nc">Negyzet</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="n">Negyzet</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A következő példában az alosztály nem kevesebb, hanem több értékét kér be mint a szülőosztály.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">class</span> <span class="nc">Jarmu</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">modell</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ev</span><span class="p">;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="n">Jarmu</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">modell</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ev</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">}</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="kd">class</span> <span class="nc">Auto</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">rendszam</span><span class="p">;</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ajtok</span><span class="p">;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">    </span><span class="n">Auto</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">modell</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ev</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">rendszam</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ajtok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">gyarto</span><span class="p">,</span><span class="w"> </span><span class="n">modell</span><span class="p">,</span><span class="w"> </span><span class="n">ev</span><span class="p">);</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">rendszam</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rendszam</span><span class="p">;</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ajtok</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ajtok</span><span class="p">;</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="hozzaferes-modositok">Hozzáférés módosítók</h2>
+<p>Az előző feladatsorban mar megismerkedtünk két hozzáférés módosítóval, a <code>private</code>-tal és a ”<code>default</code>”-tal. Mivel már
+tudjuk, mit jelent az, ha egy osztálynak egy másik osztály alosztálya, igy értelmezhetjük a másik két hozzáférés
+módosítót is. A <code>protected</code> es a <code>public</code> kulcsszavakkal a változókat es metódusokat elérhetővé tehetjük a csomagon
+kívülről
+is, azonban a <code>protected</code> a hozzáférést limitálni fogja az osztályunk alosztályaira. A <code>private</code> elemek továbbra is az
+osztályon belül lesznek csak elérhetők, a csomagon belül levő alosztályok sem férhetnek hozza.</p>
+<table>
+<thead>
+<tr>
+<th>Kulcsszó</th>
+<th>Osztályon belül</th>
+<th>Csomagon belül bárhonnan</th>
+<th>Csomagon kívül alosztályból</th>
+<th>Csomagon kívül bárhonnan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>private</td>
+<td>Igen</td>
+<td>Nem</td>
+<td>Nem</td>
+<td>Nem</td>
+</tr>
+<tr>
+<td>(nincs)</td>
+<td>Igen</td>
+<td>Igen</td>
+<td>Nem</td>
+<td>Nem</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Igen</td>
+<td>Igen</td>
+<td>Igen</td>
+<td>Nem</td>
+</tr>
+<tr>
+<td>public</td>
+<td>Igen</td>
+<td>Igen</td>
+<td>Igen</td>
+<td>Igen</td>
+</tr>
+</tbody>
+</table>
+<h2 id="polimorfizmus">Polimorfizmus</h2>
+<p>A polimorfizmus az objektum orientált programozás alapelveinek egyike, jelentésé pedig ”több alakúság”. Akkor beszélünk
+polimorfizmusról, amikor egy típus példányai több alakot is felvehetnek. Ennek a legkézenfekvőbb példája az, amikor egy
+osztály alosztályai felül írjak a szülő osztály metódusait.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">M</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A &quot;</span><span class="p">);</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">M</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;B &quot;</span><span class="p">);</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="p">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="kd">class</span> <span class="nc">C</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">M</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;C &quot;</span><span class="p">);</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ha az <code>A</code> osztályunkat kibővíti a <code>B</code> és <code>C</code> osztály, akkor egy <code>A</code> típussal deklarált változóba <code>B</code> és <code>C</code> típusokat is
+elhelyhetünk.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">A</span><span class="p">();</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">A</span><span class="w"> </span><span class="n">a2</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">B</span><span class="p">();</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">A</span><span class="w"> </span><span class="n">a3</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">C</span><span class="p">();</span>
+</span></code></pre></div>
+<p>Ez azt jelenti, hogy bar mind a három változónk <code>A</code> típusú, mivel más osztályok példányai, az <code>M()</code> metódus mind a három
+példányon mást fog kiírni a konzolra.</p>
+<h3 id="override-annotacio">@Override annotáció</h3>
+<p>Metódusok felül írásakor erősen ajánlott az <code>@Override</code> annotáció használata, amivel egyértelműen jelezzük a Java-nak,
+hogy a szül osztályban levő metódus viselkedését fogjuk felül írni, de a ki- es bemeneteit nem. Ha azokat is felülijük,
+például egy új paramétert adunk hozza az alosztályban levő metódushoz, akkor az nem fogja felül írni a szülő osztály
+metódusát, hanem új metódusként adódik hozza az alosztályhoz. Egy <code>@Override</code> annotációval megjelölt metódusnál ebben az
+esetben mar futtatás elött figyelmeztetést fogunk kapni. Ha egy metódust az annotáció nélkül írunk felül, azt
+kitakarásnak vagy árnyékolásnak hívhatjuk.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">class</span> <span class="nc">C</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">M</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;C &quot;</span><span class="p">);</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="instaceof-operator">Instaceof operátor</h3>
+<p>Az <code>instanceof</code> operator segítségével ellenőrizheted, hogy egy változó egy bizonyos alosztályához tartozó objektumot
+tartalmaz-e. A lenti példában az előző <code>A</code>, <code>B</code>, <code>C</code> osztályokra hivatkozunk.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">B</span><span class="p">();</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">B</span><span class="p">){</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Ez egy B objektum&quot;</span><span class="p">);</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">C</span><span class="p">){</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; Ez egy C objektum&quot;</span><span class="p">);</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ha meggyőződtől róla, hogy az objektumod egy bizonyos alosztályhoz tartozik, azt biztonságban konvertálhatod az
+altípusba, ezzel helyben elérhetővé téve az alosztály sajátos metódusait, változóit.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">class</span> <span class="nc">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="c1">// ures osztaly</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="kd">class</span> <span class="nc">B</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">M</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; En  egy B vagyok !&quot;</span><span class="p">);</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">}</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">B</span><span class="p">();</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w"> </span><span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="k">instanceof</span><span class="w"> </span><span class="n">B</span><span class="p">){</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="n">b</span><span class="o">=</span><span class="p">(</span><span class="n">B</span><span class="p">)</span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="na">M</span><span class="p">();</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="final-kulcsszo">Final kulcsszó</h3>
+<p>Ha meg szeretned akadályozni, hogy az osztályodnak alosztályai jöhessenek létre, vagy egy metódusod felül legyen írva
+egy alosztályban, egy osztály vagy metódust elláthatsz <code>final</code> kulcsszóval.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kd">final</span><span class="w"> </span><span class="kd">class</span> <span class="nf">Szamologep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">osszead</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w"> </span><span class="kd">class</span> <span class="nf">Szamologep</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">osszead</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="super-kulcsszo">Super kulcsszó</h3>
+<p>A <code>super</code> kulcsszó nem csak konstruktoroknál használatos, általánosságban az osztály szülő osztályára mutat, a <code>this</code>
+-nek
+felel meg. Segítségével meg tudod hívni egy felüliért metódus eredeti verzióját a szülő osztályban. Az alábbi példában a
+<code>Zsiraf</code> osztály ki bővíti a bemutatkozását azzal, hogy megmondja a magasságát.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">class</span> <span class="nc">Allat</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nev</span><span class="p">;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">kor</span><span class="p">;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">bemutatkozas</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;A nevem &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nev</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; es &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">kor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; eves vagyok &quot;</span><span class="p">;</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="p">}</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="kd">class</span> <span class="nc">Zsiraf</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">magassag</span><span class="p">;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="nf">bemutatkozas</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kd">super</span><span class="p">.</span><span class="na">bemutatkozas</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; A magassagom &quot;</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">                </span><span class="o">+</span><span class="w"> </span><span class="n">magassag</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; meter .&quot;</span><span class="p">;</span>
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="object-osztaly">Object osztály</h2>
+<p>Ugyan ez számunkra nem látható, minden osztály automatikusan ki bővíti a <code>java.lang.Object osztályt</code>. Ez az osztály
+hierarchia csúcsa, ami meghatároz olyan metódusokat, amit minden Java objektumnak kötelező tartalmaznia, azonban ezeket
+az alosztályokkal felül írhatjuk. Figyelmesen tanulmányozd az <code>Object</code> osztályt es keresd meg az osztály Java
+dokumentációját az interneten. Az <code>Object</code> ősosztályból minden általunk létrehozott osztály örököl metódusokat, amiket
+mi
+szabadon felülírhatunk ilyenek például a <code>toString()</code> és az <code>equals()</code></p>
+<h3 id="tostring-metodus">toString() metódus</h3>
+<p>A <code>toString()</code> metódus határozza meg, hogy egy objektumot hogyan reprezentálunk String alakban. Amikor fontos számunkra,
+hogy egy osztály példányait emberek szamara is érthetően jelenítsünk meg, olyankor ezt a metódust írjuk felül es
+String-kent adjuk vissza az objektumunk adatait, vagy bármit, amit a szituáció kíván. Az alapvető implementációja ennek
+a metódusnak csak az objektum osztályát és hash kódját fogja visszaadni, például <code>Termek@1fee6fc</code>;</p>
+<h3 id="equals-metodus">equals() metódus</h3>
+<p>Az <code>equals()</code> metódus határozza meg, hogy mi alapján tekintjük egy osztály két példányát egyenlőnek. Fontos megjegyezni,
+hogy
+ennek a metódusnak a felülírása eseteben kötelező a <code>hashCode()</code> metódust is felülírni, hogy az osztályod konzisztenszen
+működjen hash alapú adatszerkezetekben, például <code>HashMap()</code>. Szerencsere ezt egyszerűen megtehetjük az <code>Objects.hash()</code>
+metódus használatával.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Foglalas</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="n">String</span><span class="w"> </span><span class="n">nev</span><span class="p">;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ora</span><span class="p">;</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">equals</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">o</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w"> </span><span class="p">...</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hashCode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Objects</span><span class="p">.</span><span class="na">hash</span><span class="p">(</span><span class="n">nev</span><span class="p">,</span><span class="w"> </span><span class="n">ora</span><span class="p">);</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="feladatok">Feladatok</h2>
+<h3 id="1-feladat">1. Feladat</h3>
+<p>Mi történik, ha</p>
+<ul>
+<li>megpróbálsz egy osztályból két másik osztályt ki bővíteni,</li>
+<li>megpróbálod a Math osztályt kibővíteni,</li>
+<li>egy szülő osztálynak statikus metódusai/változói vannak,</li>
+<li>egy alosztályból nem elégíted ki a szülő osztály konstruktorának paramétereit,</li>
+<li>egy tetszőleges T típusú tömbben T különböző alosztályainak objektumait tesszük,</li>
+<li>egy tetszőleges T típussal deklarált változónak T szülő osztályának objektumát adjuk értekül,</li>
+<li>egy tetszőleges T típus egyik alosztályával deklarált változójának a T osztály egy másik alosztályának objektumát
+  adjuk értekül,</li>
+<li>egy alosztályban létrehozott metódus vagy osztály változó neve megegyezik a szülő osztály egyik metódusával,</li>
+<li>egy statikus metódust egy nem statikus metódussal árnyékolunk vagy fordítva,</li>
+<li>két osztály egymást bővíti ki,</li>
+<li>egy final kulcs szóval megjelölt osztályt vagy metódust megpróbálsz ki bővíteni vagy felül írni,</li>
+<li>egy @Override annotációval megjelölt metódus neve/paraméterei/visszatérési érteke nem egyezik meg a szülő osztály
+  egyik metódusával sem?</li>
+</ul>
+<h3 id="2-feladat">2. Feladat</h3>
+<p>Hozz létre egy tetszőleges osztályt és implementáld a <code>toString()</code> és <code>equals()</code> metódust.</p>
+<h3 id="3-feladat">3. Feladat</h3>
+<p>A következő feladatokban a lenti <code>Termek</code> osztallyal fogunk dolgozni.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="kd">class</span> <span class="nc">Termek</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kovetkezoAzonosito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">azonosito</span><span class="p">;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">;</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ar</span><span class="p">;</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Termek</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">azonosito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kovetkezoAzonosito</span><span class="o">++</span><span class="p">;</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">megnevezes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">;</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ar</span><span class="p">;</span>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAzonosito</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">azonosito</span><span class="p">;</span>
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getMegnevezes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">;</span>
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAr</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ar</span><span class="p">;</span>
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="31-feladat">3.1. Feladat</h4>
+<p>Készíts a <code>Termek</code> osztálynak egy <code>Laptop</code> alosztályt. Minden laptopról el szeretnénk tárolni a processzor típusát és a
+képátló hosszát. A <code>Laptop</code> alosztály a szülőosztálya mintájára készüljön, a változok hozzáférhetőségé, az osztály
+mutálhatósága, konstruktora stb. egyezzen meg vele.</p>
+<h4 id="32-feladat">3.2. Feladat</h4>
+<p>Készíts a <code>Termek</code> osztálynak egy <code>Kamera</code> alosztályt. Minden kameráról el szeretnénk tárolni a felbontást megapixelben.
+A <code>Kamera</code> alosztály a szülőosztálya mintájára készüljön, a változok hozzáférhetőségé, az osztály
+mutálhatósága, konstruktora stb. egyezzen meg vele.</p>
+<h4 id="33-feladat">3.3. Feladat</h4>
+<p>Készíts a <code>Termek</code> osztályba egy <code>toString()</code> metódust, amely a következő formátumú String-ben adja vissza a termék
+adatait.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>100014 BananaBook Pro 12 226000 Ft
+</span></code></pre></div>
+<h4 id="34-feladat">3.4. Feladat</h4>
+<p>Egy <code>Termek</code> típusú tömbbe helyezz vegyesen <code>Laptop</code> és <code>Kamera</code> példányokat, majd hívd meg mindegyiken a <code>toString()</code>
+metódust
+egy ciklus segítségével.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>100000 BananaBook Pro 12 226000 Ft
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>100001 BananaBook Pro 15 265000 Ft
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>100002 Canikon D6000D 120000 Ft
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>100003 Canikon D6500D 165000 Ft
+</span></code></pre></div>
+<h4 id="35-feladat">3.5. Feladat</h4>
+<p>Az <code>instanceof</code> operátorral módosítsd a ciklust úgy, hogy csak a <code>Laptop</code> osztály példányait jelenítse meg.</p>
+<h4 id="36-feladat">3.6. Feladat</h4>
+<p>Az <code>instanceof</code> operátorral módosítsd a ciklust úgy, hogy minden termékhez oda írja, hogy melyik kategóriába esik.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>100000 BananaBook Pro 12 226000 Ft Laptop
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>100001 BananaBook Pro 15 265000 Ft Laptop
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>100002 Canikon D6000D 120000 Ft Kamera
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>100003 Canikon D6500D 165000 Ft Kamera
+</span></code></pre></div>
+<h4 id="37-feladat">3.7. Feladat</h4>
+<p>Írd felül a Laptop és Kamera osztály toString() metódusait úgy, hogy a ciklusod az alábbi eredményt produkálja.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>100000 BananaBook Pro 12 226000 Ft i5 6700K, 30 cm Laptop
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>100001 BananaBook Pro 15 265000 Ft amd 6300X, 24 cm Laptop
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>100002 Canikon D6000D 120000 Ft 24 MP cm Kamera
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>100003 Canikon D6500D 165000 Ft 36 MP Kamera
+</span></code></pre></div>
+<h4 id="38-feladat">3.8. Feladat</h4>
+<p>Módosítsd úgy a <code>Termek</code> osztályt, hogy az <code>equals()</code> metódus két példányát akkor tekintse egyenlőnek, ha az azonosítóik
+megegyeznek.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
