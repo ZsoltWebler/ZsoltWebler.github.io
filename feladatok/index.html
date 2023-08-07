@@ -471,7 +471,61 @@ metódust.</p>
 létre az osztályon belül egy ekkora méretű <code>ElectronicDevice</code> tömböt. Az osztálynak legyen
 egy <code>addSamsungDevice</code> metódusa, ami egy <code>ElectronicDevice</code> objektumot vár és ha a termék brand változója <strong>Samsung</strong>
 értékű, akkor kiírja a konzolra, hogy milyen típusú objektum lett hozzáadva és eltárolja a tömbben. Ha a tömbben nincs,
-több hely, akkor kezd előről a tömb feltöltését, vagyis írd felül a legkorábban hozzáadott objektumot az újjal. </p>
+több hely, akkor kezd előről a tömb feltöltését, vagyis írd felül a legkorábban hozzáadott objektumot az újjal.</p>
+<hr />
+<p>Az alábbi <code>RealEstate</code> osztállyal fogunk dolgozni.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RealEstate</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RealEstate</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numberOfRooms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getNumberOfRooms</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Implementáld a <code>toString</code> metódust az osztályhoz.</p>
+<p>Készíts egy <code>Flat</code> osztályt, ami a <code>RealEstate</code> osztályból származik és bővítsd ki a <code>boolean</code> balcony, és <code>int</code> level
+adattagokkal. Készíts hozzá paraméteres konstruktort és getter metódust az új adattagokhoz. Írd felül a toString
+metódust, hogy az új attribútumokat is figyelembe vegye.</p>
+<p>Készíts egy <code>House</code> osztályt, ami a <code>RealEstate</code> osztályból származik és bővítsd ki a <code>boolean</code> pool, és <code>double</code>
+gardenArea adattagokkal. Készíts hozzá paraméteres konstruktort és getter metódust az új adattagokhoz. Írd felül a
+toString metódust, hogy az új attribútumokat is figyelembe vegye.</p>
+<hr />
+<p>Készíts egy <code>Meat</code> osztályt, aminek egy <code>final</code> <code>String</code> meatType paramétere van. Készíts paraméteres konstruktort,
+gettert és valósítsd meg a <code>toString</code> és <code>equals</code> metódust.</p>
+<p>Készíts egy <code>Bread</code> osztályt, aminek egy <code>final</code> <code>String</code> breadType paramétere van. Készíts paraméteres konstruktort,
+gettert és valósítsd meg a <code>toString</code> és <code>equals</code> metódust.</p>
+<p>Készíts egy <code>Cheese</code> osztályt, aminek egy <code>final</code> <code>String</code> cheeseType paramétere van. Készíts paraméteres konstruktort,
+gettert és valósítsd meg a <code>toString</code> és <code>equals</code> metódust.</p>
+<p>Készíts egy <code>Hamburger</code> osztályt az alábbi attribútumokkal</p>
+<ul>
+<li><code>Meat</code> - meat.</li>
+<li><code>Bread</code> - bread.</li>
+<li><code>Cheese</code> - cheese</li>
+</ul>
+<p>Készíts paraméteres <code>konstruktort</code>, amiben beállítod a paramétereket. Készíts <code>getter - setter</code> és <code>toString</code>
+metódusokat az osztályhoz.</p>
+<p>Készíts egy <code>PremiumHamburger</code> osztályt, ami a hamburgerből származik. A konstruktora ne várjon semmilyen paramétert,
+hanem te állítsd be az ősosztály konstruktorának értékeit az alábbi objektumokkal. A <code>Meat</code> paramétere egy olyan <code>Meat</code>
+objektum legyen aminek a meatType értéke "PremiumMeat". A <code>Bread</code> paramétere egy olyan <code>Bread</code>
+objektum legyen aminek a breadType értéke "PremiumBread". A <code>Cheese</code> paramétere egy olyan <code>Cheese</code>
+objektum legyen aminek a cheeseType értéke "PremiumCheese".</p>
+<p>Készíts egy <code>VeganMeat</code> osztályt, ami a <code>Meat</code> osztályból származik.</p>
+<p>Készíts egy <code>VeganHamburger</code> ami a <code>Hamburger</code> osztályból származik. Az osztály konstruktora az ősosztály
+konstruktorához hasonlóan 3 paramétert várjon, azonban a <code>Meat</code> típus helyett <code>VeganMeat</code> típust várjon és így hívja
+tovább az ősosztály konstruktorát.</p>
 
 
 
