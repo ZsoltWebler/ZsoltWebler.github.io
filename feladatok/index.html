@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../java_se_5/">
+        <link rel="prev" href="../java_se_5_5/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -254,6 +254,20 @@
     <li class="md-nav__item">
       <a href="../java_se_5/" class="md-nav__link">
         Öröklődés az objektum orientált programozásban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5_5/" class="md-nav__link">
+        Java Enum típus
       </a>
     </li>
   
@@ -526,6 +540,24 @@ objektum legyen aminek a cheeseType értéke "PremiumCheese".</p>
 <p>Készíts egy <code>VeganHamburger</code> ami a <code>Hamburger</code> osztályból származik. Az osztály konstruktora az ősosztály
 konstruktorához hasonlóan 3 paramétert várjon, azonban a <code>Meat</code> típus helyett <code>VeganMeat</code> típust várjon és így hívja
 tovább az ősosztály konstruktorát.</p>
+<hr />
+<p>Készíts egy <code>OrderStatus</code> enumot az alábbi lehetséges értékekkel. <code>ORDERED</code>, <code>READY</code>, <code>DELIVERED</code>. Az enumnak legyen egy
+<code>int</code> timeToDelivery adattagja, <code>ORDERED</code> esetén 5, <code>READY</code> esetén 2, <code>DELIVERED</code> esetén pedig 0.</p>
+<p>Készíts egy <code>Order</code> osztályt, az alábbi attribútumokkal:</p>
+<ul>
+<li><code>int</code> orderId: Minden objektum esetén legyen különböző, 0-tól indulva, minden új objektum 1-el nagyobb id-t kap.</li>
+<li><code>String</code> name: A rendelés neve</li>
+<li><code>OrderStatus</code> orderStatus: A rendelés állapota.</li>
+<li><code>String</code> logisticCompany: A futárszolgálat aki a csomagot kezeli</li>
+</ul>
+<p>Készíts paraméteres <code>konstruktort</code>, <code>toString</code> és <code>getter</code>-<code>setter</code> metódusokat azokhoz a változókhoz, amelyekhez
+szükséges. Készíts egy <code>getTimeToDelivery</code> metódust, ami térjen vissza az orderStatus <strong>timeToDelivery</strong> értékével.</p>
+<p>Készíts egy <code>GLSOrder</code> és egy <code>DHLOrder</code> osztályt ami az <code>Order</code> osztályból származik.</p>
+<p>A <code>GLSOrder</code> minden objektumának a <strong>logisticCompany</strong> változója legyen GLS. Ezen felül, legyen egy extra attribútuma,
+<code>String</code> carrierPhoneNumber, ami a futár telefonszámát tárolja, <code>konstruktor</code> paraméterből kapja ezt az értéket.
+Készítsd el a megfelelő <code>toString</code> és <code>getter</code>-<code>setter</code> metódusokat.</p>
+<p>A <code>DHLOrder</code> minden objektumának a <strong>logisticCompany</strong> változója legyen DHL. Írd felül a <code>getTimeToDelivery</code> metódust,
+az alap értékhez adjon hozzá 2 napot minden esetben, ha az nullától különböző értékű.</p>
 
 
 

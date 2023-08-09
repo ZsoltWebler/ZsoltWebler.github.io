@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../java_se_5/">
+      
+      
+        <link rel="next" href="../feladatok/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
@@ -191,16 +195,18 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -209,7 +215,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Gyakorlati anyagok
@@ -253,6 +259,102 @@
       <a href="../java_se_5/" class="md-nav__link">
         Öröklődés az objektum orientált programozásban
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Java Enum típus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Java Enum típus
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enumok-hasznalata" class="md-nav__link">
+    Enumok használata
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feladatok" class="md-nav__link">
+    Feladatok
+  </a>
+  
+    <nav class="md-nav" aria-label="Feladatok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-feladat" class="md-nav__link">
+    1. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-feladat" class="md-nav__link">
+    2. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-feladat" class="md-nav__link">
+    3. Feladat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -356,9 +458,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#enum-adattagok" class="md-nav__link">
-    Enum adattagok
+  <a href="#feladatok" class="md-nav__link">
+    Feladatok
   </a>
+  
+    <nav class="md-nav" aria-label="Feladatok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-feladat" class="md-nav__link">
+    1. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-feladat" class="md-nav__link">
+    2. Feladat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-feladat" class="md-nav__link">
+    3. Feladat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -419,8 +548,74 @@ listájával tér vissza.</p>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="p">}</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="enum-adattagok">Enum adattagok</h2>
-<p>Az enum típus értékei lényegében az enum típusunk objektumai. Mint minden más objektum ezek is rend</p>
+<p>Az enum típus értékei lényegében az enum osztályunk objektumai. Az enum osztályunk is rendelkezhet adattagokkal és
+metódusokkal amiket különböző értékekkel inicializálhatunk az objektumok készítésre során.</p>
+<p>Nézzük a következő példát, amiben a <code>Planet</code> enumot hozzuk létre, ami a naprendszerünk bolygóit fogja tárolni.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">Planet</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">MERCURY</span><span class="p">(</span><span class="mf">3.303e+23</span><span class="p">,</span><span class="w"> </span><span class="mf">2.4397e6</span><span class="p">),</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">VENUS</span><span class="p">(</span><span class="mf">4.869e+24</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0518e6</span><span class="p">),</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">EARTH</span><span class="p">(</span><span class="mf">5.976e+24</span><span class="p">,</span><span class="w"> </span><span class="mf">6.37814e6</span><span class="p">),</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">MARS</span><span class="p">(</span><span class="mf">6.421e+23</span><span class="p">,</span><span class="w"> </span><span class="mf">3.3972e6</span><span class="p">),</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">JUPITER</span><span class="p">(</span><span class="mf">1.9e+27</span><span class="p">,</span><span class="w"> </span><span class="mf">7.1492e7</span><span class="p">),</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">SATURN</span><span class="p">(</span><span class="mf">5.688e+26</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0268e7</span><span class="p">),</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">URANUS</span><span class="p">(</span><span class="mf">8.686e+25</span><span class="p">,</span><span class="w"> </span><span class="mf">2.5559e7</span><span class="p">),</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="n">NEPTUNE</span><span class="p">(</span><span class="mf">1.024e+26</span><span class="p">,</span><span class="w"> </span><span class="mf">2.4746e7</span><span class="p">);</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">mass</span><span class="p">;</span><span class="w">   </span><span class="c1">// in kilograms</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span><span class="w"> </span><span class="c1">// in meters</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="n">Planet</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">mass</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">radius</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">mass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mass</span><span class="p">;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">radius</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">mass</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">mass</span><span class="p">;</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">radius</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">radius</span><span class="p">;</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-26"><a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>
+</span><span id="__span-2-27"><a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="c1">// universal gravitational constant  (m3 kg-1 s-2)</span>
+</span><span id="__span-2-28"><a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.67300E-11</span><span class="p">;</span>
+</span><span id="__span-2-29"><a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+</span><span id="__span-2-30"><a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">surfaceGravity</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-31"><a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">G</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">mass</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">radius</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">radius</span><span class="p">);</span>
+</span><span id="__span-2-32"><a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-33"><a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+</span><span id="__span-2-34"><a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="nf">surfaceWeight</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">otherMass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-35"><a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">otherMass</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">surfaceGravity</span><span class="p">();</span>
+</span><span id="__span-2-36"><a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-37"><a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A korábbi példával ellentétben itt az enum típusunkhoz adattagokat és metódusokat is definiálunk. Mivel az enum csak egy
+különleges osztály ezt minden további gond nélkül megtehetjük. Minden egyes enum értékünk mostmár eltárolja az adott
+bolygó tömegét és a bolygó sugarát és a két metódusán keresztül, minden bolygón kiszámolhatjuk a felületi gravitációt
+valamint egy tömeg súlyát az adott bolygó felszínén.</p>
+<h2 id="feladatok">Feladatok</h2>
+<h3 id="1-feladat">1. Feladat</h3>
+<p>Készíts egy <code>Month</code> enumot ami a hónapok listáját tárolja el kiegészítve azzal az információval, hogy az adott hónap
+hány napos.</p>
+<h3 id="2-feladat">2. Feladat</h3>
+<p>Készíts egy <code>CardSuit</code> enumot a következő értékekkel <code>HEARTS</code>, <code>DIAMONDS</code>, <code>CLUBS</code>, <code>SPADES</code>.</p>
+<p>Készíts egy <code>Card</code> osztályt, a következő adattagokkal. <code>String</code> rank, <code>CardSuit</code> cardSuit.
+Készíts paraméteres <code>konstruktort</code>, <code>toString</code> és <code>getter-setter</code> metódusokat.</p>
+<p>A <code>main</code> függvényedben generálj ki egy 52 lapos paklit az összes lehetséges kártyalappal és tárold el a lapokat egy
+tömbben!</p>
+<h3 id="3-feladat">3. Feladat</h3>
+<p>Készíts egy <code>PizzaSize</code> enumot a következő értékekkel <code>SMALL</code>, <code>MEDIUM</code>, <code>LARGE</code>, <code>EXTRALARGE</code>.</p>
+<p>Készíts egy <code>Pizza</code> osztályt, a következő adattagokkal. <code>String</code> pizzaName, <code>int</code> basePrice, <code>PizzaSize</code> pizzaSize.
+Készíts paraméteres <code>konstruktort</code>, <code>toString</code> és <code>getter-setter</code> metódusokat. Készíts egy <code>getPrice</code> metódust, ami a
+pizza árát számolja ki az alábbi képlet segítségével.</p>
+<p>A pizza ára a basePrice * pizza méretével.</p>
+<ul>
+<li>1 - <code>SMALL</code></li>
+<li>1.25 - <code>MEDIUM</code></li>
+<li>1.5 - <code>LARGE</code></li>
+<li>2 - <code>EXTRALARGE</code></li>
+</ul>
+<p>Vagyis egy <code>LARGE</code> pizza, aminek az alap ára 1000 volt, 1500-ba kerül.</p>
 
 
 
