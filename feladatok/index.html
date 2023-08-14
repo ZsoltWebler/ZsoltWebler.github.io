@@ -558,6 +558,65 @@ szükséges. Készíts egy <code>getTimeToDelivery</code> metódust, ami térjen
 Készítsd el a megfelelő <code>toString</code> és <code>getter</code>-<code>setter</code> metódusokat.</p>
 <p>A <code>DHLOrder</code> minden objektumának a <strong>logisticCompany</strong> változója legyen DHL. Írd felül a <code>getTimeToDelivery</code> metódust,
 az alap értékhez adjon hozzá 2 napot minden esetben, ha az nullától különböző értékű.</p>
+<hr />
+<p>Feladatod egy egyszerűsített Könyvtárkezelő Rendszer létrehozása Java nyelven. A rendszernek támogatnia kell két típusú
+elemet: Könyveket és DVD-ket. Minden elemnek van egy címe, szerzője (könyvek esetén) vagy rendezője (DVD-k esetén),
+valamint egy egyedi azonosítószáma. Valósítsd meg a rendszert osztályok és enumok segítségével.</p>
+<p>A feladatod a következő osztályok létrehozása:</p>
+<p><code>Item</code>: Ez az alaposztály mind a könyvek, mind a DVD-k számára. Az alábbi attribútumokkal kell rendelkeznie:</p>
+<ul>
+<li><code>int</code> id (egyedi azonosítószám minden elemhez)</li>
+<li><code>String</code> title (cím)</li>
+<li>Egy <code>ItemType</code> enum, ami a <strong>BOOK</strong> és a <strong>DVD</strong> értékeket veheti fel.</li>
+</ul>
+<p>Emellett egy konstruktornak kell inicializálnia ezeket az attribútumokat, és megfelelő gettereket és settereket.</p>
+<p><code>Book</code>: Ez az osztály öröklődik az <code>Item</code> osztályból. Egy további attribútummal kell rendelkeznie:</p>
+<ul>
+<li><code>String</code> author (szerző)</li>
+</ul>
+<p><code>DVD</code>: Ez az osztály öröklődik az <code>Item</code> osztályból. Egy további attribútummal kell rendelkeznie:</p>
+<ul>
+<li><code>String</code> director (rendező)</li>
+</ul>
+<p><code>Library</code>: Ez az osztály képviseli magát a könyvtárat. A következő metódusokat kell tartalmaznia:</p>
+<ul>
+<li>void <code>addItem(Item item)</code> - Hozzáad egy elemet a könyvtár gyűjteményéhez.</li>
+<li>void <code>displayItems()</code> - Megjeleníti az összes elem információját a könyvtárban.</li>
+<li>Item <code>findItemById(int id)</code> - Megkeres és visszaad egy elemet azonosítója alapján.</li>
+</ul>
+<hr />
+<p>Feladatod egy Online Vásárlási Rendszer tervezése Java nyelven. A rendszernek támogatnia kell különböző típusú
+termékeket: Elektronikai cikkeket és Ruházatot. Minden terméknek van egy név, ár és egy egyedi azonosítószáma. Ezenkívül
+minden termék rendelkezhet specifikus tulajdonságokkal.</p>
+<p>A feladatod a következő osztályok és interfészek létrehozása:</p>
+<p><code>Product</code>: Ez az alaposztály mind az elektronikai cikkek, mind a ruházati termékek számára. Az alábbi
+attribútumokkal kell rendelkeznie:</p>
+<ul>
+<li><code>int</code> id (egyedi azonosítószám minden termékhez)</li>
+<li><code>String</code> name (név)</li>
+<li><code>double</code> price (ár)</li>
+</ul>
+<p><code>Electronics</code>: Ez az osztály öröklődik a <code>Product</code> osztályból. Egy további attribútummal kell
+rendelkeznie:</p>
+<ul>
+<li><code>String</code> brand (márka)</li>
+</ul>
+<p><code>Clothing</code>: Ez az osztály öröklődik a <code>Product</code> osztályból. Két további attribútummal kell rendelkeznie:</p>
+<ul>
+<li><code>String</code> size (méret)</li>
+<li><code>String</code> material (anyag)</li>
+</ul>
+<p><code>Review</code> Ez az osztály a következő adattagokat és metódusokat tartalmazza.</p>
+<ul>
+<li><code>String</code> review (vélemény)</li>
+<li><code>int</code> rating (pontozás), csak 1 és 5 között vehet fel értékeket.</li>
+</ul>
+<p>A <code>Product</code> osztály egészítsd ki az alábbi metódusokkal és attribútumokkal.</p>
+<ul>
+<li><code>Review[]</code> reviews: A vélemények tárolására használt tömb.</li>
+<li>void <code>addReview(String review, int rating)</code> - Hozzáad egy értékelést a termékhez.</li>
+<li>double <code>getAverageRating()</code> - Kiszámítja és visszaadja az átlagos értékelést az értékelések alapján.</li>
+</ul>
 
 
 

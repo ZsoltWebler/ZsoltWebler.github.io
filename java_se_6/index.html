@@ -1,0 +1,713 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Hibakezelés - Junior Java Backend jegyzet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#hibakezeles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-header__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Junior Java Backend jegyzet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Hibakezelés
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-nav__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Junior Java Backend jegyzet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Bevezető
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Gyakorlati anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gyakorlati anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_1/" class="md-nav__link">
+        Java alapok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_4_5/" class="md-nav__link">
+        Konzol io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5/" class="md-nav__link">
+        Öröklődés az objektum orientált programozásban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5_5/" class="md-nav__link">
+        Java Enum típus
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Extra anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extra anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok/" class="md-nav__link">
+        Gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attekintes" class="md-nav__link">
+    Áttekintés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hibak-fajtai" class="md-nav__link">
+    Hibák fajtái
+  </a>
+  
+    <nav class="md-nav" aria-label="Hibák fajtái">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#szintaktikai-hibak" class="md-nav__link">
+    Szintaktikai hibák
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#futasi-ideju-hibak" class="md-nav__link">
+    Futási idejű hibák
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kivetelek-kezelese" class="md-nav__link">
+    Kivételek kezelése
+  </a>
+  
+    <nav class="md-nav" aria-label="Kivételek kezelése">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#try-catch" class="md-nav__link">
+    try-catch
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throws-kulcsszo" class="md-nav__link">
+    throws kulcsszó
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#throw-kulcsszo" class="md-nav__link">
+    throw kulcsszó
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kivetel-tipusok" class="md-nav__link">
+    Kivétel típusok
+  </a>
+  
+    <nav class="md-nav" aria-label="Kivétel típusok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#checked-exception" class="md-nav__link">
+    Checked exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unchecked-exception" class="md-nav__link">
+    Unchecked exception
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sajat-exception-tipus" class="md-nav__link">
+    Saját Exception típus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logikai-hibak" class="md-nav__link">
+    Logikai hibák
+  </a>
+  
+    <nav class="md-nav" aria-label="Logikai hibák">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hibakeresesi-technikak" class="md-nav__link">
+    Hibakeresési technikák
+  </a>
+  
+    <nav class="md-nav" aria-label="Hibakeresési technikák">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oszd-meg-es-uralkodj" class="md-nav__link">
+    Oszd meg és uralkodj
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ertekek-megvizsgalasa" class="md-nav__link">
+    Értékek megvizsgálása
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="hibakezeles">Hibakezelés</h1>
+<h2 id="bevezetes">Bevezetés</h2>
+<p>Ebben a feladatsorban megismerjük, milyen hibákkal találkozhatunk a programozás során a Java nyelvben és milyen
+lehetőségeink vannak a hibák kezelésére.</p>
+<h2 id="attekintes">Áttekintés</h2>
+<p>A történet szerint 1947. szeptember 9-én Grace Hopper informatikus egy lepkét talált a Harvard Mark II-es számítógép
+naplójában és jelentette a világ első „bug”-ját.
+Szoftverfejlesztés során időnk túlnyomó részét hibát keresésével töltjük egyes becslések szerint több mint a 75%-át,
+ezért a hibák gyors megtalálása fontos tulajdonság minden szoftverfejlesztő számára.</p>
+<p><img alt="" src="../img/img.png" /></p>
+<h2 id="hibak-fajtai">Hibák fajtái</h2>
+<p>A Java nyelvben a hibák osztályozásának sokféle módja van, de ezek az alábbi három kategóriába esnek.</p>
+<ul>
+<li>Szintaktikai hibák: A fordító által talált hibák.</li>
+<li>Futási idejű hibák: A program futása közben fellépő hibák.</li>
+<li>Logikai hibák: A programozó által talált hibák a hibás eredmények okát keresve.</li>
+</ul>
+<p>Általánosságban elmondható, hogy a hibákat egyre nehezebb megtalálni és kijavítani, ahogy a fenti listán lefelé
+haladunk.</p>
+<h3 id="szintaktikai-hibak">Szintaktikai hibák</h3>
+<p>Amikor Java programokat írunk, a fordító az első védelmi vonal a hibák ellen. A szintaktikai hibák a programozási nyelv
+használatának nyelvtani hibáit jelentik. Ezeket a legkönnyebb megtalálni és kijavítani. A fordító megmondja, hol került
+bajba, és a legjobb tippje lesz arról, hogy mit csinált rosszul.</p>
+<p>Néhány gyakori szintaktikai hiba:</p>
+<ul>
+<li>Rosszul írt változó- és metódusnevek</li>
+<li>A pontosvessző elhagyása <code>;</code></li>
+<li>A záró zárójel <code>)</code>, szögletes zárójel <code>]</code> vagy kapcsos zárójel elhagyása <code>}</code></li>
+</ul>
+<p>Általában a hiba pontosan a fordító által jelzett sorban, vagy az előtte lévő sorban van. Ha azonban a probléma a
+helytelenül beágyazott kapcsos zárójelek, akkor a tényleges hiba a beágyazott blokk elején lehet.</p>
+<h3 id="futasi-ideju-hibak">Futási idejű hibák</h3>
+<p>Ha a programunknak nincs fordítási idejű hibája, akkor futni fog. Azokat a hibákat, amelyek a sikeres fordítás után a
+program végrehajtása során (futás közben) fordulnak elő, futási hibáknak nevezzünk. Futás közbeni hibák akkor fordulnak
+elő, amikor egy fordítási idejű hiba nélküli program olyasmire kéri a számítógépet, amit a számítógép nem tud
+megbízhatóan elvégezni.</p>
+<blockquote>
+<p>Emlékezzünk vissza mi történik, ha egy tömböt alul vagy túl indexelünk</p>
+</blockquote>
+<p>A leggyakoribb futási idejű hibák:</p>
+<ul>
+<li><strong>ArithmeticException</strong>: (Nullával osztás)</li>
+<li><strong>NullPointerException</strong>: (Nem inicializált objektummal szeretnénk dolgozni)</li>
+<li><strong>ClassCastException</strong>: (Nem megfelelő osztállyá szeretnénk kasztolni egy másik osztályt)</li>
+<li><strong>ArrayIndexOutOfBoundsException</strong>: (Túlindexelünk egy tömböt vagy listát)</li>
+</ul>
+<p>A fordító nem tudhat az ilyen típusú hibákról a program fordítása során ezért futás időben keletkeznek.</p>
+<p>Amikor a program futása során egy metódusban hiba keletkezik, a metóduson belül egy kivétel objektum jön létre
+a memóriában, amit a futtatókörnyezetnek átadunk, a metódus végrehajtása megáll, és a hívó fél számára továbbküldjük a
+létrejött kivételobjektumot, aki lekezelheti, vagy továbbdobhatja azt.</p>
+<p>Kivétel dobódás esetén a fejlesztő környezet megjelenít egy üzenetet, amely tartalmazza a kivétel nevét, a program
+sorát, ahol a kivétel
+előfordult, és egy úgy nevezett <code>stack trace</code>-t.
+A <code>stack trace</code> tartalmazza a metódust, amiben a hiba keletkezett, azt a metódust ami a korábbi metódust hívta és így
+tovább teljesen a Main metódusig. A kivétel típusából és a sorszámból könnyen következtethetünk a hiba okára és könnyen
+javíthatjuk.</p>
+<h3 id="kivetelek-kezelese">Kivételek kezelése</h3>
+<p>A kivélek kezelésére a Java nyelvben a többi nyelvhez hasonlóan úgynevezett <code>try-catch</code> blokkokat használhatunk.</p>
+<h4 id="try-catch">try-catch</h4>
+<p>Vegyük az alábbi példát. A program a felhasználótól kér két tetszőleges egész számot, majd kiszámítja a hányadosukat. A
+nullával való osztásra az egészérték aritmetika nincs felkészítve így az osztásnál egy <strong>ArithmeticException</strong> kivétel
+dobódik, ha az osztó 0.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="n">Scanner</span><span class="w"> </span><span class="n">scanner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">dividend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">divisor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scanner</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">fraction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">            </span><span class="n">fraction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dividend</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">divisor</span><span class="p">;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Zero division is undefined!&quot;</span><span class="p">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fraction</span><span class="p">);</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ahhoz, hogy kezelni tudjuk a problémás kódrészletet, magát az osztást egy <code>try</code> blokkba tesszük. A <code>try</code> blokkon belül,
+ha kivétel dobódik, azt a <code>try</code>-hoz tartozó <code>catch</code> blokk elkapja. Így a program futása nem terminál a hiba miatt.
+A <code>finally</code> blokk, mindenképp meghívódik, akár történt kivétel a végrehajtás során akár nem. A <code>finally</code> blokk
+opcionális általában fájlok bezárására, csak adatbázis kapcsolat megszűntetésére szoktuk használni.</p>
+<p>A <code>catch</code> blokknak van egy paramétere, ami az <strong>Exception</strong> típusát írja le, egy <code>try</code> blokkhoz társulhat több <code>catch</code>
+ág is, a megfelelő Exception típusok kezelése miatt.</p>
+<h4 id="throws-kulcsszo">throws kulcsszó</h4>
+<p>Ha tudjuk, hogy a kódunk amit írunk Exception-t dobhat, akkor ezt jelezhetjük a metóduson keresztül.
+A metódus paraméter listája után a <code>throws</code> kulcsszóval megadhatjuk, hogy milyen Exception-t dobhat az adott metódus.
+Így a többi fejlesztő látja, hogy olyan metódust hív, amit célszerű <code>try-catch</code> blokkba tenni.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">division</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">dividend</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">divisor</span><span class="p">)</span><span class="kd">throws</span><span class="w"> </span><span class="n">ArithmeticException</span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dividend</span><span class="o">/</span><span class="n">divisor</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="throw-kulcsszo">throw kulcsszó</h4>
+<p>Lehetőségünk van nekünk is Exception-t dobni, ha a programozási logikánkat sértő állapot fordul elő a kódban. Például
+van egy metódusunk, aminek van egy String paramétere és mi visszatérünk a megfordított Stringgel. Ha a metódusunk
+egy <code>null</code> objektummal van hívva, akkor dobhatunk egy <strong>Exception</strong>-t, ezzel jelezve, hogy a metódusunk nem
+rendeltetésszerűen van használva.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">reverseString</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">inputString</span><span class="p">){</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">inputString</span><span class="o">==</span><span class="kc">null</span><span class="p">){</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IllegalArgumentException</span><span class="p">();</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="p">...</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="p">}</span>
+</span></code></pre></div>
+<p>Kivételt a <code>throw</code> kulcsszóval dobhatunk, ilyenkor létre kell hoznunk egy kivétel példányt, valamilyen <strong>Exception</strong>
+típusból.</p>
+<h3 id="kivetel-tipusok">Kivétel típusok</h3>
+<p><img alt="" src="../img/img_1.png" /></p>
+<p>A beépített kivétel típusokat két fő csoportra bonthatjuk.</p>
+<h4 id="checked-exception">Checked exception</h4>
+<p>A <strong>Checked exception</strong> vagyis ellenőrzött kivétel típusoknál, fordítási hibát kapunk, ha nem kezeljük le a kivételt a
+kódunkban. A Java fordító kényszerít minket, hogy az adott metódust ami ellenőrzött kivételt dobhat egy <code>try-catch</code>
+blokkba tegyük.</p>
+<h4 id="unchecked-exception">Unchecked exception</h4>
+<p>Ezzel szemben <strong>Unchecked exception</strong> vagyis nem ellenőrzött kivétel típusoknál, nem kényszerít minket a fordító, hogy a
+kivételt lekezeljük azonban, ha kivétel dobódik egy <code>try-catch</code> blokkon kívül, akkor az a program termináláshoz vezet.</p>
+<h4 id="sajat-exception-tipus">Saját Exception típus</h4>
+<p>Lehetőségünk van saját exception típus deklarálására is, ha általálunk definiált hibákat szeretnénk létrehozni. Például,
+ha van egy osztályunk, aminek az egyik szám paramétere csak 0 és 100 között vehet fell értéket. Létrehozhatunk egy saját
+Exception típust, ami akkor dobódik, ha a megadott szám kívül esik az intervallumon.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NumberOutOfInterval</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">NumberOutOfInterval</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="s">&quot;Number is out of interval!&quot;</span><span class="p">);</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="logikai-hibak">Logikai hibák</h3>
+<p>Miután eltávolítottuk a szintaktikai és futási hibákat, a program sikeresen fut. De néha a program még mindig nem azt
+csinálja, amit szeretnénk, vagy nem jön létre kimenet.
+Az ilyen típusú hibákat, amelyek hibás kimenetet biztosítanak, de hibamentesnek tűnnek, logikai hibáknak nevezzük.
+Logikai hibák akkor fordulnak elő, ha tervezési hiba van a programban. Ezek a leggyakoribb hibák, amelyek kezdőkkel
+fordulnak elő, és általában a legnehezebb megtalálni és kiküszöbölni őket.</p>
+<h4 id="hibakeresesi-technikak">Hibakeresési technikák</h4>
+<h5 id="oszd-meg-es-uralkodj">Oszd meg és uralkodj</h5>
+<p>Kommenteljük ki vagy ideiglenesen töröljük a kód egy részét. Ha a program lefordul és sikeresen működik, akkor tudjuk,
+hogy a hiba az eltávolított területen volt. Ha továbbra is fennáll a hiba, akkor próbáljuk más területek ideiglenes
+inaktiválását, amíg a probléma forrását nem találjuk meg.</p>
+<h5 id="ertekek-megvizsgalasa">Értékek megvizsgálása</h5>
+<p>Nézzük meg, hogy a változóink jó értéket vesznek fel és a metódusaink jó értékekkel térnek
+vissza. A legtöbb esetben a logikai hibákat egy hibás logika, egy félreszámolás, egy lépés hiánya… stb. okozza. A
+végrehajtási folyamat különböző szakaszaiban lévő értékek megvizsgálásával remélhetőleg meghatározhatja, hol hibáztunk.
+Az értékeket megvizsgálhatjuk <strong>Loggolás</strong> segítségével vagy a program <strong>Debug</strong> módban történő futtatásával.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
