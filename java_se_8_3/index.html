@@ -1,0 +1,1313 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../java_se_8_2/">
+      
+      
+        <link rel="next" href="../java_se_11/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Java Collection Framework - Junior Java Backend jegyzet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#java-collection-framework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-header__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Junior Java Backend jegyzet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Java Collection Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-nav__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Junior Java Backend jegyzet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Bevezető
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Gyakorlati anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gyakorlati anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_1/" class="md-nav__link">
+        Java alapok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_4_5/" class="md-nav__link">
+        Konzol io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5/" class="md-nav__link">
+        Öröklődés az objektum orientált programozásban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5_5/" class="md-nav__link">
+        Java Enum típus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_6/" class="md-nav__link">
+        Hibakezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_7/" class="md-nav__link">
+        Java IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_1/" class="md-nav__link">
+        Absztrakt osztályok és interfészek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_2/" class="md-nav__link">
+        Generikus típusok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Java Collection Framework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Java Collection Framework
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jfc-architektura" class="md-nav__link">
+    JFC architektúra
+  </a>
+  
+    <nav class="md-nav" aria-label="JFC architektúra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collection" class="md-nav__link">
+    Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-set-metodusok" class="md-nav__link">
+    Fontosabb Set metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-megvalositasok" class="md-nav__link">
+    Set megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    List
+  </a>
+  
+    <nav class="md-nav" aria-label="List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-list-metodusok" class="md-nav__link">
+    Fontosabb List metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-megvalositasok" class="md-nav__link">
+    List megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda_1" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue" class="md-nav__link">
+    Queue
+  </a>
+  
+    <nav class="md-nav" aria-label="Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-queue-metodusok" class="md-nav__link">
+    Fontosabb Queue metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-megvalositasok" class="md-nav__link">
+    Queue megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda_2" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+    <nav class="md-nav" aria-label="Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-map-metodusok" class="md-nav__link">
+    Fontosabb Map metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-megvalositasok" class="md-nav__link">
+    Map megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda_3" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-osztalyok" class="md-nav__link">
+    Utility osztályok
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility osztályok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    Collections
+  </a>
+  
+    <nav class="md-nav" aria-label="Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segedmetodusok" class="md-nav__link">
+    Segédmetódusok
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segedmetodusok_1" class="md-nav__link">
+    Segédmetódusok
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_11/" class="md-nav__link">
+        Verziókezelő rendszerek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_12/" class="md-nav__link">
+        Java Swing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Extra anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extra anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok/" class="md-nav__link">
+        Gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jfc-architektura" class="md-nav__link">
+    JFC architektúra
+  </a>
+  
+    <nav class="md-nav" aria-label="JFC architektúra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collection" class="md-nav__link">
+    Collection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+    <nav class="md-nav" aria-label="Set">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-set-metodusok" class="md-nav__link">
+    Fontosabb Set metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-megvalositasok" class="md-nav__link">
+    Set megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list" class="md-nav__link">
+    List
+  </a>
+  
+    <nav class="md-nav" aria-label="List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-list-metodusok" class="md-nav__link">
+    Fontosabb List metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-megvalositasok" class="md-nav__link">
+    List megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda_1" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue" class="md-nav__link">
+    Queue
+  </a>
+  
+    <nav class="md-nav" aria-label="Queue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-queue-metodusok" class="md-nav__link">
+    Fontosabb Queue metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-megvalositasok" class="md-nav__link">
+    Queue megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda_2" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map" class="md-nav__link">
+    Map
+  </a>
+  
+    <nav class="md-nav" aria-label="Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fontosabb-map-metodusok" class="md-nav__link">
+    Fontosabb Map metódusok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-megvalositasok" class="md-nav__link">
+    Map megvalósítások
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda_3" class="md-nav__link">
+    Példa
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility-osztalyok" class="md-nav__link">
+    Utility osztályok
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility osztályok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#collections" class="md-nav__link">
+    Collections
+  </a>
+  
+    <nav class="md-nav" aria-label="Collections">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segedmetodusok" class="md-nav__link">
+    Segédmetódusok
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arrays" class="md-nav__link">
+    Arrays
+  </a>
+  
+    <nav class="md-nav" aria-label="Arrays">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segedmetodusok_1" class="md-nav__link">
+    Segédmetódusok
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="java-collection-framework">Java Collection Framework</h1>
+<h2 id="bevezetes">Bevezetés</h2>
+<p>A gyűjtemények (vagy más néven tárolók, konténerek, kollekciók) olyan típuskonstrukciós eszközök, melynek célja egy vagy
+több típusba tartozó objektumok memóriában történő összefoglaló jellegű tárolása, manipulálása és lekérdezése.</p>
+<p>Ebben a szekcióban megismerkedünk a java gyűjtemény keretrendszerrel (Java Collections Framework, JCF), ami egy egységes
+architektúra a gyűjtemények használatára és manipulálására. A gyűjtemény keretrendszer tartalmazza:</p>
+<ul>
+<li><strong>interfészek</strong>: absztrakt adattípusok reprezentációja. Az interfészek lehetővé teszik a gyűjtemények
+  szolgáltatásainak (
+  publikus interfészének) megvalósítás-független ábrázolását.</li>
+<li><strong>implementációk</strong>: a gyűjtemény interfészek konkrét implementációi. Főként ezek az újrafelhasználható adatstruktúrák.</li>
+<li><strong>algoritusok</strong>: azok a metódusok, amelyek hasznos műveleteket valósítanak meg, mint például a keresés vagy a rendezés
+  egy
+  objektumon, ami implementálható különböző gyűjtemény interfészeken. Ezeket az algoritmusokat többalakúnak hívjuk:
+  azonos metódus használható különböző implementációk esetén is. Elsősorban az algoritmusok újrafelhasználható
+  funkcionalitása.</li>
+</ul>
+<h2 id="jfc-architektura">JFC architektúra</h2>
+<p>A Java Collections Framework (JCF) architektúrája hierarchikus struktúrában van kialakítva, amelynek középpontjában az
+interfészek és osztályok kollekciós kategóriái állnak. A következőkben nézzük meg a JCF architektúráját a legfontosabb
+komponensekkel.</p>
+<figure>
+<p><img alt="" src="../img/img_21.png" width="750" /></p>
+</figure>
+<h3 id="collection">Collection</h3>
+<p>A <code>Collection</code> a gyűjtemény hierarchia gyökere. A <code>Collection</code> objektumok csoportját reprezentálja, amiket elemeknek
+hívjuk. A <code>Collection</code> interfész a legkisebb közös nevező a gyűjtemény implementációk között, és akkor érdemes ezt
+választani, ha a lehető legnagyobb rugalmasságra van szükség. A gyűjtemények néhány típusa engedélyezi az elemek
+duplikálását, a többi pedig nem. A gyűjtemények néhány típusa rendezett, a többi nem rendezett. A Java platform nem
+biztosít közvetlen implementációt ehhez az interfészhez, ehelyett a sokkal specifikusabb al-interfészeket implementálja.</p>
+<h3 id="set">Set</h3>
+<p>Ez a gyűjtemény nem tartalmazhat duplikált elemeket. Ezt az interfészt halmazok tárolására szokták használni, mint
+például a futó processzek halmaza.</p>
+<h4 id="fontosabb-set-metodusok">Fontosabb Set metódusok</h4>
+<ul>
+<li><code>add(E element)</code>: Hozzáadja az elemet a halmazhoz, vagy nem csinál semmit, ha már benne van.</li>
+<li><code>remove(Object o)</code>: Eltávolítja az adott elemet a halmazból, ha létezik.</li>
+<li><code>contains(Object o)</code>: Ellenőrzi, hogy az elem szerepel-e a halmazban.</li>
+<li><code>size()</code>: Visszaadja a halmaz méretét.</li>
+<li><code>isEmpty()</code>: Ellenőrzi, hogy a halmaz üres-e.</li>
+<li><code>clear()</code>: Kitörli az összes elemet a halmazból.</li>
+<li><code>iterator()</code>: Visszaadja az iterátort a halmaz bejárásához.</li>
+</ul>
+<h4 id="set-megvalositasok">Set megvalósítások</h4>
+<p>A két legtöbbet használt <code>Set</code> implementáció a Java Collections Framework-ben:</p>
+<p><strong>HashSet</strong></p>
+<p>A <code>HashSet</code> a legelterjedtebb és leggyakrabban használt <code>Set</code> implementáció. Amikor egy elemet hozzáadunk a
+<code>HashSet</code>-hez az <code>add</code> metódussal, a <code>HashSet</code> az elem <code>hash</code> értékét kiszámítja a <code>hash</code> függvény segítségével.</p>
+<p>Ezután a hash értéket a <code>HashSet</code> egy belső struktúrában (általában hash táblában) használja, hogy meghatározza, hova
+helyezze el az új elemet a halmazban. A hash érték alapján egy bucket-be (vödör) kerül, amely tartalmazhat egy vagy több
+elemet.</p>
+<p>Amikor egy elemet keresünk a <code>HashSet</code>-ben a <code>contains</code> metódus segítsével, először a hash függvény segítségével
+kiszámítjuk az elem hash értékét. Ezután a <code>HashSet</code> megnézi az adott hash értékhez tartozó vödröt, és csak ebben a
+vödörben keresi az elemet. Ez a lépés jelentősen gyorsítja a keresést, mivel csak néhány elemmel kell összehasonlítani
+az adott vödörben.</p>
+<details class="note">
+<summary>A hash függvény</summary>
+<p>A <strong>hash</strong> függvény egy olyan matematikai függvény, amely bemeneti adatokat (általában tetszőleges hosszúakat) átalakít egy
+rögzített méretű (általában rövidebb) kóddá vagy "hash értékké". A hash függvényeknek az a céljuk, hogy a bemeneti
+adatokból olyan kimenetet hozzanak létre, amely egyértelműen reprezentálja a bemeneti adatokat, és lehetővé teszi a
+hatékony keresést és összehasonlítást.</p>
+</details>
+<p><strong>TreeSet</strong></p>
+<p>A <code>TreeSet</code> egy rendezett halmaz, ami azt jelenti, hogy az elemek alapértelmezett vagy egy adott sorrend
+szerint kerülnek rendezésre. A <code>TreeSet</code> az alapértelmezett rendezés vagy egy meghatározott komparátor alapján sorolja
+fel az
+elemeket. A <code>TreeSet</code> mögött álló adatszerkezet egy kiegyensúlyozott bináris keresőfa, amely lehetővé teszi hatékony
+kereséseket, tartomány-kiválasztásokat és iterációkat.</p>
+<details class="note">
+<summary>Kiegyensúlyozott bináris keresőfa</summary>
+<p>A kiegyensúlyozott bináris keresőfa (Balanced Binary Search Tree vagy AVL Tree) egy speciális típusú bináris keresőfa,
+amely garantálja, hogy a fa magassága minden beillesztés vagy eltávolítás után közel azonos marad. Ennek eredményeként a
+keresés, beszúrás és törlés műveletek átlagosan gyorsabbak, mivel a fa magassága korlátozott és az elemek egyenletesen
+oszlanak el.</p>
+</details>
+<p>Amikor választani kell a két implementáció között, érdemes mérlegelni az alkalmazás igényeit. Ha a rendezettség fontos
+és gyakran kereséseket végezünk, akkor a <code>TreeSet</code> lehet a jobb választás. Ha a rendezettség nem kritikus, és a
+teljesítmény az elsődleges szempont, akkor a <code>HashSet</code> általában jobban teljesít.</p>
+<h4 id="pelda">Példa</h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashSet</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Set</span><span class="p">;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SetExample</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fruits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Apple&quot;</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Apple&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// (1)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Méret: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fruits</span><span class="p">.</span><span class="na">size</span><span class="p">());</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="n">fruits</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">&quot;Banana&quot;</span><span class="p">);</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tartalmazza a Grapefruit-et? &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">fruits</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="s">&quot;Grapefruit&quot;</span><span class="p">));</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">fruit</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">fruits</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">fruit</span><span class="p">);</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li>Nem lesz hozzáadva, mert a halmaz már tartalmazza az Apple szót.</li>
+</ol>
+<p>Ebben a példában egy <code>HashSet</code> implementációt használunk a <code>Set</code> interfész bemutatására. Az <code>add</code> metódussal hozzáadunk
+elemeket a halmazhoz, majd a <code>remove</code> metódussal eltávolítunk egy elemet. A <code>contains</code> metódussal ellenőrizzük, hogy a
+halmaz tartalmazza-e a megadott elemet. Végül egy <code>for-each</code> ciklussal bejárjuk és kiírjuk az összes elemet a halmazban.</p>
+<h3 id="list">List</h3>
+<p>A <code>List</code> rendezettséget biztosító gyűjtemény, néha szekvenciának is hívják. A listák tartalmazhatnak duplikált elemeket.
+A lista felhasználója egész index segítségével hozzá tud férni az elemekhez (hasonlóan a tömbök indexeléséhez), valamint
+lehetőséget kap a lista egyszerű bejárásához. A <code>List</code> segítségével hatékonyan lehet dinamikus méretű listákat kezelni
+és manipulálni.</p>
+<h4 id="fontosabb-list-metodusok">Fontosabb List metódusok</h4>
+<ul>
+<li><code>add(E element)</code>: Hozzáadja az elemet a listához a végére.</li>
+<li><code>add(int index, E element)</code>: Hozzáadja az elemet a megadott indexre a listában, eltolva a többi elemet.</li>
+<li><code>get(int index)</code>: Visszaadja az adott indexű elemet.</li>
+<li><code>set(int index, E element)</code>: Felülírja az adott indexű elemet az új elemmel.</li>
+<li><code>remove(int index)</code>: Eltávolítja az adott indexű elemet.</li>
+<li><code>size()</code>: Visszaadja a lista méretét.</li>
+<li><code>contains(Object o)</code>: Ellenőrzi, hogy az elem szerepel-e a listában.</li>
+<li><code>indexOf(Object o)</code>: Visszaadja az első előfordulású elem indexét a listában, vagy -1-et, ha nincs benne.</li>
+</ul>
+<h4 id="list-megvalositasok">List megvalósítások</h4>
+<p>A két legtöbbet használt <code>List</code> implementáció a Java Collections Framework-ben:</p>
+<p><strong>ArrayList</strong></p>
+<p>Az <code>ArrayList</code> egy dinamikus méretű tömböt reprezentál. Az elemeket egy tömbben tárolja, és ha az adatokat
+hozzáadjuk vagy eltávolítjuk, az <code>ArrayList</code> dinamikusan növeli vagy csökkenti a tömb méretét. Az <code>ArrayList</code> gyors
+hozzáférést és gyors véletlenszerű hozzáadást és eltávolítást kínál. Az átlagos esetben az <code>ArrayList</code> gyorsabb az adat
+hozzáférésében, mivel a tömb elemei közvetlenül elérhetők index alapján.</p>
+<p><strong>LinkedList</strong></p>
+<p>A <code>LinkedList</code> egy kétirányú láncolt listát reprezentál. Minden elem rendelkezik egy referenciával az előző és
+a következő elemre. A <code>LinkedList</code> hatékonyabb, ha gyakran szükség van az elemek beszúrására vagy eltávolítására a
+listában. Az elemek közötti beszúrás és eltávolítás gyorsabb lehet, mint az <code>ArrayList</code>-nél, de az elemek hozzáférése
+lassabb, mivel nem közvetlenül elérhetők index alapján, hanem végig kell menni a láncolaton.</p>
+<p>Amikor választani kell a két implementáció között, érdemes átgondolni, hogy milyen műveleteket kell gyakran elvégezni a
+listán, és mi a prioritás: gyors adatelérés vagy hatékony beszúrás/eltávolítás.</p>
+<h4 id="pelda_1">Példa</h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.ArrayList</span><span class="p">;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.List</span><span class="p">;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ListExample</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">);</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">);</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&quot;Eve&quot;</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Második név: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="n">names</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">names</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ebben a példában egy <code>ArrayList</code> implementációt használunk a <code>List</code> interfész bemutatására. Az <code>add</code> metódussal
+hozzáadunk elemeket a listához, a <code>get</code> metódussal lekérjük egy adott indexű elemet, majd az <code>remove</code> metódussal
+eltávolítjuk az első elemet. A <code>for-each</code> ciklussal bejárjuk és kiírjuk az összes elemet a listában.</p>
+<h3 id="queue">Queue</h3>
+<p>A <code>Queue</code> egy olyan kollekció típust definiál, amely egy sorban tárolja az elemeket, és a sorrend fontos szerepet
+játszik az elemek kezelésében. A <code>Queue</code> a FIFO (First-In-First-Out) elvet követi, ami azt jelenti, hogy az elsőként
+hozzáadott elem az első, amelyet kiveszünk a sorból.</p>
+<h4 id="fontosabb-queue-metodusok">Fontosabb Queue metódusok</h4>
+<ul>
+<li><code>add(E e)</code>: Hozzáad egy elemet a sor végéhez.</li>
+<li><code>offer(E e)</code>: Hasonlóan hozzáad egy elemet a sor végéhez, de visszatér hamis értékkel, ha nem sikerült hozzáadni.</li>
+<li><code>remove()</code>: Eltávolítja és visszaadja a sor első elemét.</li>
+<li><code>poll()</code>: Eltávolítja és visszaadja a sor első elemét, vagy null-t, ha üres.</li>
+<li><code>peek()</code>: Visszaadja a sor első elemét anélkül, hogy eltávolítaná.</li>
+</ul>
+<h4 id="queue-megvalositasok">Queue megvalósítások</h4>
+<p>Az egyik leggyakrabban használt <code>Queue</code> implementáció a Java Collections Framework-ben a <code>LinkedList</code>. A <code>LinkedList</code>
+egyaránt
+alkalmas <code>List</code> és <code>Queue</code> implementációként is.</p>
+<h4 id="pelda_2">Példa</h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.LinkedList</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Queue</span><span class="p">;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">QueueExample</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">LinkedList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">&quot;First&quot;</span><span class="p">);</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">&quot;Second&quot;</span><span class="p">);</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="n">queue</span><span class="p">.</span><span class="na">offer</span><span class="p">(</span><span class="s">&quot;Third&quot;</span><span class="p">);</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Első elem: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">queue</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Kivett elem: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="na">poll</span><span class="p">());</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ebben a példában a <code>LinkedList</code> implementációt használjuk, hogy a Queue használatát bemutassuk. A <code>offer</code>
+metódussal hozzáadjuk az elemeket a sorhoz, a <code>peek</code> metódussal megnézzük az első elemet, majd a <code>poll</code> metódussal
+folyamatosan kivesszük és kiírjuk az összes elemet a sorból.</p>
+<h3 id="map">Map</h3>
+<p>A <code>Map</code> olyan adatszerkezetet definiál, amely kulcs-érték párokat tárol. A kulcs-érték párok egyedi kulcsokhoz vannak
+rendelve, és a kulcsok segítségével lehet hozzáférni az értékekhez. A <code>Map</code> segítségével hatékonyan lehet azonosítókat
+tárolni és az azokhoz tartozó adatokat kezelni.</p>
+<h4 id="fontosabb-map-metodusok">Fontosabb Map metódusok</h4>
+<ul>
+<li><code>put(K key, V value)</code>: Egy új kulcs-érték párt ad hozzá a térképhez, vagy frissíti a meglévő párt, ha a kulcs már
+  létezik.</li>
+<li><code>get(Object key)</code>: Visszaadja a megadott kulcshoz tartozó értéket, vagy null-t, ha a kulcs nem található.</li>
+<li><code>remove(Object key)</code>: Eltávolítja a megadott kulcshoz tartozó párt a kollekcióból.</li>
+<li><code>containsKey(Object key)</code>: Ellenőrzi, hogy a <code>Map</code> tartalmazza-e a megadott kulcsot.</li>
+<li><code>keySet()</code>: Visszaadja a <code>Map</code> kulcsainak halmazát.</li>
+<li><code>values()</code>: Visszaadja a <code>Map</code> értékeinek halmazát.</li>
+<li><code>entrySet()</code>: Visszaadja a kulcs-érték párok halmazát.</li>
+</ul>
+<h4 id="map-megvalositasok">Map megvalósítások</h4>
+<p>A két leggyakrabban használt <code>Map</code> implementáció a Java Collections Framework-ben:</p>
+<p><strong>HashMap</strong></p>
+<p>A <code>HashMap</code> egy hash táblát használ az elemek tárolására. A hash tábla egy olyan adatszerkezet, amely egy kulcs-érték
+párok gyors keresésére és elérésére szolgál. Az elemek hash kódját használja arra, hogy megtalálja, hol kell fizikailag
+tárolni az adott értéket.</p>
+<p><strong>TreeMap</strong></p>
+<p>A TreeMap egy kiegyensúlyozott bináris keresőfát használ az elemek tárolására. Ez a keresőfa a kulcsokat rendezetten
+tárolja, így az elemek közötti keresés és hozzáférés hatékonyabb.</p>
+<p>Amikor választani kell a két implementáció között, érdemes mérlegelni az alkalmazás igényeit. Ha a rendezettség fontos
+és gyakran kereséseket végezünk, akkor a <code>TreeMap</code> lehet a jobb választás. Ha a rendezettség nem kritikus, és a
+teljesítmény az elsődleges szempont, akkor a <code>HashMap</code> általában jobban teljesít.</p>
+<h4 id="pelda_3">Példa</h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.HashMap</span><span class="p">;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Map</span><span class="p">;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MapExample</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">grades</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">grades</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">);</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="n">grades</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">87</span><span class="p">);</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="n">grades</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;Eve&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">78</span><span class="p">);</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Bob jegye: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">grades</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;Bob&quot;</span><span class="p">));</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">entry</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">grades</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">entry</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">entry</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Ebben a példában egy <code>HashMap</code> implementációt használunk a <code>Map</code> interfész bemutatására. A <code>put</code> metódussal adunk hozzá
+kulcs-érték párokat a szótárhoz, a <code>get</code> metódussal lekérjük egy kulcshoz tartozó értéket. A <code>entrySet</code> metódussal
+bejárjuk az összes kulcs-érték párt és kiírjuk az értékeket.</p>
+<h2 id="utility-osztalyok">Utility osztályok</h2>
+<p>A Java Collections Framework (JCF) tartalmaz olyan segédosztályokat is, amelyek megkönnyítik és kibővítik a kollekciók (
+listák, halmazok stb.) kezelését. Ezek az osztályok a <code>java.util</code> csomagban találhatók.</p>
+<h3 id="collections">Collections</h3>
+<p>A <code>java.util.Collections</code> osztály a Java Collections Framework része, és különféle segédmetódusokat kínál a kollekciók
+kezeléséhez és manipulálásához.</p>
+<h4 id="segedmetodusok">Segédmetódusok</h4>
+<p>A <code>sort()</code> metódus a kollekció elemeit rendezett sorrendbe rendezi. Használatához a kollekció elemeinek
+összehasonlíthatónak kell lenniük, vagyis implementálniuk kell a <code>Comperable</code> interfészt.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>reverse()</code> a kollekció elemeinek sorrendjét megfordítja.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="s">&quot;Charlie&quot;</span><span class="p">));</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>shuffle()</code> a kollekció elemeit véletlenszerűen összekeveri</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="s">&quot;Charlie&quot;</span><span class="p">));</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">shuffle</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>min()</code> és <code>max()</code> visszaadja a kollekció legkisebb és legnagyobb elemét.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>binarySearch()</code> bináris keresést végez a <strong>rendezett</strong> kollekcióban egy adott elemre, és visszaadja az indexét.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">words</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">,</span><span class="s">&quot;date&quot;</span><span class="p">);</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>frequency()</code> megszámolja, hogy egy adott elem hányszor fordul elő a kollekcióban.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fruits</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">);</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">frequency</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">frequency</span><span class="p">(</span><span class="n">fruits</span><span class="p">,</span><span class="s">&quot;apple&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>Az <code>emptyList()</code>, <code>emptySet()</code> és <code>emptyMap()</code> üres és módosíthatatlan listát, halmazt és map-et hoz létre.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptyList</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptySet</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptySet</span><span class="p">();</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptyMap</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyMap</span><span class="p">();</span>
+</span></code></pre></div>
+<h3 id="arrays">Arrays</h3>
+<p>A <code>java.util.Arrays</code> osztály különböző segédmetódusokat kínál a tömbök egyszerű kezeléséhez.</p>
+<h4 id="segedmetodusok_1">Segédmetódusok</h4>
+<p>A <code>sort()</code> a tömb elemeit rendezett sorrendbe rendezi. Használatához a tömb elemeinek összehasonlíthatónak kell lenniük.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">numbers</span><span class="o">=</span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>binarySearch()</code> bináris keresést végez a <strong>rendezett</strong> tömbben egy adott elemre, és visszaadja az indexét.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="n">words</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">,</span><span class="s">&quot;date&quot;</span><span class="p">};</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>copyOf()</code>: Létrehoz egy új tömböt, amely tartalmazza a megadott eredeti tömb elemeit, és megadott méretű vagy kisebb.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">sourceArray</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">newArray</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">sourceArray</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>Az <code>equals()</code> összehasonlítja két tömb tartalmát, és visszatér igaz értékkel, ha az elemeik egyeznek.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">array1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">array2</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">areEqual</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span><span class="n">array2</span><span class="p">);</span>
+</span></code></pre></div>
+<hr />
+<p>A <code>fill()</code> az összes tömbelemet az adott értékre állítja.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">        </span><span class="kt">char</span><span class="o">[]</span><span class="n">chars</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span><span class="sc">&#39;X&#39;</span><span class="p">);</span>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>

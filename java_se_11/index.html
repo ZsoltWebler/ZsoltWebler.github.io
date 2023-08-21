@@ -1,0 +1,910 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../java_se_8_3/">
+      
+      
+        <link rel="next" href="../java_se_12/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Verziókezelő rendszerek - Junior Java Backend jegyzet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#verziokezelo-rendszerek" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-header__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Junior Java Backend jegyzet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Verziókezelő rendszerek
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-nav__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Junior Java Backend jegyzet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Bevezető
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Gyakorlati anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gyakorlati anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_1/" class="md-nav__link">
+        Java alapok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_4_5/" class="md-nav__link">
+        Konzol io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5/" class="md-nav__link">
+        Öröklődés az objektum orientált programozásban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5_5/" class="md-nav__link">
+        Java Enum típus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_6/" class="md-nav__link">
+        Hibakezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_7/" class="md-nav__link">
+        Java IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_1/" class="md-nav__link">
+        Absztrakt osztályok és interfészek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_2/" class="md-nav__link">
+        Generikus típusok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_3/" class="md-nav__link">
+        Java Collection Framework
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Verziókezelő rendszerek
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Verziókezelő rendszerek
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verziokezelo-rendszerek-jellemzoi" class="md-nav__link">
+    Verziókezelő rendszerek jellemzői
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verziokezelo-rendszerek-tortenete" class="md-nav__link">
+    Verziókezelő rendszerek története
+  </a>
+  
+    <nav class="md-nav" aria-label="Verziókezelő rendszerek története">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-vs-svn" class="md-nav__link">
+    Git vs SVN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-alapfogalmak" class="md-nav__link">
+    Git alapfogalmak
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-parancsok" class="md-nav__link">
+    Git parancsok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-elagazasi-strategiak" class="md-nav__link">
+    Git elágazási stratégiák
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-szolgaltatok" class="md-nav__link">
+    Git szolgáltatók
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_12/" class="md-nav__link">
+        Java Swing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Extra anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extra anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok/" class="md-nav__link">
+        Gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verziokezelo-rendszerek-jellemzoi" class="md-nav__link">
+    Verziókezelő rendszerek jellemzői
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verziokezelo-rendszerek-tortenete" class="md-nav__link">
+    Verziókezelő rendszerek története
+  </a>
+  
+    <nav class="md-nav" aria-label="Verziókezelő rendszerek története">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-vs-svn" class="md-nav__link">
+    Git vs SVN
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    Git
+  </a>
+  
+    <nav class="md-nav" aria-label="Git">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#git-alapfogalmak" class="md-nav__link">
+    Git alapfogalmak
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-parancsok" class="md-nav__link">
+    Git parancsok
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-elagazasi-strategiak" class="md-nav__link">
+    Git elágazási stratégiák
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-szolgaltatok" class="md-nav__link">
+    Git szolgáltatók
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="verziokezelo-rendszerek">Verziókezelő rendszerek</h1>
+<h2 id="bevezetes">Bevezetés</h2>
+<p>Ebben a szekcióban megismerkedünk a verzió kezelés fogalmával, több verziókezelő rendszerrel és módszerekkel amikkel a
+forráskódunkat egyszerre többen tudják módosítani.</p>
+<div class="admonition quote">
+<p class="admonition-title">Verziókezelés</p>
+<p>Verziókezelés alatt több verzióval rendelkező adatok kezelését értjük. Leggyakrabban a mérnöki tudományokban és a
+szoftverfejlesztésben használnak verziókezelő rendszereket fejlesztés alatt álló dokumentumok, tervek, forráskódok és
+egyéb olyan adatok verzióinak kezelésére, amelyeken több ember dolgozik egyidejűleg.</p>
+</div>
+<p>A verziókövetés lényegében valamilyen információ - például a forráskód - több változatának menedzselése.</p>
+<figure>
+<p><img alt="" src="../img/img_4.png" width="400" /></p>
+</figure>
+<h2 id="verziokezelo-rendszerek-jellemzoi">Verziókezelő rendszerek jellemzői</h2>
+<ul>
+<li>Nyomon követés, hogy mikor és hogyan változott a könyvtárunk és ki végezte el a változtatást</li>
+<li>Visszaállítható bármelyik korábbi állapota a könyvtárnak, illetve lekérhető a legfrissebb verzió</li>
+<li>Szinkronizálni tud egy másik gépen levő hasonló könyvtárral (átvezetve a változásokat) és jelez, ha ezt nem tudja
+  automatikusan elvégezni</li>
+<li>Minden verziót egy szám vagy hash azonosít</li>
+<li>A verziók összefüggései egy gráffal vizualizálhatóak a legegyszerűbben</li>
+</ul>
+<h2 id="verziokezelo-rendszerek-tortenete">Verziókezelő rendszerek története</h2>
+<ol>
+<li><strong>Generáció</strong>: egyszerre csak egy ember dolgozhatott egy fájlon, amikor egy fejlesztő elkezdett dolgozni a fájlon a
+   <code>lock</code> művelettel lezárta azt, így más fejlesztő azt nem szerkeszthette.</li>
+<li><strong>Generáció</strong>: a projekt egy központi szerveren helyezkedett el, amelyben a fájlokat <code>merge -&gt; commit</code> sorrendben
+   lehetett változtatni.</li>
+<li><strong>Generáció</strong>: megjelentek a lokálisan tárolt repositoryk, ezzel levéve a súlyt a központi szerverről. Nem szükséges
+   merge a commithoz.</li>
+</ol>
+<p>Verziókövetéssel egyébként sok helyen találkozhatunk - például a Microsoft Word is rendelkezik beépített verziókövető
+rendszerrel - esetünkben viszont két verziókövető rendszert érdemes tárgyalni, az a <strong>Git</strong> és az <strong>SVN</strong>.</p>
+<h3 id="git-vs-svn">Git vs SVN</h3>
+<p>Mind a Git, mind az SVN (Subversion) verziókezelő rendszerek, amelyek segítenek a fejlesztőknek a kódbázis nyomon
+követésében, a változtatások kezelésében és a csapatmunka támogatásában. Azonban működési és tervezési különbségek
+vannak közöttük.</p>
+<figure>
+<table>
+<thead>
+<tr>
+<th>Git</th>
+<th>SVN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elosztott rendszer</td>
+<td>Centralizált rendszer</td>
+</tr>
+<tr>
+<td>Offline   is elérhető</td>
+<td>Hálózatot   igényel a használata</td>
+</tr>
+<tr>
+<td>Komplexebb   rendszer</td>
+<td>Egyszerűbben   átlátható/tanulható</td>
+</tr>
+<tr>
+<td>A   fejlesztési ágak kezelése komplikáltabb</td>
+<td>A   fejlesztési ágak könnyen kezelhetőek</td>
+</tr>
+<tr>
+<td>A   konfliktusok száma lecsökken</td>
+<td>A   konfliktusok száma nagyobb</td>
+</tr>
+<tr>
+<td>Gyorsabb   rendszer</td>
+<td>Lassabb működésű</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<figure>
+<p><img alt="" src="../img/img_5.png" width="500" /></p>
+</figure>
+<h2 id="git">Git</h2>
+<p>Az elkövetkező órák során a Git verziókövető rendszert fogjuk használni, így az alábbi fogalmak is erre a verziókezelő
+szoftverre vonatkoznak (néhány fogalom más verziókezelő esetén - például SVN - nem értelmezhető/mást jelent). A Git
+verziókezelő rendszer a szöveges állományok, így tipikusan a forráskód fájlok, dokumentációk változáskezelésében
+hatékony. Ez azt is jelenti, hogy bizonyos fájlokat nem érdemes verziókövetés alá vonni Git-tel (bizonyos nézőpontból
+pedig elvi hiba, hiszen a Git nem tárhelyszolgáltatásként működik).</p>
+<div class="admonition warning">
+<p class="admonition-title">Figyelem</p>
+<p>Így tehát a következő állományokat NE tároljunk: rejtett fájlokat, futtatható állományokat, tömörített mappákat pl.:
+bin/, tmp/, node_modules/, .class, .log, .jar, .zip, .rar</p>
+</div>
+<figure>
+<p><img alt="" src="../img/img_6.png" width="500" />
+  </p>
+<figcaption>Git vs SVN piaci részesedés</figcaption>
+</figure>
+<h3 id="git-alapfogalmak">Git alapfogalmak</h3>
+<ul>
+<li><strong>Master</strong>: a fő fejlesztési ág</li>
+<li><strong>Branch</strong>: különböző elágazások a fejlesztésben, amelyek később visszatér(het)nek a master-be</li>
+<li><strong>Conflict</strong>: ugyanaz a dokumentum két helyen megváltozik (pl. más branch-eken), és a változtatások automatikusan nem
+  egyesíthetőek</li>
+<li>Repository(remote, local): a forráskódok, history (korábbi események) tárhelye (szerver)</li>
+<li><strong>Working</strong> copy(working directory): aktuális munkakönyvtár egy adott repository-hoz nézve</li>
+<li><strong>Commit</strong>: a fájlok eltárolása a local repository-ban</li>
+<li><strong>Staging</strong> area: átmeneti terület a local repository és a working directory között, a következő commit-ra jelölt
+  fájlokat tartalmazza</li>
+<li><strong>Push</strong>, <strong>Pull</strong>: a local és a remote repository közötti commit-ok feltöltése/letöltése</li>
+<li><strong>HEAD</strong>: a legutolsó commit-ra való hivatkozás az aktuális branch-ben</li>
+<li><strong>Checkout</strong>: branch-ek közötti váltásra szolgál</li>
+<li><strong>Clone</strong>: remote repository lemásolása a saját gépre (első alkalommal)</li>
+<li><strong>Merge</strong>: branch-ek egyesítése</li>
+</ul>
+<figure>
+<p><img alt="" src="../img/img_7.png" width="500" /></p>
+</figure>
+<h3 id="git-parancsok">Git parancsok</h3>
+<ul>
+<li><code>git init</code>: Új Git repository létrehozása egy meglévő projektben.</li>
+<li><code>git clone [url]</code>: Egy távoli repository klónozása a helyi gépre.</li>
+<li><code>git add [file(s)]</code>: Fájlok hozzáadása a staging területhez, hogy a következő commitban szerepeljenek.</li>
+<li><code>git commit -m "[message]"</code>: Staging területen lévő változtatások rögzítése egy új commitban.</li>
+<li><code>git status</code>: Státusz lekérdezése a munkakönyvtár, a staging és az előzmények között.</li>
+<li><code>git log</code>: Előzmények (commitok) listázása időrendi sorrendben.</li>
+<li><code>git pull</code>: Távoli repository legfrissebb változtatásainak letöltése és a helyi állapot frissítése.</li>
+<li><code>git push</code>: Lokális változtatások feltöltése a távoli repositorybe.</li>
+<li><code>git branch</code>: Jelenlegi ágak listázása.</li>
+<li><code>git checkout [branch/commit]</code>: Átváltás másik ágra vagy egy korábbi commit állapotára.</li>
+<li><code>git merge [branch]</code>: Aktuális ágra másik ág beolvasztása.</li>
+<li><code>git remote -v</code>: Távoli repositoryk listázása, ahonnan vagy ahova adatokat küldhetünk.</li>
+<li><code>git diff</code>: Változtatások megtekintése a munkakönyvtár és a staging terület között.</li>
+<li><code>git stash</code>: A munkakönyvtári változtatások ideiglenes mentése, hogy átválthassunk másik ágra.</li>
+<li><code>git reset [file(s)]</code>: Fájlok eltávolítása a staging területről, de a munkakönyvtárban tartva a változtatásokat.</li>
+<li><code>git remote add [name] [url]</code>: Új távoli repository hozzáadása a repository listához.</li>
+<li><code>git push -u [remote] [branch]</code>: Első alkalommal a lokális ág feltöltése a távoli repositorybe.</li>
+<li><code>git rebase [branch]</code>: Az aktuális ág újraalapozása a másik ágra, ami simább commit történetet eredményezhet.</li>
+</ul>
+<p>Ezek csak néhány alapvető Git parancs. A <a href="https://git-scm.com/docs">Git</a> rendelkezik további parancsokkal és
+lehetőségekkel is.</p>
+<h3 id="git-elagazasi-strategiak">Git elágazási stratégiák</h3>
+<p>A Git elágazási stratégia egy meghatározott és szervezett megközelítés arra, hogy hogyan hozzunk létre, használjunk és
+kezeljünk ágakat (<em>branch</em>) egy Git verziókezelő rendszerben. A célja, hogy struktúrát adjon a fejlesztési folyamatnak,
+lehetővé tegye a párhuzamos munkát, csökkentse a konfliktusokat és a hibákat, és segítse a fejlesztői csapatot
+hatékonyabban dolgozni.</p>
+<div class="grid">
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="zero-branch-strategy--trunk-based-development" name="__tabbed_1" type="radio" /><input id="develop-branch-strategy" name="__tabbed_1" type="radio" /><input id="feature-branch-strategy" name="__tabbed_1" type="radio" /><input id="gitflow-branch-strategy" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="zero-branch-strategy--trunk-based-development">Zero Branch Strategy / Trunk Based Development</label><label for="develop-branch-strategy">Develop Branch Strategy</label><label for="feature-branch-strategy">Feature Branch Strategy</label><label for="gitflow-branch-strategy">Gitflow Branch Strategy</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><figure markdown>
+  <img alt="" src="../img/img_8.png" width="600" />
+</figure></p>
+<ul>
+<li>Nem hozunk létre külön ágakat a fejlesztés során.</li>
+<li>Minden módosítást a master branchre commitolunk.</li>
+<li>Solo projekteken kívül kerüljük ezt a megközelítést.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><figure markdown>
+  <img alt="" src="../img/img_9.png" width="600" />
+</figure></p>
+<ul>
+<li>A master branchen kívül létrehozunk egy develop branchet, ahova commitoljuk a módosításainkat.</li>
+<li>A master branchet mindig release-elhető verzióban tartjuk.</li>
+<li>Solo projekteken kívül kerüljük ezt a megközelítést is.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><figure markdown>
+  <img alt="" src="../img/img_10.png" width="600" />
+</figure></p>
+<ul>
+<li>Minden feature-nek külön branchet hozunk létre és arra commitoljuk a módosításainkat.</li>
+<li>Ha egy feature elkészül, akkor az adott feature-t vissza mergeljük a master branchre. </li>
+<li>Lehetőséget ad feature-k párhuzamos fejlesztésére.</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<p><figure markdown>
+  <img alt="" src="../img/img_11.png" width="600" />
+</figure></p>
+<ul>
+<li>Egyesíti a develop és feature branch stratégia előnyeit.</li>
+<li>Létrehozunk egy develop branchet, így a master branchünket mindig release-elhető állapotban tudjuk tartani.</li>
+<li>A különböző fejlesztéseknek külön feature brancheket nyitunk.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>Ezen stratégiák mindegyike különböző előnyöket és alkalmazási eseteket kínál, és a csapat méretétől, a projekt típusától
+és a folyamatos integráció és deployment követelményeitől függően választhatók. A lényeg, hogy a csapat jól értse és
+szigorúan tartsa magát a kiválasztott stratégiához, hogy a fejlesztés folyamatos és rendezett legyen.</p>
+<h3 id="git-szolgaltatok">Git szolgáltatók</h3>
+<figure>
+<p><img alt="" src="../img/img_12.png" width="500" /></p>
+</figure>
+<p>A <strong>Git</strong> egy nyíltforrás-kódú verziókezelő rendszer.
+<strong>GitHub</strong>, <strong>GitLab</strong>, <strong>Bitbucket</strong> pedig tárhely szolgáltatók amik a Git-et használják. A giten túl extra szolgáltatásokat
+biztosítanak a felhasználók számára.
+Mi az órák során a <strong>GitHub</strong>-bal fogunk dolgozni mert:</p>
+<ul>
+<li>Ingyenesen használható</li>
+<li>De facto sztenderd az open-source projektek világában</li>
+<li>A különböző szolgáltatók által nyújtott szolgáltatásokra nem térünk ki a tananyag során.</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
