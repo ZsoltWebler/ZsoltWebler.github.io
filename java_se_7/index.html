@@ -12,7 +12,7 @@
         <link rel="prev" href="../java_se_6/">
       
       
-        <link rel="next" href="../java_se_8_1/">
+        <link rel="next" href="../java_se_7_ex/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
@@ -299,6 +299,35 @@
     
   
   
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Java IO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Java IO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -419,44 +448,31 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#feladatok" class="md-nav__link">
-    Feladatok
-  </a>
-  
-    <nav class="md-nav" aria-label="Feladatok">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-feladat" class="md-nav__link">
-    1. Feladat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-feladat" class="md-nav__link">
-    2. Feladat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-feladat" class="md-nav__link">
-    3. Feladat
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_7_ex/" class="md-nav__link">
+        Java IO gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -742,40 +758,6 @@
           <li class="md-nav__item">
   <a href="#csv-fajlok-letrehozasa" class="md-nav__link">
     CSV fájlok létrehozása
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#feladatok" class="md-nav__link">
-    Feladatok
-  </a>
-  
-    <nav class="md-nav" aria-label="Feladatok">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-feladat" class="md-nav__link">
-    1. Feladat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-feladat" class="md-nav__link">
-    2. Feladat
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-feladat" class="md-nav__link">
-    3. Feladat
   </a>
   
 </li>
@@ -1112,49 +1094,6 @@ metódus segítségével szétválasztjuk a sort a vessző karakterek mentén, �
 </ol>
 <p>Először a fejléc sort hozzáadjuk, majd az adatokat (<strong>név</strong>, <strong>kor</strong>, <strong>ország</strong>) írjuk be a fájlba. A <code>BufferedWriter</code>
 osztályt használjuk, hogy hatékonyan írjunk a fájlba.</p>
-<h2 id="feladatok">Feladatok</h2>
-<h3 id="1-feladat">1. Feladat</h3>
-<p>Generáljunk le két szövegfájlt az <code>a.txt</code> és a <code>b.txt</code> fájlokat:</p>
-<ul>
-<li><code>a.txt</code> tartalma: 1 és 10 között a páratlan számok</li>
-<li><code>b.txt</code> tartalma: 1 és 10 között a páros számok</li>
-</ul>
-<p>Fésüljük össze az <code>a.txt</code> és <code>b.txt</code> fájlokat a <code>c.txt</code> fájlba úgy, hogy felváltva olvasunk belőlük!</p>
-<h3 id="2-feladat">2. Feladat</h3>
-<p>Készítsünk programot ami a konzolról beolvas szavakat, ad nekik egy sorszámot, majd kiírja a <code>szavak.txt</code> nevű fájlba.
-Ha a begépelt szó <code>exit</code> akkor kilép.
-Tehát, ha az első beolvasott szó az volt, hogy macska, akkor a <code>szavak.txt</code> fájlba (ha nem létezik, hozzunk létre egyet
-kódból) beírja, hogy <code>1 macska</code>. Ha a következő szó az hogy kutya, akkor a fájlba bekerül, hogy <code>2 kutya</code> és így tovább,
-amíg az <code>exit</code> parancs le nem állítja a programot.</p>
-<h3 id="3-feladat">3. Feladat</h3>
-<p>Vegyük az alábbi <code>Termek</code> osztályt. Készíts egy statikus <code>writeTermekToCSV()</code> metódust, ami egy termek tömböt kap
-paraméterül és kiírja azt a <code>termek.csv</code> fájlba. A <code>main()</code> metódusban hozz létre egy tömböt 10 darab termékkel és hívd
-meg a <code>writeTermekToCSV()</code> metódust.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">class</span> <span class="nc">Termek</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">kovetkezoAzonosito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">azonosito</span><span class="p">;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">;</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ar</span><span class="p">;</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Termek</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ar</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">azonosito</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kovetkezoAzonosito</span><span class="o">++</span><span class="p">;</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">megnevezes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">;</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">ar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ar</span><span class="p">;</span>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
-</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAzonosito</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">azonosito</span><span class="p">;</span>
-</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
-</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">getMegnevezes</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">megnevezes</span><span class="p">;</span>
-</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>
-</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getAr</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ar</span><span class="p">;</span>
-</span><span id="__span-9-23"><a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-9-24"><a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a><span class="p">}</span>
-</span></code></pre></div>
 
 
 
