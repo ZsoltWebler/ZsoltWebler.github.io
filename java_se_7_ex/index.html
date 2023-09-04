@@ -430,6 +430,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-feladat" class="md-nav__link">
+    9. Feladat
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -703,6 +710,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-feladat" class="md-nav__link">
+    9. Feladat
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -918,6 +932,50 @@ alapján.</p>
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>...
 </span></code></pre></div></li>
 </ul>
+<h2 id="9-feladat">9. Feladat</h2>
+<p>Az alábbi <code>RealEstate</code> osztállyal fogunk dolgozni.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RealEstate</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">RealEstate</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">numberOfRooms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="nf">getArea</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">area</span><span class="p">;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">getNumberOfRooms</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">numberOfRooms</span><span class="p">;</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18" href="#__codelineno-11-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19" href="#__codelineno-11-19"></a>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20" href="#__codelineno-11-20"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Készíts egy <code>Flat</code> osztályt, ami a <code>RealEstate</code> osztályból származik és bővítsd ki a <code>boolean</code> balcony, és <code>int</code> level
+adattagokkal. Készíts hozzá paraméteres konstruktort és getter metódust az új adattagokhoz. Írd felül a toString
+metódust, hogy az új attribútumokat is figyelembe vegye.</p>
+<p>Készíts egy <code>House</code> osztályt, ami a <code>RealEstate</code> osztályból származik és bővítsd ki a <code>boolean</code> pool, és <code>double</code>
+gardenArea adattagokkal. Készíts hozzá paraméteres konstruktort és getter metódust az új adattagokhoz. Írd felül a
+toString metódust, hogy az új attribútumokat is figyelembe vegye.</p>
+<p>Vegyük az alábbi csv fájlt. Olvassuk be a <code>real_estates.csv</code> fájlt és hozzunk létre megfelelő <code>Flat</code> és <code>House</code>
+objektumokat és tároljuk el egy <code>RealEstate[]</code> tömbben. A tömb összes elemén hívjuk meg a <code>toString</code> metódust. Majd az
+ingatlan típusától függően írjuk ki a <code>flat.csv</code> vagy <code>house.csv</code> fájlba az összes elemet.</p>
+<div class="language-text highlight"><span class="filename">real_estates.csv</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>area,number_of_rooms,type,balcony,level,pool,garden_area
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>60,2,Flat,1,2,,
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>52,3,Flat,0,3,,
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>73,4,Flat,1,5,,
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>42,1,Flat,0,4,,
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>80,5,Flat,1,6,,
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>60,2,House,,,0,30
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>52,3,House,,,0,54
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>73,4,House,,,1,23
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>42,1,House,,,0,12
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>80,5,House,,,1,130
+</span></code></pre></div>
 
 
 

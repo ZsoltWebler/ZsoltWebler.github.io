@@ -579,6 +579,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sajat-tipusok-kollekcioi" class="md-nav__link">
+    Saját típusok kollekciói
+  </a>
+  
+    <nav class="md-nav" aria-label="Saját típusok kollekciói">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equals" class="md-nav__link">
+    equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashcode" class="md-nav__link">
+    hashCode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compareto" class="md-nav__link">
+    compareTo()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -963,6 +997,40 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#sajat-tipusok-kollekcioi" class="md-nav__link">
+    Saját típusok kollekciói
+  </a>
+  
+    <nav class="md-nav" aria-label="Saját típusok kollekciói">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equals" class="md-nav__link">
+    equals()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hashcode" class="md-nav__link">
+    hashCode()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compareto" class="md-nav__link">
+    compareTo()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1288,6 +1356,40 @@ teljesítmény az elsődleges szempont, akkor a <code>HashMap</code> általában
 <p>Ebben a példában egy <code>HashMap</code> implementációt használunk a <code>Map</code> interfész bemutatására. A <code>put</code> metódussal adunk hozzá
 kulcs-érték párokat a szótárhoz, a <code>get</code> metódussal lekérjük egy kulcshoz tartozó értéket. A <code>entrySet</code> metódussal
 bejárjuk az összes kulcs-érték párt és kiírjuk az értékeket.</p>
+<h3 id="sajat-tipusok-kollekcioi">Saját típusok kollekciói</h3>
+<p>Ahogy korábban már megismerkedtünk vele a saját típusok összehasonlítására nem használhatjuk az <code>==</code> operátort, mert a
+legtöbb esetben az egyenlőség vizsgálátánál mi nem a memória címek egyezésére vagyunk kíváncsiak. A bemutatott
+kollekciók közül több esetében szükségünk van további metódusok elhelyezésére az osztályunkban, hogy azok az elvárt
+módon működjenek.</p>
+<h4 id="equals">equals()</h4>
+<p>Ahhoz, hogy egy kollekcióban egy elem tartalmazását vizsgálni tudjuk, a saját osztályunknak mindenképpen implementálnia
+kell az <code>equals()</code> metódust. A korábban bemutatott <code>Set</code> adatszerkezet csak akkor tudja a számunkra elvárt módon
+garantálni az elemek egyediségét, ha az <code>equals()</code> metódus megfelelően implementálva van az osztályunkban.</p>
+<p>Egy jól megírt <code>equals()</code> függvénynek az alábbi kritériumoknak kell megfelelnie:</p>
+<ul>
+<li><strong>reflexív</strong>: Egy objektumnak egyenlőnek kell lennie önmagával.</li>
+<li><strong>szimmetrikus</strong>: Az <code>x.equals(y)</code>-nak ugyan azzal az értékkel kell visszatérnie mint az <code>y.equals(x)</code>.</li>
+<li><strong>tranzitív</strong>: Ha <code>x.equals(y)</code> és <code>y.equals(z)</code>, akkor <code>x.equals(z)</code>-nek is igaznak kell lennie.</li>
+<li><strong>konzisztens</strong>: Az <code>equals()</code> értékének csak akkor szabad változnia, ha a metódusban felhasznált valamelyik adattag
+  értéke változik, nem lehet véletlenszerűséget használni.</li>
+</ul>
+<h4 id="hashcode">hashCode()</h4>
+<p>Olyan adatszerkezeteknél, amik valamilyen <code>hash</code>-elési eljárást használnak az elemek tárolása során fontos, hogy
+implementáljuk <code>hashCode()</code> metódust. A metódus feladata, hogy valamilyen <code>hash</code> kódot rendeljen az objektumunkhoz. Amit
+például egy <code>HashSet</code> használni tud az elemek tárolása során.</p>
+<p>Egy jól megírt <code>hashCode()</code> függvénynek az alábbi kritériumoknak kell megfelelnie:</p>
+<ul>
+<li><strong>belső konzisztencia</strong>: A <code>hashCode()</code> értéke, csak akkor változhat, ha egy olyan attribútum értéke változik, ami
+  az <code>equals()</code> metódusban is használva volt.</li>
+<li><strong>egyenlőség konzisztencia</strong>: Az <code>equals()</code> metódos szerint egyenlő objektumok <code>hash</code> értéke meg kell, hogy egyezzen.</li>
+<li><strong>ütközés</strong>: A nem egyforma objektumoknak is lehet egyforma <code>hash</code> értékük, azonban minimalizálni szeretnénk az
+  ütközések gyakoriságát.</li>
+</ul>
+<h4 id="compareto">compareTo()</h4>
+<p>Ahogy korábban láttuk az osztályunknak lehetősége van implementálni a <code>Comparable</code> interfészt. Az interfész előírja
+a <code>compareTo()</code> metódust, amivel az objektumaink között tudunk relációt felállítsani. Az olyan adatszerkezetek, amelyek
+az adatokat rendezve tárolják erre a <code>compareTo()</code> metódusra támaszkodnak a rendezés felállítása során, így ha a saját
+logikánk szerint szeretnénk rendezést felállítani az objektumaink között implementáltunk kell a <code>compareTo()</code> metódust.</p>
 <h2 id="utility-osztalyok">Utility osztályok</h2>
 <p>A Java Collections Framework (JCF) tartalmaz olyan segédosztályokat is, amelyek megkönnyítik és kibővítik a kollekciók (
 listák, halmazok stb.) kezelését. Ezek az osztályok a <code>java.util</code> csomagban találhatók.</p>
