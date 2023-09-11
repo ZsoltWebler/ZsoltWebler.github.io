@@ -12,7 +12,7 @@
         <link rel="prev" href="../java_se_8_2/">
       
       
-        <link rel="next" href="../java_se_11/">
+        <link rel="next" href="../java_se_8_3_ex/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
@@ -437,6 +437,35 @@
     
   
   
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+          Java Collection Framework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Java Collection Framework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -667,6 +696,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comparable-es-comparator-interfesz" class="md-nav__link">
+    Comparable és Comparator interfész
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparable és Comparator interfész">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparable-interfesz" class="md-nav__link">
+    Comparable interfész
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparator-interfesz" class="md-nav__link">
+    Comparator interfész
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparable-vagy-comparator" class="md-nav__link">
+    Comparable vagy Comparator?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#utility-osztalyok" class="md-nav__link">
     Utility osztályok
   </a>
@@ -723,6 +786,27 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_3_ex/" class="md-nav__link">
+        Java Collection Framework gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1223,6 +1307,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#comparable-es-comparator-interfesz" class="md-nav__link">
+    Comparable és Comparator interfész
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparable és Comparator interfész">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparable-interfesz" class="md-nav__link">
+    Comparable interfész
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparator-interfesz" class="md-nav__link">
+    Comparator interfész
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparable-vagy-comparator" class="md-nav__link">
+    Comparable vagy Comparator?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#utility-osztalyok" class="md-nav__link">
     Utility osztályok
   </a>
@@ -1576,6 +1694,93 @@ például egy <code>HashSet</code> használni tud az elemek tárolása során.</
 a <code>compareTo()</code> metódust, amivel az objektumaink között tudunk relációt felállítsani. Az olyan adatszerkezetek, amelyek
 az adatokat rendezve tárolják erre a <code>compareTo()</code> metódusra támaszkodnak a rendezés felállítása során, így ha a saját
 logikánk szerint szeretnénk rendezést felállítani az objektumaink között implementáltunk kell a <code>compareTo()</code> metódust.</p>
+<h2 id="comparable-es-comparator-interfesz">Comparable és Comparator interfész</h2>
+<p>Az objektumok összehasonlítása elengedhetetlen a számos alkalmazásban, különösen azokban, ahol rendezni vagy keresni
+kell elemeket. A Java nyelvben két fontos interfész áll rendelkezésre az objektumok összehasonlításához a <code>Comparable</code>
+és a <code>Comparator</code>.</p>
+<h3 id="comparable-interfesz">Comparable interfész</h3>
+<p>A <code>java.lang.Comparable</code> interfész egy egyszerű módszert definiál, amely segít az objektumok természetes rendezési
+sorrendjének meghatározásában.</p>
+<div class="language-java highlight"><span class="filename">Comparable.java</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">o</span><span class="p">);</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A <code>compareTo</code> metódus egy egész számot ad vissza, annak függvényében, hogy az összehasonlított objektumok milyen
+relációban állnak.</p>
+<ul>
+<li>Negatív szám: Az aktuális objektum kisebb, mint a paraméterként kapott objektum.</li>
+<li>Nulla: Az aktuális objektum és a paraméterként kapott objektum megegyezik.</li>
+<li>Pozitív szám: Az aktuális objektum nagyobb, mint a paraméterként kapott objektum.</li>
+</ul>
+<p>A legtöbb beépített osztály, mint a String osztály is már implementálja a <code>Comparable</code> interfészt, így
+a <code>Collections.sort()</code> metódus automatikusan használható a rendezéshez, azonban lehetőségünk van a saját osztályainkban
+is implementálni az interfészt.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">class</span> <span class="nc">Book</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparable</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">author</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">publicationYear</span><span class="p">;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Book</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">title</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">author</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">publicationYear</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">title</span><span class="p">;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">author</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">author</span><span class="p">;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">publicationYear</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">publicationYear</span><span class="p">;</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">    </span><span class="c1">// Getterek és setterek</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compareTo</span><span class="p">(</span><span class="n">Book</span><span class="w"> </span><span class="n">other</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="w">        </span><span class="c1">// Könyveket az id alapján rendezzük a compareTo metódusban.</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">compare</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="p">,</span><span class="w"> </span><span class="n">other</span><span class="p">.</span><span class="na">id</span><span class="p">);</span><span class="w"> </span><span class="c1">// (1)</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Book{&quot;</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a><span class="w">                </span><span class="s">&quot;id=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-5-26"><a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a><span class="w">                </span><span class="s">&quot;, title=&#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;\&#39;&#39;</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a><span class="w">                </span><span class="s">&quot;, author=&#39;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">author</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;\&#39;&#39;</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">                </span><span class="s">&quot;, publicationYear=&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">publicationYear</span><span class="w"> </span><span class="o">+</span>
+</span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">                </span><span class="sc">&#39;}&#39;</span><span class="p">;</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="p">}</span>
+</span></code></pre></div>
+<ol>
+<li>Megfigyelhetjük, hogy az <code>Integer</code> osztály rendelkezik saját compare metódussal, amit felhasználhatunk a mi
+   összehasonlításunk során is. Az osztály compare metódusa az alábbi képpen néz ki:
+    <div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">){</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">      </span><span class="k">return</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">y</span><span class="p">)</span><span class="o">?-</span><span class="mi">1</span><span class="p">:((</span><span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">)</span><span class="o">?</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">);</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p">}</span>
+</span></code></pre></div></li>
+</ol>
+<h3 id="comparator-interfesz">Comparator interfész</h3>
+<p>A <code>java.util.Comparator</code> interfész egy rugalmasabb megközelítést kínál az objektumok összehasonlítására. Ezt az
+interfészt használhatjuk olyan helyzetekben, ahol a természetes rendezésen túl más összehasonlítási szabályokat is
+alkalmazni szeretnénk.</p>
+<div class="language-java highlight"><span class="filename">Comparator.java</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">Comparator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">o1</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">o2</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>A <code>compare</code> metódus az összehasonlítás eredményét adja vissza, hasonlóan a <code>compareTo</code> metódushoz, azonban itt nem a
+saját objektumunk kerül összehasonlításra a paraméterben kapott objektummal, hanem az első argumentum a másodikkal.</p>
+<p>Az előző példánkat kiegészítve lehetőségünk van egy új Comparator osztályt létrehozni, ami a könyvek azonosítója helyett
+a könyvek címét használja a rendezés felállítására.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">class</span> <span class="nc">TitleComparator</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Comparator</span><span class="o">&lt;</span><span class="n">Book</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">Book</span><span class="w"> </span><span class="n">book1</span><span class="p">,</span><span class="w"> </span><span class="n">Book</span><span class="w"> </span><span class="n">book2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">        </span><span class="c1">// Könyveket cím alapján rendezzük.</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">book1</span><span class="p">.</span><span class="na">getTitle</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">book2</span><span class="p">.</span><span class="na">getTitle</span><span class="p">());</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<h3 id="comparable-vagy-comparator">Comparable vagy Comparator?</h3>
+<p>A <code>Comparable</code> interfészt általában akkor használjuk, ha az objektumoknak van egy meghatározott természetes rendezési
+sorrendje. Ezt a rendezést az osztályon belül definiáljuk a <code>compareTo</code> metódus segítségével.</p>
+<p>A <code>Comparator</code> interfészt használjuk akkor, amikor a rendezési sorrendet dinamikusan vagy különböző szempontok alapján
+akarjuk módosítani. Például egy adott osztályhoz többféle rendezési szabályt alkalmazhatunk különböző <code>Comparator</code>
+implementációkkal.</p>
 <h2 id="utility-osztalyok">Utility osztályok</h2>
 <p>A Java Collections Framework (JCF) tartalmaz olyan segédosztályokat is, amelyek megkönnyítik és kibővítik a kollekciók (
 listák, halmazok stb.) kezelését. Ezek az osztályok a <code>java.util</code> csomagban találhatók.</p>
@@ -1585,68 +1790,68 @@ kezeléséhez és manipulálásához.</p>
 <h4 id="segedmetodusok">Segédmetódusok</h4>
 <p>A <code>sort()</code> metódus a kollekció elemeit rendezett sorrendbe rendezi. Használatához a kollekció elemeinek
 összehasonlíthatónak kell lenniük, vagyis implementálniuk kell a <code>Comperable</code> interfészt.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>reverse()</code> a kollekció elemeinek sorrendjét megfordítja.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="s">&quot;Charlie&quot;</span><span class="p">));</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="s">&quot;Charlie&quot;</span><span class="p">));</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">reverse</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>shuffle()</code> a kollekció elemeit véletlenszerűen összekeveri</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="s">&quot;Charlie&quot;</span><span class="p">));</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">shuffle</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">names</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="s">&quot;Charlie&quot;</span><span class="p">));</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">        </span><span class="n">Collections</span><span class="p">.</span><span class="na">shuffle</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>min()</code> és <code>max()</code> visszaadja a kollekció legkisebb és legnagyobb elemét.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">numbers</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">));</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">minValue</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">min</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">maxValue</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>binarySearch()</code> bináris keresést végez a <strong>rendezett</strong> kollekcióban egy adott elemre, és visszaadja az indexét.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">words</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">,</span><span class="s">&quot;date&quot;</span><span class="p">);</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">words</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">,</span><span class="s">&quot;date&quot;</span><span class="p">);</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>frequency()</code> megszámolja, hogy egy adott elem hányszor fordul elő a kollekcióban.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fruits</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">);</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">frequency</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">frequency</span><span class="p">(</span><span class="n">fruits</span><span class="p">,</span><span class="s">&quot;apple&quot;</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fruits</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">);</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">frequency</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">frequency</span><span class="p">(</span><span class="n">fruits</span><span class="p">,</span><span class="s">&quot;apple&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>Az <code>emptyList()</code>, <code>emptySet()</code> és <code>emptyMap()</code> üres és módosíthatatlan listát, halmazt és map-et hoz létre.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptyList</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptySet</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptySet</span><span class="p">();</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptyMap</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyMap</span><span class="p">();</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptyList</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyList</span><span class="p">();</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptySet</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptySet</span><span class="p">();</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">        </span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">Integer</span><span class="o">&gt;</span><span class="w"> </span><span class="n">emptyMap</span><span class="o">=</span><span class="n">Collections</span><span class="p">.</span><span class="na">emptyMap</span><span class="p">();</span>
 </span></code></pre></div>
 <h3 id="arrays">Arrays</h3>
 <p>A <code>java.util.Arrays</code> osztály különböző segédmetódusokat kínál a tömbök egyszerű kezeléséhez.</p>
 <h4 id="segedmetodusok_1">Segédmetódusok</h4>
 <p>A <code>sort()</code> a tömb elemeit rendezett sorrendbe rendezi. Használatához a tömb elemeinek összehasonlíthatónak kell lenniük.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">numbers</span><span class="o">=</span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">numbers</span><span class="o">=</span><span class="p">{</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">};</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">numbers</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>binarySearch()</code> bináris keresést végez a <strong>rendezett</strong> tömbben egy adott elemre, és visszaadja az indexét.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="n">words</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">,</span><span class="s">&quot;date&quot;</span><span class="p">};</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">        </span><span class="n">String</span><span class="o">[]</span><span class="n">words</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;apple&quot;</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">,</span><span class="s">&quot;cherry&quot;</span><span class="p">,</span><span class="s">&quot;date&quot;</span><span class="p">};</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">index</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">binarySearch</span><span class="p">(</span><span class="n">words</span><span class="p">,</span><span class="s">&quot;banana&quot;</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>copyOf()</code>: Létrehoz egy új tömböt, amely tartalmazza a megadott eredeti tömb elemeit, és megadott méretű vagy kisebb.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">sourceArray</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">newArray</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">sourceArray</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">sourceArray</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">newArray</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">copyOf</span><span class="p">(</span><span class="n">sourceArray</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>Az <code>equals()</code> összehasonlítja két tömb tartalmát, és visszatér igaz értékkel, ha az elemeik egyeznek.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">array1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">array2</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">areEqual</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span><span class="n">array2</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">array1</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">        </span><span class="kt">int</span><span class="o">[]</span><span class="n">array2</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">        </span><span class="kt">boolean</span><span class="w"> </span><span class="n">areEqual</span><span class="o">=</span><span class="n">Arrays</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">array1</span><span class="p">,</span><span class="n">array2</span><span class="p">);</span>
 </span></code></pre></div>
 <hr />
 <p>A <code>fill()</code> az összes tömbelemet az adott értékre állítja.</p>
-<div class="language-java highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">        </span><span class="kt">char</span><span class="o">[]</span><span class="n">chars</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span><span class="sc">&#39;X&#39;</span><span class="p">);</span>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="w">        </span><span class="kt">char</span><span class="o">[]</span><span class="n">chars</span><span class="o">=</span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">        </span><span class="n">Arrays</span><span class="p">.</span><span class="na">fill</span><span class="p">(</span><span class="n">chars</span><span class="p">,</span><span class="sc">&#39;X&#39;</span><span class="p">);</span>
 </span></code></pre></div>
 
 
