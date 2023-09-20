@@ -573,6 +573,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#8-feladat" class="md-nav__link">
+    8. Feladat
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1059,6 +1066,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#8-feladat" class="md-nav__link">
+    8. Feladat
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1133,7 +1147,7 @@ vegyesen.</p>
 <p>A fájlban vegyesen vannak az emberek email címei és telefonszámai, vannak duplikált elemek és nem tudjuk, hogy egy
 névhez hány email cím és telefonszám tartozik. A feladatunk az lesz, hogy minden személyhez össze szedjük a hozzá
 tartozó email címeket és telefonszámokat kiszűrve a duplikátumokat.</p>
-<h2 id="7-feladat">7. Feladat</h2>
+<h3 id="7-feladat">7. Feladat</h3>
 <p>Készíts egy programot, ami különböző autók co2 kibocsájtási adatait olvassa be és dolgozza fel. Az alkalmazás
 elkészítése során a <code>FuelType</code> enumot és a <code>CarEmissionInfo</code> osztályt használd.</p>
 <div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">FuelType</span><span class="w"> </span><span class="p">{</span>
@@ -1190,6 +1204,82 @@ adatszerkezetbe.</p>
   egy lista, azokkal a <code>CarEmissionInfo</code> objektumokkal, amelyeknek az üzemanyagtípusa megegyezik a kulccsal.</li>
 </ul>
 </li>
+</ul>
+<h3 id="8-feladat">8. Feladat</h3>
+<p>Nézzük az alábbi <a href="../resources/otos.csv"><code>otos.csv</code></a> fájlt (ez egyébként a https://bet.szerencsejatek.hu/jatekok/otoslotto/sorsolasok
+címről tölthető le), és olvasd be. A fájl pontosvesszővel (<code>;</code>) elválasztva tárolja a mezőket, az alábbi formátumban.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Év</th>
+<th align="center">Hét</th>
+<th align="center">Húzásdátum</th>
+<th align="center">5 találat (db)</th>
+<th align="center">5 találat (Ft)</th>
+<th align="center">4 találat (db)</th>
+<th align="center">4 találat (Ft)</th>
+<th align="center">3 találat (db)</th>
+<th align="center">3 találat (Ft)</th>
+<th align="center">2 találat (db)</th>
+<th align="center">2 találat (Ft)</th>
+<th align="center">Számok</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">2023</td>
+<td align="center">28</td>
+<td align="center">2023.07.15.</td>
+<td align="center">0</td>
+<td align="center">0 Ft</td>
+<td align="center">20</td>
+<td align="center">2 088 310 Ft</td>
+<td align="center">2160</td>
+<td align="center">20 255 Ft</td>
+<td align="center">61381</td>
+<td align="center">2 430 Ft</td>
+<td align="center">27  56  75  76  81</td>
+</tr>
+<tr>
+<td align="center">2023</td>
+<td align="center">27</td>
+<td align="center">2023.07.08.</td>
+<td align="center">1</td>
+<td align="center">1 724 177 660 Ft</td>
+<td align="center">48</td>
+<td align="center">950 325 Ft</td>
+<td align="center">2975</td>
+<td align="center">16 065 Ft</td>
+<td align="center">76481</td>
+<td align="center">2 130 Ft</td>
+<td align="center">4  17  55  67  89</td>
+</tr>
+<tr>
+<td align="center">2023</td>
+<td align="center">26</td>
+<td align="center">2023.07.01.</td>
+<td align="center">0</td>
+<td align="center">0 Ft</td>
+<td align="center">17</td>
+<td align="center">2 556 520 Ft</td>
+<td align="center">2467</td>
+<td align="center">18 455 Ft</td>
+<td align="center">63441</td>
+<td align="center">2 445 Ft</td>
+<td align="center">18  42  44  48  86</td>
+</tr>
+</tbody>
+</table>
+<p>Írj egy <code>LottoStatistic</code> osztályt és valósítsd meg az alábbi metódusokat:</p>
+<ul>
+<li>mostFrequentNumber() - Térjen vissza a legtöbbett kihúzott számmal</li>
+<li>leastFrequentNumber() - Térjen vissza a legkevesebbet kihúzott számmal</li>
+<li>highestPrize() - Írja ki a konzolra, hogy mekkora volt a legnagyobb kifizetés és mikor történt.</li>
+<li>highestPrizes() - Írja ki a konzolra, hogy mekkora volt az 5 legnagyobb kifizetés.</li>
+<li>myNumbers(Set<Integer> numbers) - A metódus kapjon 5 számot és nézze meg, nyert-e valamikor és ha igen, hányszor.</li>
+<li>getNumbers(int year, int week) - Térjen vissza, az adott heti nyertes számokkal.</li>
+<li>numberStatistics() - Térjen vissza egy Map-el amiben minden számhoz rendeld hozzá, hogy hányszor lett kihúzva.</li>
+<li>numberStatistics_2() - Térjen vissza egy Map-el amiben minden számhoz rendeld hozzá, mely heteken kerültek kihúzásra.</li>
 </ul>
 
 
