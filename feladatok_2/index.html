@@ -913,6 +913,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#konzolok" class="md-nav__link">
+    Konzolok
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -985,6 +992,13 @@
         <li class="md-nav__item">
   <a href="#fotokollekcio-oop" class="md-nav__link">
     Fotókollekció - OOP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konzolok" class="md-nav__link">
+    Konzolok
   </a>
   
 </li>
@@ -1132,6 +1146,64 @@ egy saját kivétel, terjessze ki a <code>RuntimeException</code> osztályt!</p>
 <p>Írj egy <code>numberOfStars()</code> metódust, mely visszaadja, hogy a képeken összesen mennyi csillag van!
 Ha nincs minősítése, akkor 0 csillag. Ha a minősítése <code>Quality.ONE_STAR</code>, akkor egy csillaggal kell
 számolni. Ha a minősítése <code>Quality.TWO_STAR</code>, akkor két csillaggal kell számolni.</p>
+<h2 id="konzolok">Konzolok</h2>
+<ol>
+<li>
+<p>Készíts egy <strong>Jatek</strong> osztályt! Tárold egy a játék <strong>nevét</strong>,<strong>nehézségi szintjét</strong> (0-10 közötti egész szám,
+   beállításkor ezt ellenőrizd le. Ha 0-nál kisebb értéket kap, 0 legyen, ha 10-nél nagyobbat, 10 legyen)
+   Továbbá tárold le azt, hogy a játék milyen <strong>Konzolon</strong>! Hozz létre az adattagoknak megfelelően egy paraméteres
+   konstruktort!
+   Hozz létre egy <strong>GitGud</strong> és egy <strong>NemTamogatottJatek</strong> nevű kivétel osztályt, melyek
+   rendelkezzenek egy default és egy paraméteres konstruktorral is!</p>
+</li>
+<li>
+<p>Hozz létre egy <strong>Konzol</strong> nevű, <strong>absztrakt</strong> osztályt! Tárold le a konzol <strong>nevét</strong>, valamint legyen egy absztrakt
+   <strong>jatszik</strong> metódusa, mely egy <strong>Jatek</strong>, valamint egy <strong>egész szám (skill)</strong> típusú paramétert vár, <strong>GitGud</strong>
+   és <strong>NemTamogatottJatek</strong> típusú kivételeket dobhat. Készíts egy, az adattagnak
+   megfelelő paraméteres konstruktort is!</p>
+</li>
+<li>
+<p>Készíts egy <strong>Jatekos</strong> nevű osztályt is! Tárold el a játékos <strong>nevét</strong>, <strong>skilljét</strong> (0-10 közötti egész szám,
+   beállításkor ezt is ellenőrizd le). Tárolj továbbá egy darab <strong>Konzolt</strong> és egy <strong>Jatek</strong> listát is a játékosnál!
+   Készíts megfelelő paraméteres konstruktort.
+   Legyen egy <strong>kockul</strong> metódusa, amely végigmegy a játékos által birtokolt játékokon és mindegyikkel
+   megpróbál játszani (mindegyikre meghívja a birtokolt <strong>Konzol</strong> <strong>jatek</strong> metódusát). Amennyiben sikeres a
+   játék (nem dobott kivételt), a játékos <strong>skill</strong>-je növekedjen eggyel. Ellenkező esetben írd ki az alapértelmezett
+   hibakimenetre, hogy melyik játékos mely játékot nem tudta végigjátszani.</p>
+</li>
+<li>
+<p>Származtass a <strong>Konzol</strong> osztályból egy <strong>XBOX</strong> és egy <strong>Playstation</strong> osztályt is! Mindkettő egy default
+   konstruktorral rendelkezzen, melyek beállítják a konzol nevét (“XBOX One” vagy “Playstation 5”)!
+   XBOX esetében a jatek metódus megvalósítása a következő. Megkapja paraméterben a játékot, valamint
+   a játékos skilljét. Azonban csak azokkal a játékokkal lehet játszani, melyek az adott konzolhoz valóak. Ha
+   egy játék nem ehhez a konzolhoz való, dobj <strong>NemTamogatottJatek</strong> típusú kivételt! Ellenkező esetben
+   vizsgáld le, hogy a játékos skillje hogy alakul az aktuális játék nehézségéhez. XBOX esetén olyan játékot képes
+   végigjátszani melynek nehézsége maximum 2-vel nehezebb, mint
+   a játékos aktuális skillje. Amennyiben nem tudja végigjátszani a játékot, dobj <strong>GitGud</strong> típusú
+   kivételt!
+   A játszik metódus az XBOX-hoz hasonlóan működjön,
+   azonban a játékos csak olyan játékokat tud végigjátszani, melyek nehézségi szintje maximum a játékos
+   skilljével egyezik meg.</p>
+</li>
+<li>
+<p>Hozz létre egy <strong>jatekok.csv</strong> fájlt, amiben vegyél fel legalább 5-5 játékot mindkét konzolhoz, a játékok adatai
+   pontosvesszővel legyenek elválasztva, pl:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    Grand Theft Auto V;4;XBOX One
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    Bloodborne;8;Playstation 5
+</span></code></pre></div>
+</li>
+<li>
+<p>Olvasd be a <strong>jatekok.csv</strong> -t egy listába. Hozz létre két <strong>Jatekos</strong> objektumot egyet Playstation a másikat XBOX
+   konzollal, a <strong>skill</strong> értékük legyen 2-7 közötti random egész szám és a lehetséges játékok listájából
+   véletlenszerűen rendelj hozzá 8 darab játékot.</p>
+</li>
+<li>
+<p>Hívd meg a mindkét játékos <strong>kockul</strong> metódusát és írd ki melyik játékokat sikerült végigjátszania a konzol
+   kimenetre.</p>
+</li>
+</ol>
+<p>A megoldás során ügyelj a <strong>Clean Code</strong> alapelveinek betartására. Bármilyen külső könyvtárat használhatsz a megoldás
+során.</p>
 
 
   
