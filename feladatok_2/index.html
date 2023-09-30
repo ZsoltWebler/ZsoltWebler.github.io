@@ -914,6 +914,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zenei-adok" class="md-nav__link">
+    Zenei adók
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#konzolok" class="md-nav__link">
     Konzolok
   </a>
@@ -992,6 +999,13 @@
         <li class="md-nav__item">
   <a href="#fotokollekcio-oop" class="md-nav__link">
     Fotókollekció - OOP
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zenei-adok" class="md-nav__link">
+    Zenei adók
   </a>
   
 </li>
@@ -1146,6 +1160,38 @@ egy saját kivétel, terjessze ki a <code>RuntimeException</code> osztályt!</p>
 <p>Írj egy <code>numberOfStars()</code> metódust, mely visszaadja, hogy a képeken összesen mennyi csillag van!
 Ha nincs minősítése, akkor 0 csillag. Ha a minősítése <code>Quality.ONE_STAR</code>, akkor egy csillaggal kell
 számolni. Ha a minősítése <code>Quality.TWO_STAR</code>, akkor két csillaggal kell számolni.</p>
+<h2 id="zenei-adok">Zenei adók</h2>
+<p>A rádióhallgatás ma már egyre inkább zene vagy hírek hallgatására korlátozódik. Ez a feladat három, folyamatosan zenét
+sugárzó adóról szól, azok egyetlen napi műsorát feldolgozva.
+A reklám elkerülése érdekében az adókat nevük helyett egyetlen számmal azonosítottuk.
+A musor.txt állomány minden sora négy, egymástól egyetlen szóközzel elválasztott adatot
+tartalmaz: a rádió sorszámát, amit a szám hossza követ két egész szám
+(perc és másodperc) formában, majd a játszott szám azonosítója szerepel, ami a szám előadójából és címéből áll. A rádió
+sorszáma az 1, 2, 3 számok egyike. Az adás minden adón 0 óra
+0 perckor kezdődik. Egyik szám sem hosszabb 30 percnél, tehát a perc értéke legfeljebb 30, a
+másodperc pedig legfeljebb 59 lehet. A szám azonosítója legfeljebb 50 karakter hosszú, benne
+legfeljebb egy kettőspont szerepel, ami az előadó és a cím között található. A számok az elhangzás sorrendjében
+szerepelnek az állományban, tehát a később kezdődő szám későbbi sorban található. Az állományban minden zeneszám
+legfeljebb egyszer szerepel.</p>
+<p>Példa:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1 5 3 Deep Purple:Bad Attitude
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2 3 36 Eric Clapton:Terraplane Blues
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>3 2 46 Eric Clapton:Crazy Country Hop
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>3 3 25 Omega:Ablakok
+</span></code></pre></div>
+<p>Olvasd be a <a href="../resources/musor.txt">musor.txt</a> file-t és oldd meg az alábbi feladatokat.</p>
+<ul>
+<li>Készíts egy <strong>Zeneszam</strong> osztályt és tárold el benne a szöveges file-ban tárolt sorokat.</li>
+<li>Készíts egy <strong>Radio</strong> osztályt és töltsd fel a Zeneszám objektumokkal.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, hogy az adott rádió hány percni zenét játszott aznap.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, hogy az adott rádió hány darab zenét játszott.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, a leghosszabb zeneszámmal.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, a legrövidebb zeneszámmal.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, a legtöbbet játszott előadóval.</li>
+<li>Készíts a Rádió osztályba egy metódust ami paraméterben kap egy óra és perc értéket és visszatér az éppen játszott
+  zeneszámmal.</li>
+<li>Készíts a Rádió osztályba egy metódust ami paraméterben kap egy előadót és visszatér az általa játszott számokkal.</li>
+</ul>
 <h2 id="konzolok">Konzolok</h2>
 <ol>
 <li>
@@ -1188,8 +1234,8 @@ számolni. Ha a minősítése <code>Quality.TWO_STAR</code>, akkor két csillagg
 <li>
 <p>Hozz létre egy <strong>jatekok.csv</strong> fájlt, amiben vegyél fel legalább 5-5 játékot mindkét konzolhoz, a játékok adatai
    pontosvesszővel legyenek elválasztva, pl:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    Grand Theft Auto V;4;XBOX One
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    Bloodborne;8;Playstation 5
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    Grand Theft Auto V;4;XBOX One
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    Bloodborne;8;Playstation 5
 </span></code></pre></div>
 </li>
 <li>
