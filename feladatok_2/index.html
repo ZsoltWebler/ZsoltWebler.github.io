@@ -764,6 +764,68 @@
   
     <li class="md-nav__item">
       <a href="../java_se_15_ex/" class="md-nav__link">
+        None
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+          Adatbáziskezelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_15">
+          <span class="md-nav__icon md-icon"></span>
+          Adatbáziskezelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_16/" class="md-nav__link">
+        Adatbáziskezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_15_ex/" class="md-nav__link">
         Java funkcionális programozás
       </a>
     </li>
@@ -927,6 +989,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hamburgerezo" class="md-nav__link">
+    Hamburgerező
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konyvek" class="md-nav__link">
+    Könyvek
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1013,6 +1089,20 @@
         <li class="md-nav__item">
   <a href="#konzolok" class="md-nav__link">
     Konzolok
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hamburgerezo" class="md-nav__link">
+    Hamburgerező
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konyvek" class="md-nav__link">
+    Könyvek
   </a>
   
 </li>
@@ -1250,6 +1340,54 @@ legfeljebb egyszer szerepel.</p>
 </ol>
 <p>A megoldás során ügyelj a <strong>Clean Code</strong> alapelveinek betartására. Bármilyen külső könyvtárat használhatsz a megoldás
 során.</p>
+<h2 id="hamburgerezo">Hamburgerező</h2>
+<p>Az alkalmazás célja, hogy segítsen egy Hamburgerező cégnek kezelni a hamburgerek értékesítésének folyamatát. A menüben
+három hamburger típus elérhető. Az alap hamburger, a prémium hamburger és a fitnesz hamburger.</p>
+<p>Az alap hamburger osztály konstruktorának 4 paramétere van. A hamburger neve, a hús típusa, a zsemle típusa és a
+hamgurger ára. Az ár paraméter legyen <em>double</em> a többi pedig <em>String</em>.</p>
+<p><strong>Extra feladat:</strong> A zsemle és a hús típushoz <em>Enum</em> használata <em>String</em> helyett.</p>
+<p>A hamburgerhez még tartozzon egy lista ami az extra feltéteket tartalmazza a burgerhez, maximum 4 darabot. Az extra
+feltét egy <em>String</em> névből és egy <em>double</em> árból állnak. A feltét megvalósításához hozz létre egy feltét osztályt ami a
+feltét nevét és az árát tartalmazza.</p>
+<p>Az osztálynak legyen egy addExtraTopping() és egy removeExtraTopping() metódusa, amivel az extra feltéteket lehet
+felvenni és eltávolítani a hamburgerről. Ezen kívül készíts egy toString() metódust, ami kiírja a hamgurger adatait és a
+végső árát az extra feltétekkel.</p>
+<p>A prémium hamburger konstruktora ne fogadjon paramétert, helyette hozzon létre egy prémium burger nevő hamburgert,
+prémium hússal, prémium zsemlével és adj hozzá 6 feltétet. A prémium burger ára, 50%-al magasabb, mint a feltétek árának
+összege. A prémium hamburgerhez nem lehet új feltétet felvenni vagy eltávolítani róla. A toString() metódus ugyan úgy
+működik, mint az alap hamgurgernél.</p>
+<p>A fitnesz hamburger az konstruktora 3 paramétert vár, a hamburger nevét, az árat és a hús típusát. A zsemle típusa
+legyen beállítva teljes kiőrlésű zsemlére alapértelmezetten.</p>
+<p>Az alap hamburgerhez hasonlóan a fitnesz hamburgert is lehessen extra feltétekkel ellátni, azonban ezeknek a feltéteknek
+egészséges feltéteknek kell lenniük, maximum 3 darab ugyan. A toString() hasonló az előző két típushoz.</p>
+<h2 id="konyvek">Könyvek</h2>
+<p>Készíts egy könyv osztályt az alábbi attribútumokkal:</p>
+<ul>
+<li><strong>Book:</strong> Egy könyvet reprezentál a könyvtárban.<ul>
+<li><strong>String</strong> isbn - A könyv ISBN kódja. Egyedinek kell lennie.</li>
+<li><strong>String</strong> title - A könyv címe.</li>
+<li><strong>String</strong> author - A könyv szerzője.</li>
+<li><strong>String</strong> genre - A könyv műfaja.</li>
+<li><strong>boolean</strong> available - Elérhető-e a könyv.</li>
+</ul>
+</li>
+</ul>
+<p>Olvasd be az alábbi <a href="../resources/books.csv">books.csv</a> fájlt és oldjuk meg az alábbi feladatokat.</p>
+<ul>
+<li>Book findBookByIsbn(String isbn) : Isbn alapján keresse meg a könyvet.</li>
+<li>List<String> listOfGenres() : Térjen vissza az elérhető műfajok listájával.</li>
+<li>List<String> listOfAuthors() : Térjen vissza az szerzők listájával.</li>
+<li>List<Book> findBookByAuthor(String author) : Keresse meg az összes könyvet szerző alapján.</li>
+<li>List<Book> findBookByTitle(String title) : Keresse meg az összes könyvet cím alapján.</li>
+<li>List<Book> findBookByGenre(String genre) : Keresse meg az összes könyvet műfaj alapján.</li>
+<li>List<Book> findAllAvailableBooks() : Keresse meg az összes elérhető könyvet.</li>
+<li>List<Book> findAllUnAvailableBooks() : Keresse meg az összes nem elérhető könyvet.</li>
+<li>String mostPopularAuthor() : Térjen vissza a legtöbb könyvvel rendelkező szerzővel.</li>
+<li>Map<String, List\<Book>> findAllBooksGroupedByGenre() : Térjen vissza a könyvekkel műfaj alapján csoportosítva.</li>
+<li>Map<String, List\<Book>> findAllBooksGroupedByAuthor() : Térjen vissza a könyvekkel szerző alapján csoportosítva.</li>
+<li>Map<Boolean, List\<Book>> findAllBooksGroupedByAuthor() : Térjen vissza a könyvekkel elérhetőség alapján csoportosítva.</li>
+<li>Map<String, Integer> authorsWithBookCount() : Térjen vissza a szerzők álltal írt könyvek számával.</li>
+</ul>
 
 
   
