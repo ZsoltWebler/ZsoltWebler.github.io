@@ -976,6 +976,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lejatszasi-listak" class="md-nav__link">
+    Lejátszási listák
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zenei-adok" class="md-nav__link">
     Zenei adók
   </a>
@@ -1080,6 +1087,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#lejatszasi-listak" class="md-nav__link">
+    Lejátszási listák
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#zenei-adok" class="md-nav__link">
     Zenei adók
   </a>
@@ -1133,6 +1147,7 @@ Erica Santiago e-mail címe, ERI_sa_2@webler.hu.</p>
 címet és ezt írd ki, az email.txt fájlba. Figyelj oda, hogy ne lehessen kettő egyforma e-mail cím.</p>
 <details class="note">
 <summary>nevek.txt</summary>
+</details>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Erick Santiago
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Tiffany Drake
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Camille Thornton
@@ -1234,7 +1249,6 @@ címet és ezt írd ki, az email.txt fájlba. Figyelj oda, hogy ne lehessen kett
 </span><span id="__span-0-99"><a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a>Alejandro Stephens
 </span><span id="__span-0-100"><a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a>Della Logan
 </span></code></pre></div>
-</details>
 <h2 id="fotokollekcio-oop">Fotókollekció - OOP</h2>
 <p>Írj egy <code>Photo</code> osztályt, melynek van egy neve és egy minősítése! Létre lehet hozni
 csak névvel, vagy névvel és minősítéssel. A minősítés egy <code>Quality</code> enum, hogy a felhasználó
@@ -1250,6 +1264,22 @@ egy saját kivétel, terjessze ki a <code>RuntimeException</code> osztályt!</p>
 <p>Írj egy <code>numberOfStars()</code> metódust, mely visszaadja, hogy a képeken összesen mennyi csillag van!
 Ha nincs minősítése, akkor 0 csillag. Ha a minősítése <code>Quality.ONE_STAR</code>, akkor egy csillaggal kell
 számolni. Ha a minősítése <code>Quality.TWO_STAR</code>, akkor két csillaggal kell számolni.</p>
+<h2 id="lejatszasi-listak">Lejátszási listák</h2>
+<p>Készítsünk egy <code>Song</code> osztályt, melynek az alábbi mezői vannak:</p>
+<ul>
+<li><code>String name</code></li>
+<li><code>long lengthInSeconds</code></li>
+<li><code>String artist</code></li>
+</ul>
+<p>A <code>Song</code> konstruktorában ellenőrizd, hogy a <code>name</code> és az <code>artist</code> üres-e! Dobj kivételt, ha igen! Ellenőrizd továbbá
+a <code>lengthInSeconds</code>-ot is, hogy nagyobb legyen, mint <code>0</code>!</p>
+<p>Készíts <code>toString</code>, <code>equals</code> és <code>hashCode</code> metódust a <code>Song</code> osztályhoz.</p>
+<p>Készítsünk egy <code>Playlist</code> osztályt, melynek van egy konstruktora, amiben <code>Song</code>-ok listáját fogadja el!
+Készíts egy <code>addSong</code> és <code>removeSong</code> metódust, melynek segítségével egy dalt lehet hozzáadni a lejátszási listához.
+Készíts egy metódust <code>findByLengthGreaterThan</code> néven, mely egy <code>int</code>-et vár paraméterként <code>mins</code> néven és
+azoknak a <code>Song</code>-oknak a listáját adjuk vissza, melyek hosszabbak percben (!), mint a <code>Song</code> <code>lengthInSeconds</code> mezője.
+Készíts egy <code>totalPlayTime</code> metódust ami kiírja a konzolra, hogy hány perc és másodperc a lejátszási lista hossza.</p>
+<p>Készíts <code>toString</code>, <code>equals</code> és <code>hashCode</code> metódust a <code>Playlist</code> osztályhoz.</p>
 <h2 id="zenei-adok">Zenei adók</h2>
 <p>A rádióhallgatás ma már egyre inkább zene vagy hírek hallgatására korlátozódik. Ez a feladat három, folyamatosan zenét
 sugárzó adóról szól, azok egyetlen napi műsorát feldolgozva.
