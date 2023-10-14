@@ -12,7 +12,7 @@
         <link rel="prev" href="../java_se_16/">
       
       
-        <link rel="next" href="../feladatok/">
+        <link rel="next" href="../java_se_17/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
@@ -876,10 +876,99 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-feladat" class="md-nav__link">
+    3. Feladat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zenei-adok" class="md-nav__link">
+    Zenei adók
+  </a>
+  
+    <nav class="md-nav" aria-label="Zenei adók">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-feladat" class="md-nav__link">
+    4. Feladat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+          Unit tesztelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_16">
+          <span class="md-nav__icon md-icon"></span>
+          Unit tesztelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_17/" class="md-nav__link">
+        Unit tesztelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_17_ex/" class="md-nav__link">
+        Unit tesztelés
+      </a>
     </li>
   
 
@@ -1051,6 +1140,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#3-feladat" class="md-nav__link">
+    3. Feladat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zenei-adok" class="md-nav__link">
+    Zenei adók
+  </a>
+  
+    <nav class="md-nav" aria-label="Zenei adók">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-feladat" class="md-nav__link">
+    4. Feladat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1113,6 +1229,61 @@
 <li>Térjen vissza egy táblával, amiben minden ProductsId tartalmazza, hogy mennyit rendeltek belőle összesen.</li>
 <li>Adja meg az 5 legkevesebbet rendelt Products nevét és hogy mennyit vettek belőle.</li>
 <li>Adja meg a 10 legnagyobb összértékű Order-t. (Quantity * Price)</li>
+</ul>
+<h3 id="3-feladat">3. Feladat</h3>
+<h2 id="zenei-adok">Zenei adók</h2>
+<p>A rádióhallgatás ma már egyre inkább zene vagy hírek hallgatására korlátozódik. Ez a feladat három, folyamatosan zenét
+sugárzó adóról szól, azok egyetlen napi műsorát feldolgozva.
+A reklám elkerülése érdekében az adókat nevük helyett egyetlen számmal azonosítottuk.
+A musor.txt állomány minden sora négy, egymástól egyetlen szóközzel elválasztott adatot
+tartalmaz: a rádió sorszámát, amit a szám hossza követ két egész szám
+(perc és másodperc) formában, majd a játszott szám azonosítója szerepel, ami a szám előadójából és címéből áll. A rádió
+sorszáma az 1, 2, 3 számok egyike. Az adás minden adón 0 óra
+0 perckor kezdődik. Egyik szám sem hosszabb 30 percnél, tehát a perc értéke legfeljebb 30, a
+másodperc pedig legfeljebb 59 lehet. A szám azonosítója legfeljebb 50 karakter hosszú, benne
+legfeljebb egy kettőspont szerepel, ami az előadó és a cím között található. A számok az elhangzás sorrendjében
+szerepelnek az állományban, tehát a később kezdődő szám későbbi sorban található. Az állományban minden zeneszám
+legfeljebb egyszer szerepel.</p>
+<p>Példa:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1 5 3 Deep Purple:Bad Attitude
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>2 3 36 Eric Clapton:Terraplane Blues
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>3 2 46 Eric Clapton:Crazy Country Hop
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>3 3 25 Omega:Ablakok
+</span></code></pre></div>
+<p>Olvasd be a <a href="../resources/musor.txt">musor.txt</a> file-t és oldd meg az alábbi feladatokat.</p>
+<ul>
+<li>Készíts egy <strong>Zeneszam</strong> osztályt és tárold el benne a szöveges file-ban tárolt sorokat.</li>
+<li>Készíts egy <strong>Radio</strong> osztályt és töltsd fel a Zeneszám objektumokkal.</li>
+<li>Készíts egy adatbázist amiben eltárolod a <strong>Zeneszám</strong> és <strong>Rádió</strong> objektumokat.</li>
+<li>Az adatbázisban található adatok felhasználásával oldd meg az alábbi feladatokat.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, hogy az adott rádió hány percni zenét játszott aznap.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, hogy az adott rádió hány darab zenét játszott.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, a leghosszabb zeneszámmal.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, a legrövidebb zeneszámmal.</li>
+<li>Készíts a Rádió osztályba egy metódust ami visszatér, a legtöbbet játszott előadóval.</li>
+<li>Készíts a Rádió osztályba egy metódust ami paraméterben kap egy óra és perc értéket és visszatér az éppen játszott
+  zeneszámmal.</li>
+<li>Készíts a Rádió osztályba egy metódust ami paraméterben kap egy előadót és visszatér az általa játszott számokkal.</li>
+</ul>
+<h3 id="4-feladat">4. Feladat</h3>
+<p>Készíts egy könyv osztályt az alábbi attribútumokkal:</p>
+<ul>
+<li><strong>Book:</strong> Egy könyvet reprezentál a könyvtárban.<ul>
+<li><strong>String</strong> isbn - A könyv ISBN kódja. Egyedinek kell lennie.</li>
+<li><strong>String</strong> title - A könyv címe.</li>
+<li><strong>String</strong> author - A könyv szerzője.</li>
+<li><strong>String</strong> genre - A könyv műfaja.</li>
+<li><strong>boolean</strong> available - Elérhető-e a könyv.</li>
+</ul>
+</li>
+</ul>
+<p>Olvasd be az alábbi <a href="../resources/books.csv">books.csv</a> fájlt és készíts egy adatbázist az adatok tárolására.</p>
+<p>Adatbázis lekérdezések segítségével oldd meg az alábbi feladatokat:</p>
+<ul>
+<li>Készíts egy metódust ami az írók listájával tér vissza, minden író csak egyszer szerepelhet benne.</li>
+<li>Készíts egy metódust ami egy ISBN kód alapján visszatér az adott könyvvel.</li>
+<li>Készíts egy metódust ami egy író alapján visszaadja az általa írt könyveket.</li>
+<li>Készíts egy metódust ami kilistázza az elérhető könyvelet.</li>
 </ul>
 
 
