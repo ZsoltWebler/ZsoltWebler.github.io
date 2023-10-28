@@ -12,7 +12,7 @@
         <link rel="prev" href="../java_se_17/">
       
       
-        <link rel="next" href="../feladatok/">
+        <link rel="next" href="../java_se_18/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
@@ -945,10 +945,65 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#4-feladat" class="md-nav__link">
+    4. feladat
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+          Projektkezelő keretrendszerek
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          Projektkezelő keretrendszerek
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_18/" class="md-nav__link">
+        Projektkezelő keretrendszerek
+      </a>
     </li>
   
 
@@ -1067,6 +1122,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok_interju/" class="md-nav__link">
+        Interjú feladatok
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1123,6 +1192,13 @@
         <li class="md-nav__item">
   <a href="#3-feladat" class="md-nav__link">
     3. feladat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-feladat" class="md-nav__link">
+    4. feladat
   </a>
   
 </li>
@@ -1199,6 +1275,27 @@
 </ul>
 <p>Tervezd meg az alkalmazást, amely képes 4 különböző nehézségű jelszót generálni. A jelszavak hossza állítható lehessen.</p>
 <p>Készíts teszteket a <code>PasswordGenerator</code> osztály metódusaihoz.</p>
+<h3 id="4-feladat">4. feladat</h3>
+<p>Implementáld a hiányzó metódusokat a <code>Utilities</code> osztályban, majd készíts egy <code>UtilitiesTest</code> osztályt, ahol teszteled
+az elkészült metódusokat.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Utilities</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="c1">// Visszater egy Stringgel ami minden n-ik karaktert tartalmazza.</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="c1">// Ha a sourceString hossza &lt; n, terjen vissza a sourceString-el.</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">everyNthChar</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">sourceString</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="c1">// Eltavolitja az egymas utan szereplo karaktereket, ha tobb mint </span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="c1">// egyszer szerepelnek egymas utan es csak egyet hagy meg.</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="c1">// &quot;ABBCDEEEF&quot; -&gt; &quot;ABCDEF&quot;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="c1">// &quot;ABCBDEEF&quot; -&gt; &quot;ABCBDEF&quot;</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">removePairs</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">source</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">}</span>
+</span></code></pre></div>
 
 
   

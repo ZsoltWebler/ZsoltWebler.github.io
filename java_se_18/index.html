@@ -1,0 +1,1676 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../java_se_17_ex/">
+      
+      
+        <link rel="next" href="../feladatok/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Projektkezelő keretrendszerek - Junior Java Backend jegyzet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-8SP4S5V9VB"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-8SP4S5V9VB",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-8SP4S5V9VB",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projektkezelo-keretrendszerek" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-header__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Junior Java Backend jegyzet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projektkezelő keretrendszerek
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-nav__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Junior Java Backend jegyzet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Bevezető
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Gyakorlati anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gyakorlati anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_1/" class="md-nav__link">
+        Java alapok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_4_5/" class="md-nav__link">
+        Konzol io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5/" class="md-nav__link">
+        Öröklődés az objektum orientált programozásban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5_5/" class="md-nav__link">
+        Java Enum típus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_6/" class="md-nav__link">
+        Hibakezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Java IO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Java IO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_7/" class="md-nav__link">
+        Java IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_7_ex/" class="md-nav__link">
+        Java IO gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Absztrakt osztályok és interfészek
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Absztrakt osztályok és interfészek
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_1/" class="md-nav__link">
+        Absztrakt osztályok és interfészek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_1_ex/" class="md-nav__link">
+        Absztrakt osztályok és interfészek gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_2/" class="md-nav__link">
+        Generikus típusok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+          Java Collection Framework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Java Collection Framework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_3/" class="md-nav__link">
+        Java Collection Framework
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_3_ex/" class="md-nav__link">
+        Java Collection Framework gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_11/" class="md-nav__link">
+        Verziókezelő rendszerek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+          Java Swing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Java Swing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_12/" class="md-nav__link">
+        Java Swing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_12_ex/" class="md-nav__link">
+        Java Swing gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          String és Date
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          String és Date
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_13_string/" class="md-nav__link">
+        String
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_13_date/" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_13_ex/" class="md-nav__link">
+        String és Date gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+          Java Szálkezelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          Java Szálkezelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_14/" class="md-nav__link">
+        Java Szálkezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_14_ex/" class="md-nav__link">
+        Java Szálkezelés gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+          Java funkcionális programozás
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_14">
+          <span class="md-nav__icon md-icon"></span>
+          Java funkcionális programozás
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_15/" class="md-nav__link">
+        Java funkcionális programozás
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_15_ex/" class="md-nav__link">
+        Java funkcionális programozás
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+          Adatbáziskezelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_15">
+          <span class="md-nav__icon md-icon"></span>
+          Adatbáziskezelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_16/" class="md-nav__link">
+        Adatbáziskezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_16_ex/" class="md-nav__link">
+        Adatbáziskezelés
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+          Unit tesztelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_16">
+          <span class="md-nav__icon md-icon"></span>
+          Unit tesztelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_17/" class="md-nav__link">
+        Unit tesztelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_17_ex/" class="md-nav__link">
+        Unit tesztelés
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+          Projektkezelő keretrendszerek
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          Projektkezelő keretrendszerek
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Projektkezelő keretrendszerek
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Projektkezelő keretrendszerek
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    CI/CD
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-integration" class="md-nav__link">
+    Continuous Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-deploymentdelivery" class="md-nav__link">
+    Continuous Deployment/Delivery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szoftverfejlesztesi-modszertanok" class="md-nav__link">
+    Szoftverfejlesztési módszertanok
+  </a>
+  
+    <nav class="md-nav" aria-label="Szoftverfejlesztési módszertanok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vizeseses-szoftverfejlesztesi-modell" class="md-nav__link">
+    Vízeséses szoftverfejlesztési modell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agilis-szoftverfejlesztesi-modell" class="md-nav__link">
+    Agilis szoftverfejlesztési modell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-tools" class="md-nav__link">
+    Build Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ant" class="md-nav__link">
+    Ant
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maven_1" class="md-nav__link">
+    Maven
+  </a>
+  
+    <nav class="md-nav" aria-label="Maven">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pomxml" class="md-nav__link">
+    POM.XML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-parancsok" class="md-nav__link">
+    Maven parancsok
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Extra anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extra anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Gyakorló feladatok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Gyakorló feladatok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok/" class="md-nav__link">
+        OOP gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok_2/" class="md-nav__link">
+        Vegyes gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok_alg/" class="md-nav__link">
+        Algoritmizálós feladatok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok_interju/" class="md-nav__link">
+        Interjú feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bevezetes" class="md-nav__link">
+    Bevezetés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    CI/CD
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#continuous-integration" class="md-nav__link">
+    Continuous Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continuous-deploymentdelivery" class="md-nav__link">
+    Continuous Deployment/Delivery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#szoftverfejlesztesi-modszertanok" class="md-nav__link">
+    Szoftverfejlesztési módszertanok
+  </a>
+  
+    <nav class="md-nav" aria-label="Szoftverfejlesztési módszertanok">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vizeseses-szoftverfejlesztesi-modell" class="md-nav__link">
+    Vízeséses szoftverfejlesztési modell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agilis-szoftverfejlesztesi-modell" class="md-nav__link">
+    Agilis szoftverfejlesztési modell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-tools" class="md-nav__link">
+    Build Tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Build Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maven" class="md-nav__link">
+    Maven
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    Gradle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ant" class="md-nav__link">
+    Ant
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#maven_1" class="md-nav__link">
+    Maven
+  </a>
+  
+    <nav class="md-nav" aria-label="Maven">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pomxml" class="md-nav__link">
+    POM.XML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maven-parancsok" class="md-nav__link">
+    Maven parancsok
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="projektkezelo-keretrendszerek">Projektkezelő keretrendszerek</h1>
+<h2 id="bevezetes">Bevezetés</h2>
+<p>A szoftverfejlesztési folyamat dinamikus és összetett természete számos kihívást rejt magában. A modern
+szoftverfejlesztési projektek sikerének kulcsa gyakran a hatékony és megbízható projektkezelő rendszerek használatában
+rejlik. Ezek a rendszerek biztosítják, hogy a fejlesztőcsapatok koherensen és hatékonyan működjenek, miközben lehetővé
+teszik a projekt egészének átláthatóságát és karbantarthatóságát.</p>
+<h2 id="cicd">CI/CD</h2>
+<p>A Continuous Integration (CI) és Continuous Deployment/Delivery (CD) rendszerek a
+szoftverfejlesztés alappillérei, amelyek lehetővé teszik a fejlesztők számára, hogy gyorsan és hatékonyan reagáljanak a
+piaci igényekre és visszajelzésekre.</p>
+<h3 id="continuous-integration">Continuous Integration</h3>
+<p>A Continuous Integration (CI) a szoftverfejlesztési folyamat egy alapvető része, amely lehetővé teszi a fejlesztőknek,
+hogy rendszeresen és automatikusan integrálják kódkötegeiket egy központi kódbázisba. A CI folyamat lényege, hogy a
+fejlesztők által végzett kódmódosításokat folyamatosan ellenőrizzék és integrálják a fő verziókezelő rendszerbe, ezáltal
+minimalizálva az integrációs konfliktusokat és hibákat.</p>
+<p>Continuous Integration folyamat lépései általában a következők:</p>
+<ol>
+<li><strong>Kódírás</strong>: A fejlesztők új funkciókat vagy hibajavításokat végeznek a projekt kódbázisában.</li>
+<li><strong>Verziókezelési rendszerbe történő feltöltés</strong>: A fejlesztők feltöltik a kódot a verziókezelő rendszerbe, például
+   Git-be vagy a SVN-be.</li>
+<li><strong>Automatikus build folyamat</strong>: A CI szerver figyeli a verziókezelő rendszerben történt változtatásokat, és
+   automatikusan elindítja a build folyamatot, amely magában foglalja a kód fordítását és a tesztek végrehajtását.</li>
+<li><strong>Tesztelés</strong>: A CI szerver automatikusan végrehajtja a különböző teszteket, mint például az egységtesztek vagy az
+   integrációs tesztek, hogy biztosítsa a kód minőségét és stabilitását.</li>
+<li><strong>Visszajelzés</strong>: A CI szerver visszajelzést ad a fejlesztőknek a build folyamat eredményeiről, beleértve a sikeres
+   vagy sikertelen buildet, valamint a különböző tesztek eredményeit.</li>
+<li><strong>Hibák azonosítása és javítása</strong>: Amennyiben a tesztek hibákat találnak, a fejlesztők azonnal módosíthatják a kódot
+   és újra küldhetik a verziókezelő rendszerbe.</li>
+</ol>
+<p>A Continuous Integration gyakorlatának célja a gyakori és automatikus visszajelzés biztosítása a fejlesztők számára,
+lehetővé téve számukra, hogy gyorsan azonosítsák és kijavítsák a hibákat, mielőtt azok a fejlesztési folyamat további
+szakaszaiba jutnának. Ezzel javítja a fejlesztés sebességét és minőségét, miközben minimalizálja a hibák és konfliktusok
+későbbi felmerülését a fejlesztési életciklusban.</p>
+<h3 id="continuous-deploymentdelivery">Continuous Deployment/Delivery</h3>
+<p>A Continuous Deployment és Continuous Delivery olyan folyamatok, amelyek lehetővé teszik a fejlesztők és a
+fejlesztőcsapatok számára, hogy gyorsan és hatékonyan kiadják és szállítsák a szoftvertermékeket a kiadási
+környezetbe.</p>
+<ul>
+<li><strong>Continuous Deployment</strong>: A Continuous Deployment folyamat során a kód minden sikeres CI build után automatikusan és
+  azonnal kiadásra kerül valemilyen környezetbe. Ez azt jelenti, hogy minden kódmódosítás rögtön elérhető lesz a
+  felhasználók számára. Ez a folyamat különösen hasznos agilis fejlesztési környezetekben, ahol a gyors visszacsatolás
+  és a gyors termékkiadás kulcsfontosságú.</li>
+<li><strong>Continuous Delivery</strong>: A Continuous Delivery folyamat során a szoftvertermék automatikusan elkészül a kiadásra,
+  azonban annak a tényleges kiadása manuálisan történik. Ez lehetővé teszi a fejlesztők számára, hogy ellenőrizzék és
+  jóváhagyják a termék kiadását mielőtt az eljut a felhasználókhoz. Ezáltal a folyamat nagyobb ellenőrzést és
+  rugalmasságot biztosít a termék kiadási folyamatában.</li>
+</ul>
+<h2 id="szoftverfejlesztesi-modszertanok">Szoftverfejlesztési módszertanok</h2>
+<p>A szoftverfejlesztési folyamat során alkalmazott különböző módszertanok és megközelítések széles skálája lehetővé teszi
+a fejlesztők és csapatok számára, hogy hatékonyan és eredményesen hozzanak létre szoftvertermékeket. Két ilyen
+meghatározó megközelítés a vízesés és az agilis szoftverfejlesztési módszertan, melyek alapvetően különböznek egymástól
+a tervezési és végrehajtási folyamatok szempontjából.</p>
+<h3 id="vizeseses-szoftverfejlesztesi-modell">Vízeséses szoftverfejlesztési modell</h3>
+<p>A vízeséses szoftverfejlesztési modell az egyik hagyományos és lineáris fejlesztési módszer, amelyben a fejlesztési
+folyamat szigorúan előre meghatározott lépésekre oszlik, és egy adott fázis befejezése után indul csak el a következő
+fázis. A folyamat lépései általában a következők:</p>
+<ol>
+<li><strong>Követelmények meghatározása</strong>: A projekt kezdeti fázisában a követelményeket részletesen meghatározzák és
+   dokumentálják.</li>
+<li><strong>Tervezés</strong>: A fejlesztők terveket készítenek a termék architektúrájáról és a tervezési részletekről.</li>
+<li><strong>Implementáció</strong>: Az elkészített tervek alapján a fejlesztők megvalósítják a terméket.</li>
+<li><strong>Tesztelés</strong>: Az elkészült terméket alaposan tesztelik, hogy ellenőrizzék a követelményeknek való megfelelést.</li>
+<li><strong>Telepítés</strong>: A tesztelés után a terméket telepítik és kiadják a felhasználók számára.</li>
+</ol>
+<p>A vízeséses modell erőssége a szigorú fázisok és dokumentáció, amelyek segítségével a projektek jobban tervezhetők és
+kezelhetők. Azonban a modell rugalmatlansága miatt nehezebb reagálni a változó ügyfélkövetelményekre és piaci
+változásokra.</p>
+<h3 id="agilis-szoftverfejlesztesi-modell">Agilis szoftverfejlesztési modell</h3>
+<p>z agilis szoftverfejlesztési modell egy rugalmasabb és iteratív megközelítést alkalmaz a fejlesztési folyamat során. Az
+agilis módszer lényege, hogy az egyes fejlesztési ciklusok rövidebb időközönként történnek, és a fejlesztési csapatok
+gyorsan alkalmazkodnak az ügyfélvisszajelzések és piaci változásokhoz.</p>
+<p>Az agilis fejlesztési folyamat lépései általában a következők:</p>
+<ol>
+<li><strong>Követelmények prioritizálása</strong>: A fejlesztés kezdetén a legfontosabb ügyfélkövetelményeket határozzák meg.</li>
+<li><strong>Iteratív fejlesztés</strong>: A fejlesztés kisebb iterációkra oszlik, amelyekben a fejlesztők rendszeresen tesztelik és
+   visszajelzéseket kapnak.</li>
+<li><strong>Rugalmas tervezés</strong>: Az agilis csapatok rugalmasan alkalmazkodnak a változó ügyfélkövetelményekhez és az új
+   visszajelzésekhez.</li>
+<li><strong>Folyamatos tesztelés és visszajelzés</strong>: A termék fejlesztése és tesztelése párhuzamosan történik, és a
+   visszajelzéseket gyorsan beépítik a fejlesztésbe.</li>
+</ol>
+<p>Az agilis fejlesztési modell előnyei közé tartozik a gyors reakcióképesség, a gyors termékkiadás és a rugalmas tervezés,
+amely lehetővé teszi a termék folyamatos fejlesztését és javítását az ügyfelek igényeinek és visszajelzéseinek
+megfelelően.</p>
+<h2 id="build-tools">Build Tools</h2>
+<p>A build tool-ok elengedhetetlenek a hatékony és jól strukturált szoftverfejlesztési folyamatokhoz.</p>
+<ol>
+<li><strong>Projektstruktúra kezelése</strong>: A build tool-ok lehetővé teszik a fejlesztők számára a projektstruktúra könnyű és
+   hatékony kezelését. A megfelelő projektstruktúra és a moduláris felépítés segít a kód átláthatóságának és
+   karbantarthatóságának növelésében.</li>
+<li><strong>Függőségek kezelése</strong>: A build tool-ok segítségével könnyedén kezelhetők és verziókezelhetők a projekt függőségei,
+   beleértve a külső könyvtárakat, modulokat és más komponenseket. Ez lehetővé teszi a függőségek hatékony kezelését és
+   a projekt széles körű testreszabhatóságát.</li>
+<li><strong>Build folyamat automatizálása</strong>: A build tool-ok automatizálják a build folyamatokat, beleértve a forráskód
+   fordítását, a tesztelést, a csomagolást és a telepítést. Ezáltal minimalizálják az emberi beavatkozás szükségességét,
+   növelik a fejlesztés sebességét és csökkentik a hibák lehetőségét.</li>
+<li><strong>Rugalmas konfiguráció</strong>: A build tool-ok rugalmas konfigurációs lehetőségeket kínálnak a fejlesztőknek, amelyek
+   lehetővé teszik számukra, hogy testreszabják a build folyamatokat a projekt igényeinek és követelményeinek
+   megfelelően. Ez lehetővé teszi a testreszabott és optimalizált build folyamatok létrehozását.</li>
+<li><strong>Build verziókezelés</strong>: A build tool-ok lehetővé teszik a build verziókezelését, ami kulcsfontosságú a verziók
+   kezelésében és az alkalmazások kiadásában. Ez segít a stabil és megbízható kiadások biztosításában, valamint a könnyű
+   visszalépésben az előző verziókhoz.</li>
+</ol>
+<h3 id="maven">Maven</h3>
+<p>A Maven egy hatékony és jól ismert build eszköz a Java projektek számára, amely lehetővé teszi a fejlesztők számára a
+projektstruktúra egyszerű kezelését és a függőségek hatékony kezelését. A pom.xml (Project Object Model) fájl
+segítségével könnyedén definiálhatók a projekt függőségei, a build folyamat lépései, valamint a tesztek és az
+alkalmazások futtatása.</p>
+<h3 id="gradle">Gradle</h3>
+<p>A Gradle egy rugalmas és testreszabható build eszköz, amelyet a Java és más JVM alapú projektek fejlesztéséhez
+használnak. A Gradle lehetővé teszi a fejlesztők számára testreszabott build folyamatok létrehozását és kezelését,
+valamint a függőségek hatékony menedzselését. A build.gradle fájlban definiálhatók a projekt konfigurációs beállításai
+és a különböző pluginok integrálása.</p>
+<h3 id="ant">Ant</h3>
+<p>Az Ant egy további népszerű build eszköz, amelyet széles körben használnak a Java projektek fejlesztésében. Az Ant
+lehetővé teszi a fejlesztők számára a build folyamatok testreszabását és az automatizált feladatok hatékony kezelését.
+Az XML alapú build scriptek segítségével könnyedén kezelhetők a projekt függőségei és a különböző build lépések és
+feladatok.</p>
+<figure>
+<p><img alt="" src="../img/img_39.png" width="600" /></p>
+</figure>
+<h2 id="maven_1">Maven</h2>
+<p>A Maven egy nyílt forráskódú build eszköz, amelyet széles körben használnak a Java projektek fejlesztéséhez és
+menedzseléséhez. A Maven projekt alapvető eleme a POM (Project Object Model), amely XML formátumban tartalmazza a
+projekt leírását, a függőségeket, a build beállításokat és egyéb konfigurációs információkat. A Maven számos fontos
+funkciót kínál a szoftverfejlesztési folyamatok támogatásához:</p>
+<ol>
+<li><strong>Projektstruktúra kezelése</strong>: A Maven lehetővé teszi a fejlesztők számára a könnyű és jól strukturált
+   projektstruktúra kezelését a konzisztens fejlesztési folyamatok biztosítása érdekében.</li>
+<li><strong>Függőségek kezelése</strong>: A Maven lehetővé teszi a függőségek egyszerű kezelését és menedzselését a POM fájlban
+   definiált függőségi bejegyzések segítségével. A függőségek automatikusan letöltődnek az internetről vagy a helyi
+   tárolókból.</li>
+<li><strong>Build folyamat automatizálása</strong>: A Maven lehetővé teszi a build folyamatok automatizálását a POM fájlban definiált
+   fázisok és célok segítségével. A Maven beépített fázisokat biztosít a projekt fordításához, teszteléséhez,
+   csomagolásához, telepítéséhez és egyéb feladatokhoz.</li>
+<li><strong>Pluginok támogatása</strong>: A Maven széles körű plugin támogatást kínál, amely lehetővé teszi a fejlesztők számára a
+   különböző bővítmények és funkciók integrálását a build folyamatokba.</li>
+<li><strong>Tesztelés és riportolás</strong>: A Maven beépített támogatást nyújt a különböző tesztek futtatásához és a tesztelési
+   riportok generálásához, amelyek segítenek az alkalmazások minőségének és stabilitásának ellenőrzésében.</li>
+<li><strong>Kiadások kezelése</strong>: A Maven lehetővé teszi a kiadások és verziók hatékony kezelését, amely segít a stabil és
+   megbízható alkalmazások kiadásában.</li>
+</ol>
+<p>A Maven átfogó eszközkészletet biztosít a projektstruktúra kezeléséhez, a függőségek menedzseléséhez és a hatékony build
+folyamatok automatizálásához Java alapú projektjeidben. A kiterjedt dokumentáció és a széles körben elérhető pluginok
+lehetővé teszik a fejlesztők számára, hogy hatékonyan és megbízhatóan dolgozzanak a Maven-nel a projektjeik
+fejlesztésében.</p>
+<h3 id="pomxml">POM.XML</h3>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://maven.apache.org/POM/4.0.0 </span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s">         http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>com.example<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>my-app<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">    </span><span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>My<span class="w"> </span>App<span class="nt">&lt;/name&gt;</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">&lt;description&gt;</span>Sample<span class="w"> </span>Maven<span class="w"> </span>project<span class="nt">&lt;/description&gt;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">        </span><span class="nt">&lt;maven.compiler.source&gt;</span>1.8<span class="nt">&lt;/maven.compiler.source&gt;</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">        </span><span class="nt">&lt;maven.compiler.target&gt;</span>1.8<span class="nt">&lt;/maven.compiler.target&gt;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">    </span><span class="nt">&lt;dependencies&gt;</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">        </span><span class="nt">&lt;dependency&gt;</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">            </span><span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">            </span><span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">            </span><span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">            </span><span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="nt">&lt;/dependency&gt;</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">    </span><span class="nt">&lt;/dependencies&gt;</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">    </span><span class="nt">&lt;build&gt;</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>3.8.1<span class="nt">&lt;/version&gt;</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">                    </span><span class="nt">&lt;source&gt;</span>1.8<span class="nt">&lt;/source&gt;</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">                    </span><span class="nt">&lt;target&gt;</span>1.8<span class="nt">&lt;/target&gt;</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="nt">&lt;/project&gt;</span>
+</span></code></pre></div>
+<ol>
+<li><strong>modelVersion</strong>: A POM model verziója, amelyet mindig a "4.0.0" értékre kell állítani.</li>
+<li><strong>groupId</strong>: A projekt csoport azonosítója, amely általában a vállalati domain nevéből és/vagy a projekt nevéből származik.</li>
+<li><strong>artifactId</strong>: A projekt művészeti azonosítója, amely az adott projektet egyedileg azonosítja a csoporton belül.</li>
+<li><strong>version</strong>: A projekt verziószáma, amely az adott kiadást vagy verziót jelöli.</li>
+<li><strong>packaging</strong>: A projekt csomagolási típusa, például "jar", "war" vagy "pom".</li>
+<li><strong>name</strong>: A projekt neve vagy címe.</li>
+<li><strong>description</strong>: A projekt rövid leírása vagy célja.</li>
+<li><strong>properties</strong>: A konfigurációs tulajdonságok, például a karakterkódolás és a fordítási célok.</li>
+<li><strong>dependencies</strong>: A projekt függőségei, amelyek más külső könyvtárak vagy modulok.</li>
+<li><strong>build</strong>: A build folyamat beállításai és pluginjai, például a fordító pluginok és konfigurációs beállítások.</li>
+</ol>
+<h3 id="maven-parancsok">Maven parancsok</h3>
+<div class="language-shell highlight"><span class="filename">Maven projekt létrehozása</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span>archetype:generate<span class="w"> </span>-DgroupId<span class="o">=</span>com.mycompany.app<span class="w"> </span>-DartifactId<span class="o">=</span>my-app<span class="w"> </span>-DarchetypeArtifactId<span class="o">=</span>maven-archetype-quickstart<span class="w"> </span>-DinteractiveMode<span class="o">=</span><span class="nb">false</span>
+</span></code></pre></div>
+<hr />
+<div class="language-shell highlight"><span class="filename">A projekt buildelése</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install
+</span></code></pre></div>
+<hr />
+<div class="language-shell highlight"><span class="filename">A függőségek letöltése</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn<span class="w"> </span>dependency:resolve
+</span></code></pre></div>
+<hr />
+<div class="language-shell highlight"><span class="filename">A tesztek futtatása</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn<span class="w"> </span><span class="nb">test</span>
+</span></code></pre></div>
+<hr />
+<div class="language-shell highlight"><span class="filename">A Maven verziójának ellenőrzése</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mvn<span class="w"> </span>-v
+</span></code></pre></div>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  </body>
+</html>
