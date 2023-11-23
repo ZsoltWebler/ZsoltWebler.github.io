@@ -1158,6 +1158,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jump-game" class="md-nav__link">
+    Jump Game
+  </a>
+  
+    <nav class="md-nav" aria-label="Jump Game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelda-1_2" class="md-nav__link">
+    Példa 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda-2_2" class="md-nav__link">
+    Példa 2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h-index" class="md-nav__link">
+    H-index
+  </a>
+  
+    <nav class="md-nav" aria-label="H-index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelda-1_3" class="md-nav__link">
+    Példa 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda-2_3" class="md-nav__link">
+    Példa 2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1267,6 +1321,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#jump-game" class="md-nav__link">
+    Jump Game
+  </a>
+  
+    <nav class="md-nav" aria-label="Jump Game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelda-1_2" class="md-nav__link">
+    Példa 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda-2_2" class="md-nav__link">
+    Példa 2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h-index" class="md-nav__link">
+    H-index
+  </a>
+  
+    <nav class="md-nav" aria-label="H-index">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pelda-1_3" class="md-nav__link">
+    Példa 1:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pelda-2_3" class="md-nav__link">
+    Példa 2:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1328,6 +1436,55 @@
 <li><strong>Input</strong>: nums1 = [1,2], nums2 = [3,4]</li>
 <li><strong>Output</strong>: 2.50000</li>
 <li><strong>Magyarázat</strong>: Az összekapcsolt tömb = [1,2,3,4] és a medián (2 + 3) / 2 = 2.5.</li>
+</ul>
+<h2 id="jump-game">Jump Game</h2>
+<p>Adott számok egy tömbje. A tömb minden eleme azt az értékét tárolja, hogy az adott pozícióról maximum mekkorát
+ugorhatsz. Kezdetben a tömb első elemén ( 0. index) vagy. Készíts egy metódust, ami igazzal tér vissza, ha el tudsz
+ugrálni az utolsó elemig.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">canJump</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h5 id="pelda-1_2">Példa 1:</h5>
+<ul>
+<li><strong>Input</strong>: nums = [2,3,1,1,4]</li>
+<li><strong>Output</strong>: True</li>
+<li><strong>Magyarázat</strong>: Ugorj egyet, a 0. indexről az 1. indexre, majd 3 at és tömb végén vagy.</li>
+</ul>
+<h5 id="pelda-2_2">Példa 2:</h5>
+<ul>
+<li><strong>Input</strong>: nums = [3,2,1,0,4]</li>
+<li><strong>Output</strong>: False</li>
+<li><strong>Magyarázat</strong>: Bárhogy is ugrálsz a 3. indexű elemre fogsz érkezni a 0. indexről, ahonnan viszont nem tudsz
+  továbbjutni.</li>
+</ul>
+<h2 id="h-index">H-index</h2>
+<p>Adott számoknak egy tömbje ami az adott szerző cikkjeire kapott hivatkozásokat tartalmazza. A tömb <code>i</code>.-eik eleme,
+az <code>i</code>.-eik cikkjére kapott hivatkozások számát tartalmazza. Számítsd ki a tömb alapján a szerző <em>h</em>-indexét.</p>
+<div class="admonition quote">
+<p class="admonition-title">H-index</p>
+<p>Egy kutató indexe <em>h</em>, ha legalább <em>h</em> darab olyan cikke van, ami legalább <em>h</em> idézetet kapott (vagyis a többi cikkei ennél
+kevesebbet kaptak).</p>
+</div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">hIndex</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">citations</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<h5 id="pelda-1_3">Példa 1:</h5>
+<ul>
+<li><strong>Input</strong>: citations = [3,0,6,1,5]</li>
+<li><strong>Output</strong>: 3</li>
+<li><strong>Magyarázat</strong>: Mivel van 3 cikke, ami legalább 3 hivatkozást kapott így a <em>h</em> indexe 3.</li>
+</ul>
+<h5 id="pelda-2_3">Példa 2:</h5>
+<ul>
+<li><strong>Input</strong>: citations = [1,3,1]</li>
+<li><strong>Output</strong>: 1</li>
+<li><strong>Magyarázat</strong>: Mivel van 2 cikke ami 1 hivatkozást kapott, ezért a <em>h</em> indexe 1.</li>
 </ul>
 
 
