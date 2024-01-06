@@ -1,0 +1,1773 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../feladatok_interju/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.19">
+    
+    
+      
+        <title>Projekt feladatok - Junior Java Backend jegyzet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-8SP4S5V9VB"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-8SP4S5V9VB",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-8SP4S5V9VB",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projekt-feladatok" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-header__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Junior Java Backend jegyzet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projekt feladatok
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Junior Java Backend jegyzet" class="md-nav__button md-logo" aria-label="Junior Java Backend jegyzet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Junior Java Backend jegyzet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Bevezető
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Gyakorlati anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Gyakorlati anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_1/" class="md-nav__link">
+        Java alapok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_4_5/" class="md-nav__link">
+        Konzol io
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5/" class="md-nav__link">
+        Öröklődés az objektum orientált programozásban
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_5_5/" class="md-nav__link">
+        Java Enum típus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_6/" class="md-nav__link">
+        Hibakezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Java IO
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Java IO
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_7/" class="md-nav__link">
+        Java IO
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_7_ex/" class="md-nav__link">
+        Java IO gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Absztrakt osztályok és interfészek
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_7">
+          <span class="md-nav__icon md-icon"></span>
+          Absztrakt osztályok és interfészek
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_1/" class="md-nav__link">
+        Absztrakt osztályok és interfészek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_1_ex/" class="md-nav__link">
+        Absztrakt osztályok és interfészek gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_2/" class="md-nav__link">
+        Generikus típusok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+          Java Collection Framework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_9">
+          <span class="md-nav__icon md-icon"></span>
+          Java Collection Framework
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_3/" class="md-nav__link">
+        Java Collection Framework
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_8_3_ex/" class="md-nav__link">
+        Java Collection Framework gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_11/" class="md-nav__link">
+        Verziókezelő rendszerek
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+          Java Swing
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_11">
+          <span class="md-nav__icon md-icon"></span>
+          Java Swing
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_12/" class="md-nav__link">
+        Java Swing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_12_ex/" class="md-nav__link">
+        Java Swing gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          String és Date
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_12">
+          <span class="md-nav__icon md-icon"></span>
+          String és Date
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_13_string/" class="md-nav__link">
+        String
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_13_date/" class="md-nav__link">
+        Date
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_13_ex/" class="md-nav__link">
+        String és Date gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_13" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+          Java Szálkezelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_13_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_13">
+          <span class="md-nav__icon md-icon"></span>
+          Java Szálkezelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_14/" class="md-nav__link">
+        Java Szálkezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_14_ex/" class="md-nav__link">
+        Java Szálkezelés gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_14" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+          Java funkcionális programozás
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_14_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_14">
+          <span class="md-nav__icon md-icon"></span>
+          Java funkcionális programozás
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_15/" class="md-nav__link">
+        Java funkcionális programozás
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_15_ex/" class="md-nav__link">
+        Java funkcionális programozás
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_15" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+          Adatbáziskezelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_15_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_15">
+          <span class="md-nav__icon md-icon"></span>
+          Adatbáziskezelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_16/" class="md-nav__link">
+        Adatbáziskezelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_16_ex/" class="md-nav__link">
+        Adatbáziskezelés
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_16" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+          Unit tesztelés
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_16_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_16">
+          <span class="md-nav__icon md-icon"></span>
+          Unit tesztelés
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_17/" class="md-nav__link">
+        Unit tesztelés
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_17_ex/" class="md-nav__link">
+        Unit tesztelés
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_17" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+          Projektkezelő keretrendszerek
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_17_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_17">
+          <span class="md-nav__icon md-icon"></span>
+          Projektkezelő keretrendszerek
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../java_se_18/" class="md-nav__link">
+        Projektkezelő keretrendszerek
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Extra anyagok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Extra anyagok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          Gyakorló feladatok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          Gyakorló feladatok
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok/" class="md-nav__link">
+        OOP gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok_2/" class="md-nav__link">
+        Vegyes gyakorló feladatok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok_alg/" class="md-nav__link">
+        Algoritmizálós feladatok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../feladatok_interju/" class="md-nav__link">
+        Interjú feladatok
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Projekt feladatok
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Projekt feladatok
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tarsas" class="md-nav__link">
+    Társas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rgb-szinek" class="md-nav__link">
+    RGB színek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jelado" class="md-nav__link">
+    Jeladó
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epitmenyado" class="md-nav__link">
+    Építményadó
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudoku" class="md-nav__link">
+    Sudoku
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tarsas" class="md-nav__link">
+    Társas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rgb-szinek" class="md-nav__link">
+    RGB színek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jelado" class="md-nav__link">
+    Jeladó
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#epitmenyado" class="md-nav__link">
+    Építményadó
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudoku" class="md-nav__link">
+    Sudoku
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="projekt-feladatok">Projekt feladatok</h1>
+<h2 id="tarsas">Társas</h2>
+<p>Mi sem izgalmasabb a gyerekeknek, mint a nagyszülők szekrényeiben való kutakodás. Egy ilyen
+alkalommal az öt unoka egy régi dobozra bukkant. A doboz egy társasjáték kellékeit rejtette: a játék
+tábláját, egy dobókockát és hat különböző színű, lúd formájú bábut. A táblán több ösvényen lehet
+eljuttatni a ludat az itatóhoz. A játékosok a kezdés előtt kiválasztják a közös ösvényt, amelyen
+haladni fognak.</p>
+<p>A ludak annyi mezőt ugorhatnak előre, amennyit a játékosok dobnak a kockával.
+Az ösvényen lehetnek különleges mezők, amelyekre érkezve:</p>
+<ul>
+<li>a lúd előreugorhat még egyszer annyit, mint amennyit dobott a játékos,</li>
+<li>vissza kell térnie arra a mezőre, amelyről indította az ugrást.</li>
+</ul>
+<p>Az <a href="../resources/osvenyek.txt">osvenyek.txt</a> fájl soronként egy ösvény adatait tartalmazza. Az ösvények sorszámozása
+1-től kezdődik. Az állomány legfeljebb 50 sorból, soronként legfeljebb 250 karakterből áll. Minden
+sorban egy-egy karaktersorozat van. A karakterek az M, E, V nagybetűk. Az M karakter egy
+mindenféle különleges tulajdonságtól mentes mezőt jelent. Ha valaki az E karakterű mezőre lép,
+előreugorhat még ugyanannyit, mint amennyivel ide jutott. Ha a V karakterű mezőre lép, a bábunak
+vissza kell térnie oda, ahonnan ide ugrott. Két egymást követő különleges karakter között mindig
+legalább 6 darab M karakter van.</p>
+<p>A játék akkor ér véget, ha mindenki ugyanannyiszor dobott, és legalább egy játékos elérte az utolsó
+mezőt, vagy túllépett rajta. Azok a nyertesek, akik elérték az utolsó mezőt vagy túlléptek rajta.
+A <a href="../resources/dobasok.txt">dobasok.txt</a> fájl egyetlen, szóközökkel tagolt sorból áll, amely a kockával egymást követően
+dobott értékeket tartalmazza. A fájlban 1 és 6 közötti számokból legfeljebb 2000 található. Tudjuk,
+hogy ennyi dobás biztosan elegendő a játék befejezéséhez. Azt nem rögzítettük, hogy melyik értéket
+melyik játékos dobta.
+Részlet a <em>dobasok.txt</em> állomány első sorából:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>2 4 6 5 6 1 …
+</span></code></pre></div>
+<p>Ha két játékos játszik, akkor dobásaik értékei felváltva szerepelnek a dobasok.txt állományban.
+Tehát az első játékos először 2-t dob, majd a második játékos 4-et, utána az első játékos 6-ot, a
+második játékos 5-öt, és így tovább.
+Részlet az <em>osvenyek.txt</em> állomány első néhány sorából:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>MMMMMMMMMMM…M
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>MEMMMMMMEMMMMMMMMMMM…
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>… 
+</span></code></pre></div>
+<p>Ha a második ösvényen játszanak (az MEMM kezdetűn), akkor az első játékos 2-es dobásával
+a második mezőre lép. Ez E típusú mező, ezért azonnal, dobás nélkül még két mezővel előrelép,
+így jut az első dobásával először a kettes, majd a négyes mezőre. Ezt követően a második játékos a
+4-es dobásával a negyedik mezőre lép. Ez M típusú, azaz mindenféle különleges tulajdonságtól
+mentes, így játékosunk a következő dobásig itt marad. Ismét az első játékos jön. Ő a 6-os dobásával
+a tizedik mezőre léphet tovább. Ez M típusú, ezért nem lép innen el, a második játékos jön. Ő az
+5-ös dobásával a negyedik mezőről a kilencedik mezőre lép. Ez E típusú, tehát rögtön előreléphet
+a dobásának megfelelően újabb öt mezőt. A következő ábra ezeket a lépéseket szemlélteti:</p>
+<figure>
+<p><img alt="" src="../img/img_41.png" width="700" /></p>
+</figure>
+<p>Készítsen programot, amely az állományok adatait felhasználva megoldja az alábbi feladatokat!
+A program forráskódját mentse <em>lud</em> néven! A program megírásakor a felhasználó által megadott
+adatok helyességét, érvényességét nem kell ellenőriznie, és feltételezheti, hogy a beolvasandó
+adatok a leírtaknak megfelelnek.</p>
+<p>A képernyőre írást igénylő részfeladatok esetén – a mintához tartalmában hasonlóan – írja ki a
+képernyőre a feladat sorszámát (például: 5. feladat), és utaljon a kiírt tartalomra is! Ha a
+felhasználótól kér be adatot, jelenítse meg a képernyőn, hogy milyen értéket vár! Mindkét esetben
+elfogadott az ékezetmentes kiírás is.</p>
+<ol>
+<li>Olvassa be és tárolja el az <em>osvenyek.txt</em> és a <em>dobasok.txt</em> állományok tartalmát!</li>
+<li>Jelenítse meg a képernyőn, hogy hány ösvény adatait tartalmazza az <em>osvenyek.txt</em> fájl,
+   és mennyi dobás szerepel a <em>dobasok.txt</em> fájlban!</li>
+<li>Határozza meg, hogy melyik ösvény áll a legtöbb mezőből, és jelenítse meg az ösvény
+   sorszámát és a mezők számát! Ha több ilyen is van, elegendő egyet megjelenítenie.</li>
+<li>Olvassa be és tárolja el egy ösvény sorszámát és a játékot játszók számát (legalább 2,
+   legfeljebb 5)! A későbbiekben ezekkel az adatokkal dolgozzon!</li>
+<li>Készítsen statisztikát a megadott sorszámú ösvény mezőiből! Jelenítse meg, hogy ez milyen
+   típusú mezőből mennyit tartalmaz! Ha egy adott típusú mező nem szerepel, akkor azt ne
+   jelenítse meg! (Megoldása teszteléséhez használja az első három ösvényt is, ezek ugyanis
+   nem tartalmaznak minden karaktert!)</li>
+<li>Írja a <em>kulonleges.txt</em> fájlba, hogy a választott ösvény mely mezői különlegesek!
+   Soronként egy mezőt adjon meg a mező sorszámával és a mező típusát megadó karakterrel!
+   A két értéket egy tabulátor karakterrel válassza el egymástól!</li>
+<li>Határozza meg, hogy melyik játékos jutna a legmesszebb, ha a választott ösvényen minden
+   mező M típusú lenne! Jelenítse meg a legtávolabb jutó(k) sorszámát és azt, hogy a dobások
+   hányadik körében alakult ki a végeredmény! Ha több ilyen játékos van, elegendő csak egyet
+   megjelenítenie.</li>
+<li>Határozza meg, ki nyer, ha figyelembe veszi a mezők típusát is! Jelenítse meg a nyertes(ek)
+   sorszámát és azt, hogy a többi bábu milyen sorszámú mezőn áll az utolsó teljes kör végén!</li>
+</ol>
+<p>Példa a szöveges kommunikáció kialakításához:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>2. feladat
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>A dobások száma: 1956
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Az ösvények száma: 43
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>3. feladat
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Az egyik leghosszabb a(z) 11. ösvény, hossza: 206
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>4. feladat
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Adja meg egy ösvény sorszámát! 9
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Adja meg a játékosok számát! 5
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>5. feladat
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>M: 185 darab
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>V: 8 darab
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>E: 8 darab
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>7. feladat
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>A játék a(z) 54. körben fejeződött be. A legtávolabb jutó(k) sorszáma: 5
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>8. feladat
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Nyertes(ek): 4 5
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>A többiek pozíciója:
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>1. játékos, 153. mező
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>2. játékos, 185. mező
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>3. játékos, 183. mező
+</span></code></pre></div>
+<h2 id="rgb-szinek">RGB színek</h2>
+<p>Fényképek számítógépes tárolására sokféle képformátumot ismerünk. A legegyszerűbb
+típusok az eredeti kép pixeleihez tartozó színértékeket tárolják, például ilyen a BMP vagy
+a fényképezőgépek által használt RAW formátum. Az ilyen képállomány bináris, melynek első
+néhány bájtja a kép jellemzőit írja le, míg a további bájtok sorfolytonosan a kép egy-egy
+pixelének színét adják meg.</p>
+<p>Ebben a feladatban egy RAW formátumú fájlból átalakított szöveges állományt kell
+feldolgoznia. A <a href="../resources/kep.txt">kep.txt</a> szöveges állomány egy 640×360 méretű, RGB kódolású képet ír le.
+Az állomány csak a képpontok színét tartalmazza sorfolytonosan, azaz a fájl 360 sorának
+mindegyike 640 képpontból, képpontonként három színértékből áll. Az első szám a piros (Red),
+a második szám a zöld (Green) és a harmadik szám a kék (Blue) értéket tartalmazza. Az RGB
+értékek 0 és 255 közötti egészek, melyeket a fájlban egy-egy szóköz választ el.</p>
+<p>Részlet az állomány első néhány sorából:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>0 85 112 0 86 113 0 86 113 0 86 113 0 86 113 0 86 113 …
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>0 86 111 0 86 111 0 86 113 0 86 113 0 86 113 0 86 113 …
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>0 86 113 0 86 113 0 86 113 0 86 113 0 86 113 1 87 114 …
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>0 86 113 0 86 113 0 86 113 0 86 113 1 87 114 1 87 114 …
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>… 
+</span></code></pre></div>
+<p>Az első sor első három száma a kép bal felső képpontjának színe, azaz RGB(0, 85, 112), míg
+a második sor harmadik pixelének színe RGB(0, 86, 113), a negyedik sor hatodik oszlopában
+lévő képpont színe RGB(1, 87, 114).</p>
+<p>A szöveges állomány által leírt kép:</p>
+<figure>
+<p><img alt="" src="../img/img_42.png" width="500" /></p>
+</figure>
+<p>Készítsen programot, amely az állomány adatait felhasználva megoldja az alábbi
+feladatokat! A program forráskódját mentse <em>rgb</em> néven! A program megírásakor a felhasználó
+által megadott adatok helyességét, érvényességét nem kell ellenőriznie, és feltételezheti, hogy
+a beolvasandó adatok a leírtaknak megfelelnek.</p>
+<p>A képernyőre írást igénylő részfeladatok esetén – a mintához tartalmában hasonlóan – írja
+ki a képernyőre a feladat sorszámát (például: 2. feladat:), és utaljon a kiírt tartalomra is!
+Ha a felhasználótól kér be adatot, jelenítse meg a képernyőn, hogy milyen értéket vár! Mindkét
+esetben az ékezetmentes kiírás is elfogadott.</p>
+<ol>
+<li>Olvassa be a <em>kep.txt</em> állomány tartalmát, és tárolja el a 640×360 képpont színét!</li>
+<li>Kérje be a felhasználótól a kép egy pontjának sor- és oszlopszámát (a számozás mindkét
+   esetben 1-től indul), és írja a képernyőre az adott képpont RGB színösszetevőit a minta
+   szerint!</li>
+<li>Világosnak tekintjük az olyan képpontot, amely RGB-értékeinek összege 600-nál nagyobb.
+   Számolja meg és írja ki, hogy a teljes képen hány világos képpont van!</li>
+<li>A kép legsötétebb pontjainak azokat a pontokat tekintjük, amelyek RGB-értékeinek összege
+   a legkisebb. Adja meg, hogy mennyi a legkisebb összeg, illetve keresse meg az ilyen RGB
+   összegű pixeleket, és írja ki mindegyik színét RGB(r,g,b) formában a mintának
+   megfelelően!</li>
+<li>A képen a kék ég látható közepén egy felhővel. Az ég és a felhő színe között jelentős
+   különbség van, így az ég-felhő határvonal programmal is felismerhető. Ennek
+   megtalálásához készítsen függvényt hatar néven, amely megadja, hogy egy adott sorban
+   van-e olyan hely a képen, ahol az egymás melletti képpontok kék színösszetevőinek eltérése
+   meghalad egy adott értéket! A függvény kapja meg paraméterként a sor számát, illetve
+   az eltérés értékét, melyek egészek! A függvény visszatérési értéke egy logikai érték legyen,
+   amely megadja, hogy az adott sorban volt-e az eltérést meghaladó különbség az egymás
+   melletti képpontok kék színében!</li>
+<li>Keresse meg a képen a felhő első és utolsó sorát az előzőleg elkészített függvény
+   segítségével úgy, hogy eltérésként 10-et ad meg a függvénynek bemenetként! Adja meg
+   az első és az utolsó olyan sor sorszámát, ahol az eltérés a soron belül valahol 10-nél
+   nagyobb!</li>
+</ol>
+<p>Példa a szöveges kimenetek kialakításához:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>2. feladat:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Kérem egy képpont adatait!
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Sor:180
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Oszlop:320
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>A képpont színe RGB(184,183,181)
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>3. feladat:
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>A világos képpontok száma: 7837
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>4. feladat:
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>A legsötétebb pont RGB összege: 197
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>A legsötétebb pixelek színe:
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>RGB(0,85,112)
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>RGB(0,86,111)
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>RGB(0,86,111)
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>6. feladat:
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>A felhő legfelső sora: 103
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>A felhő legalsó sora: 280 
+</span></code></pre></div>
+<h2 id="jelado">Jeladó</h2>
+<p>Az állatok mozgását ma már rutinszerűen figyelik a rájuk rögzített jeladók segítségével.
+Ebben a feladatban egy ilyen jeladó által továbbított adatokat kell feldolgoznia.</p>
+<p>Az itt használt jeladó úgy működik, hogy helyének x és y koordinátáját továbbítja. Jelet küld,
+ha a legutolsó küldés óta bármely koordináta változása elérte a 10 egységet. Ha nem történt
+ekkora elmozdulás, 5 perc elteltével akkor is mindenképpen jelenti helyét. A vevőegység egy
+fájlban rögzíti a jel érkezési idejét és a pozíciót. Előfordulhat, hogy a vétel meghiúsul, ezért
+lehetnek egymást követő adatsorok, amelyek között 5 percnél több idő telik el, vagy a
+koordináták változása 10 egységnél nagyobb.</p>
+<p>Rendelkezésére áll a <a href="../resources/jel.txt">jel.txt</a> nevű adatfájl, amely egy napról tartalmaz adatokat
+időrendben. Soraiban öt egész szám található, egymástól egy-egy szóközzel elválasztva. Az
+első három szám a jeladás időpontját (óra, perc, másodperc) adja meg, a negyedik szám az x,
+az ötödik az y koordináta. A sorok száma legfeljebb 1000, a koordináták -10 000 és 10 000
+közötti értékek lehetnek. </p>
+<p>Például:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>…
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>3 21 19 126 639
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>3 26 19 131 641
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>3 27 55 124 651
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>3 31 50 134 649
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>…
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>4 19 11 126 42
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>4 29 11 128 36
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>4 32 21 130 7
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>… 
+</span></code></pre></div></p>
+<p>A példa első csoportjában a második sor megmutatja, hogy a jeladó 5 egységnyit mozdult x,
+2 egységnyit pedig y irányban 5 perc alatt. A harmadik bejegyzés azért született, mert y
+irányban 10 egységnyit mozdult el a jeladó, a negyedik bejegyzés pedig egy x irányú
+10 egységnyi elmozdulást jelez. </p>
+<p>A példa második csoportjában a második sor adataiból látszik, hogy legalább egyszer nem
+jutott el a jel a vevőhöz, mert 5 percnél több idő telt el az előző vételtől, de az eltelt idő
+a 10 percet nem haladja meg. A második és harmadik vétel által jelzett pozíciók y koordinátája
+29 egységnyivel eltér, ezért legalább két vétel nem került rögzítésre. </p>
+<p>Készítsen programot, amely az állomány adatait felhasználva az alábbi kérdésekre válaszol!
+A program forráskódját mentse jelado néven! A program megírásakor a felhasználó által
+megadott adatok helyességét, érvényességét nem kell ellenőriznie, és feltételezheti, hogy
+a rendelkezésre álló adatok a leírtaknak megfelelnek.</p>
+<p>A képernyőre írást igénylő részfeladatok esetén – a mintához tartalmában hasonlóan – írja
+ki a képernyőre a feladat sorszámát (például: 5. feladat), és utaljon a kiírt tartalomra is!
+Ha a felhasználótól kér be adatot, jelenítse meg a képernyőn, hogy milyen értéket vár! Mindkét
+esetben az ékezetmentes kiírás is elfogadott.</p>
+<ol>
+<li>Olvassa be a jel.txt állomány tartalmát, tárolja el a rögzített jelek adatait, és azok
+   felhasználásával oldja meg a következő feladatokat!</li>
+<li>Kérje be a felhasználótól egy jel sorszámát (a sorszámozás 1-től indul), és írja a képernyőre
+   az adott jeladáshoz tartozó x és y koordinátát!</li>
+<li>Készítsen függvényt eltelt néven, amely megadja, hogy a paraméterként átadott két
+   időpont között hány másodperc telik el! A két időpontot, mint paramétert tetszőleges módon
+   átadhatja. Használhat három-három számértéket, két tömböt vagy listát, de más, a célnak
+   megfelelő típusú változót is. Ezt a függvényt később használja fel legalább egy feladat
+   megoldása során!</li>
+<li>Adja meg, mennyi idő telt el az első és az utolsó észlelés között! Az időt óra:perc:mperc
+   alakban írja a képernyőre!</li>
+<li>Határozza meg azt a legkisebb, a koordináta-rendszer tengelyeivel párhuzamos oldalú
+   téglalapot, amelyből nem lépett ki a jeladó! Adja meg a téglalap bal alsó és jobb felső
+   sarkának koordinátáit!</li>
+<li>Írja a képernyőre, hogy mennyi volt a jeladó elmozdulásainak összege! Úgy tekintjük, hogy
+   a jeladó két pozíciója közötti elmozdulása a pozíciókat összekötő egyenes mentén történt.
+   Az összeget három tizedes pontossággal jelenítse meg! A kiírásnál a tizedesvessző és
+   tizedespont kiírása is elfogadott. Az i-edik és az i+1-edik pontok távolságát a
+   <span class="arithmatex">\(\sqrt{(x_{i}-x_{i+1})^{2}+(y_{i}-y_{i+1})^{2}}\)</span> képlet segítségével határozhatja meg.</li>
+<li>Írja a kimaradt.txt fájlba a kimaradt észlelésekkel kapcsolatos adatokat! A kimeneti
+   fájlban azok a bemeneti állományban rögzített vételi időpontok jelenjenek meg, amelyek
+   előtt közvetlenül egy vagy több észlelés kimaradt! Az időpont mellett – a mintának
+   megfelelően – jelenjen meg, hogy legalább hány jel maradt ki, és az is, hogy miből
+   következtet a hiányra! Ha idő- és koordináta-eltérésből is adódik jelkimaradás, akkor a
+   nagyobb értéket írja ki! Ha az időeltérés és a koordináták eltérése alapján is ugyanannyi
+   jelkimaradásra következtetünk, akkor bármelyiket kiírhatja.</li>
+</ol>
+<p>Példa a szöveges kimenetek kialakításához: 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>2. feladat
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Adja meg a jel sorszámát! 3
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>x=126 y=639
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>4. feladat
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Időtartam: 18:52:40
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>5. feladat
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Bal alsó: 4 639, jobb felső: 147 727
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>6. feladat
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>Elmozdulás: 2007.677 egység
+</span></code></pre></div></p>
+<p>Minta a kimaradt.txt fájl tartalmára:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>4 25 33 időeltérés 1
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>4 55 33 koordináta-eltérés 1
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>5 5 33 időeltérés 1
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>6 22 42 időeltérés 2
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>6 32 42 koordináta-eltérés 2 
+</span></code></pre></div></p>
+<h2 id="epitmenyado">Építményadó</h2>
+<p>Egy Balaton-parti önkormányzat építményadót vezet be. Az adó mértéke a telken lévő
+építmény alapterületétől és a teleknek a Balatontól mért távolságától függ.</p>
+<p>A telkeket a Balatonparttól mért távolságtól függően három sávba sorolták be. Az A sávba
+azok a telkek kerültek, amelyek 300 méternél közelebb vannak a tóhoz a B sáv az előzőn túl
+600 méter távolságig terjed, a többi telek a C sávba tartozik. Az építmény után
+négyzetméterenként fizetendő összeg sávonként eltérő, azonban, ha az így kiszámított összeg
+nem éri el a 10.000 Ft-ot, akkor az adott építmény után nem kell adót fizetni.</p>
+<p>A testületi döntést az Adó Ügyosztály egy mintával készítette elő, amely csupán néhány utca
+adatait tartalmazza. Ezek az adatok az <a href="../resources/utca.txt">utca.txt</a> fájlban vannak. A fájl első sorában a három
+adósávhoz tartozó négyzetméterenként fizetendő összeg található A, B, C sorrendben, egy-egy
+szóközzel elválasztva:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>800 600 100
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>…
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>33366 Aradi 8A C 180
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>22510 Aradi 8B C 137
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>90561 Aradi 10 C 168
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>…
+</span></code></pre></div>
+<p>A többi sorban egy-egy építmény adatai szerepelnek egy-egy szóközzel elválasztva. Az első
+a telek tulajdonosának ötjegyű adószáma; egy tulajdonosnak több telke is lehet. A második adat
+az utca neve, amely nem tartalmazhat szóközt. A harmadik adat a házszám, majd az adósáv
+megnevezése, végül az építmény alapterülete következik. A minta harmadik sorában például
+azt látjuk, hogy a 33366 adószámú tulajdonos telke az Aradi utca 8A-ban található, és a C sávba
+eső telken álló építmény alapterülete 180 m2.</p>
+<p>A fájl legfeljebb 1000 telek adatait tartalmazza. A feladat megoldása során kihasználhatja,
+hogy a fájlban az adatok utca, azon belül pedig házszám szerinti sorrendben következnek.</p>
+<p>Készítsen programot, amely az utca.txt állomány adatait felhasználva az alábbi
+kérdésekre válaszol! A program forráskódját mentse epitmenyado néven! (A program
+megírásakor a felhasználó által megadott adatok helyességét, érvényességét nem kell
+ellenőriznie, és feltételezheti, hogy a rendelkezésre álló adatok a leírtaknak megfelelnek.)</p>
+<p>A képernyőre írást igénylő részfeladatok esetén – a mintához tartalmában hasonlóan – írja
+ki a képernyőre a feladat sorszámát (például: 3. feladat), és utaljon a kiírt tartalomra is!
+Ha a felhasználótól kér be adatot, jelenítse meg a képernyőn, hogy milyen értéket vár! Mindkét
+esetben az ékezetmentes kiírás is elfogadott.</p>
+<ol>
+<li>Olvassa be és tárolja el az utca.txt állományban talált adatokat, és annak
+   felhasználásával oldja meg a következő feladatokat!</li>
+<li>Hány telek adatai találhatók az állományban? Az eredményt írassa ki a mintának
+   megfelelően a képernyőre!</li>
+<li>Kérje be egy tulajdonos adószámát, és írassa ki a mintához hasonlóan, hogy melyik utcában,
+   milyen házszám alatt van építménye! Ha a megadott azonosító nem szerepel az
+   adatállományban, akkor írassa ki a „Nem szerepel az adatállományban.” hibaüzenetet!</li>
+<li>Készítsen függvényt ado néven, amely meghatározza egy adott építmény után fizetendő
+   adót! A függvény paraméterlistájában szerepeljen az adósáv és az alapterület, visszaadott
+   értéke pedig legyen a fizetendő adó! A következő feladatokban ezt a függvényt is
+   felhasználhatja.</li>
+<li>Határozza meg, hogy hány építmény esik az egyes adósávokba, és mennyi az adó összege
+   adósávonként! Az eredményt a mintának megfelelően írassa ki a képernyőre!</li>
+<li>Bár az utcák többé-kevésbé párhuzamosak a tó partjával, az egyes porták távolsága a parttól
+   az utcában nem feltétlenül ugyanannyi. Emiatt néhány utcában – az ottani tulajdonosok
+   felháborodására – egyes telkek eltérő sávba esnek. Listázza ki a képernyőre, hogy melyek
+   azok az utcák, ahol a telkek sávokba sorolását emiatt felül kell vizsgálni! Feltételezheti,
+   hogy minden utcában van legalább két telek.</li>
+<li>Határozza meg a fizetendő adót tulajdonosonként! A tulajdonos adószámát és a fizetendő
+   összeget írassa ki a mintának megfelelően a <em>fizetendo.txt</em> állományba! A fájlban
+   minden tulajdonos adatai új sorban szerepeljenek, a tulajdonos adószámát egy szóközzel
+   elválasztva kövesse az általa fizetendő adó teljes összege.</li>
+</ol>
+<p>Példa a szöveges kimenetek kialakításához:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>2. feladat. A mintában 543 telek szerepel.
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>3. feladat. Egy tulajdonos adószáma: 68396
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Harmat utca 22
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Szepesi utca 17
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>5. feladat
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>A sávba 165 telek esik, az adó 20805600 Ft.
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>B sávba 144 telek esik, az adó 13107000 Ft.
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>C sávba 234 telek esik, az adó 3479600 Ft.
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>6. feladat. A több sávba sorolt utcák:
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>Besztercei
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>Gyurgyalag
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>Icce
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Kurta
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>Rezeda
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>Szepesi 
+</span></code></pre></div>
+<p>Példa a <em>fizetendo.txt</em> fájl kialakításához:
+(A fájl a megadott forrásállomány esetén 519 adatsort fog tartalmazni.)</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>38522 18000
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>86379 0
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>79906 12300
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>…
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>73850 204000
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>74143 100000
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>59801 563200
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>73011 70400
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>…
+</span></code></pre></div>
+<h2 id="sudoku">Sudoku</h2>
+<p>A sudoku egy logikai játék, melyben megadott szabályok szerint számjegyeket kell
+elhelyezni egy táblázatban. Ebben a feladatban 9×9-es táblázatot használunk.</p>
+<p>A táblázat – az alábbi ábrának megfelelően – 9 darab 3×3-as résztáblázatra van felosztva.
+Minden résztáblázatot az 1, 2, 3, 4, 5, 6, 7, 8, 9 számokkal kell kitölteni úgy, hogy az egész
+9×9-es táblázat minden sorában és minden oszlopában az 1...9 számok mindegyike pontosan
+egyszer forduljon elő. A rejtvény készítője előre ki szokta tölteni a táblázat bizonyos celláit. A
+rejtvényfejtő feladata kitölteni a maradék cellákat a leírt szabályoknak megfelelően.</p>
+<p>A bemenetet tartalmazó szövegfájlok első 9 sorának mindegyike 9 egész számot tartalmaz,
+a játék kiindulási állapotának megfelelően. A kitöltetlen mezők helyén a 0 szám olvasható. A
+következő néhány sorban a játékos egy-egy lehetséges kitöltési lépését rögzítették. Egy lépést
+három egész szám ír le: a számot, amelyet a játékos be akar írni, majd a sor és az oszlop számát,
+ahova írni szeretné. A bemeneti fájl egy-egy sorában a számokat egy-egy szóköz választja el
+egymástól. A táblázat ellentmondásmentes, tehát megoldható feladatot ír le. A játékos által
+megtett lépések száma legalább 1, legfeljebb 10, közöttük lehet hibás.</p>
+<p>Például:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>0 0 0 0 0 0 0 0 6
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>0 0 7 0 0 0 2 0 0
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>3 8 9 5 0 0 0 0 0
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>6 0 0 0 0 0 7 0 0
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>1 2 8 4 9 0 0 3 0
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>0 0 0 0 0 0 0 0 9
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>0 5 1 0 0 0 0 4 0
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>0 0 0 0 0 3 0 9 1
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>0 0 0 0 8 0 0 0 0
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>9 2 4
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>1 2 1
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>5 9 9
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>7 2 2
+</span></code></pre></div></p>
+<figure>
+<p><img alt="" src="../img/img_43.png" width="300" /></p>
+</figure>
+<p>A fenti példában a nehez.txt bemeneti fájl tartalma látható. A 10. sorban szereplő számok
+azt jelentik, hogy a 9-es értéket kell a 2. sor 4. helyére beírni. Az adott sorban és az adott
+oszlopban nem szerepel még a 9-es, sőt, az érintett négyzetben sem, így a lépéssel nem alakul
+ki hiba, megtehető. A 11. sorbeli lépés is megtehető. A 13. sor hibás lépést tartalmaz, mert a 2.
+sorban már szerepel a 7-es szám.</p>
+<p>A jobb oldalon látható képen a körbe írt számok megadják, hogy az egyes 3×3 méretű
+résztáblákat milyen számmal azonosítjuk.</p>
+<p>Készítsen programot, amely a bemeneti állományok egyikét felhasználva (<a href="../resources/konnyu.txt">konnyu.txt</a>,
+<a href="../resources/kozepes.txt">kozepes.txt</a>, <a href="../resources/nehez.txt">nehez.txt</a>) az alábbi kérdésekre válaszol! A program forráskódját mentse
+sudoku néven! (A program megírásakor a felhasználó által megadott adatok helyességét,
+érvényességét nem kell ellenőriznie, feltételezheti, hogy a rendelkezésre álló adatok a
+leírtaknak megfelelnek.)</p>
+<p>A képernyőre írást igénylő részfeladatok eredményének megjelenítése előtt írja a képernyőre
+a feladat sorszámát (például: 4. feladat)! Ha a felhasználótól kér be adatot, jelenítse meg a
+képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogadott.</p>
+<ol>
+<li>Olvassa be egy fájl nevét, egy sor és egy oszlop sorszámát (1 és 9 közötti számot)!
+   A későbbi feladatokat ezen értékek felhasználásával kell megoldania!</li>
+<li>Az előző feladatban beolvasott névnek megfelelő fájl tartalmát olvassa be, és tárolja el a
+   táblázat adatait! Ha ezt nem tudja megtenni, akkor használja forrásként a rendelkezésre álló
+   állományok egyikét!</li>
+<li>Írja ki a képernyőre, hogy a beolvasott sor és oszlop értékének megfelelő hely…<ul>
+<li>milyen értéket tartalmaz! Ha az adott helyen a 0 olvasható, akkor az „Az adott
+   helyet még nem töltötték ki.” szöveget jelenítse meg!</li>
+<li>melyik résztáblázathoz tartozik!</li>
+</ul>
+</li>
+<li>Határozza meg a táblázat hány százaléka nincs még kitöltve! Az eredményt egy tizedesjegy
+   pontossággal jelenítse meg a képernyőn!</li>
+<li>Vizsgálja meg, hogy a fájlban szereplő lépések lehetségesek-e a beolvasott táblázaton!
+   Tekintse mindegyiket úgy, mintha az lenne az egyetlen lépés az eredeti táblázaton, de ne
+   hajtsa azt végre! Állapítsa meg, hogy okoz-e valamilyen ellentmondást a lépés végrehajtása!
+   Írja ki a lépéshez tartozó három értéket, majd a következő sorba írja az alábbi
+   megállapítások egyikét! Ha több megállapítás is igaz, elegendő csak egyet megjelenítenie.<ul>
+<li>„A helyet már kitöltötték”</li>
+<li>„Az adott sorban már szerepel a szám”</li>
+<li>„Az adott oszlopban már szerepel a szám”</li>
+<li>„Az adott résztáblázatban már szerepel a szám”</li>
+<li>„A lépés megtehető”</li>
+</ul>
+</li>
+</ol>
+<p>Minta a szöveges kimenetek kialakításához: </p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>1. feladat
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Adja meg a bemeneti fájl nevét! konnyu.txt
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Adja meg egy sor számát! 1
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>Adja meg egy oszlop számát! 1
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>3. feladat
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>Az adott helyen szereplő szám: 5
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>A hely a(z) 1 résztáblázathoz tartozik.
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>4. feladat
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>Az üres helyek aránya: 17.3%
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>5. feladat
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>A kiválasztott sor: 2 oszlop: 4 a szám: 9
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>A helyet már kitöltötték.
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>A kiválasztott sor: 3 oszlop: 6 a szám: 7
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>A lépés megtehető.
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>A kiválasztott sor: 6 oszlop: 6 a szám: 3
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>A résztáblázatban már szerepel a szám.
+</span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>A kiválasztott sor: 7 oszlop: 9 a szám: 8
+</span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>Az adott oszlopban már szerepel a szám. 
+</span></code></pre></div>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "content.code.annotate", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../javascripts/katex.js"></script>
+        
+      
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
+        
+      
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
+        
+      
+    
+  </body>
+</html>
