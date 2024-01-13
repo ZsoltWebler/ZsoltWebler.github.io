@@ -1148,6 +1148,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#godrok" class="md-nav__link">
+    Gödrök
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorozatok" class="md-nav__link">
+    Sorozatok
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1227,6 +1241,20 @@
         <li class="md-nav__item">
   <a href="#sudoku" class="md-nav__link">
     Sudoku
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#godrok" class="md-nav__link">
+    Gödrök
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sorozatok" class="md-nav__link">
+    Sorozatok
   </a>
   
 </li>
@@ -1443,8 +1471,8 @@ koordináták változása 10 egységnél nagyobb.</p>
 időrendben. Soraiban öt egész szám található, egymástól egy-egy szóközzel elválasztva. Az
 első három szám a jeladás időpontját (óra, perc, másodperc) adja meg, a negyedik szám az x,
 az ötödik az y koordináta. A sorok száma legfeljebb 1000, a koordináták -10 000 és 10 000
-közötti értékek lehetnek. </p>
-<p>Például:
+közötti értékek lehetnek.</p>
+<p>Például:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>…
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>3 21 19 126 639
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>3 26 19 131 641
@@ -1455,15 +1483,15 @@ közötti értékek lehetnek. </p>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>4 29 11 128 36
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>4 32 21 130 7
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>… 
-</span></code></pre></div></p>
+</span></code></pre></div>
 <p>A példa első csoportjában a második sor megmutatja, hogy a jeladó 5 egységnyit mozdult x,
 2 egységnyit pedig y irányban 5 perc alatt. A harmadik bejegyzés azért született, mert y
 irányban 10 egységnyit mozdult el a jeladó, a negyedik bejegyzés pedig egy x irányú
-10 egységnyi elmozdulást jelez. </p>
+10 egységnyi elmozdulást jelez.</p>
 <p>A példa második csoportjában a második sor adataiból látszik, hogy legalább egyszer nem
 jutott el a jel a vevőhöz, mert 5 percnél több idő telt el az előző vételtől, de az eltelt idő
 a 10 percet nem haladja meg. A második és harmadik vétel által jelzett pozíciók y koordinátája
-29 egységnyivel eltér, ezért legalább két vétel nem került rögzítésre. </p>
+29 egységnyivel eltér, ezért legalább két vétel nem került rögzítésre.</p>
 <p>Készítsen programot, amely az állomány adatait felhasználva az alábbi kérdésekre válaszol!
 A program forráskódját mentse jelado néven! A program megírásakor a felhasználó által
 megadott adatok helyességét, érvényességét nem kell ellenőriznie, és feltételezheti, hogy
@@ -1500,7 +1528,7 @@ esetben az ékezetmentes kiírás is elfogadott.</p>
    nagyobb értéket írja ki! Ha az időeltérés és a koordináták eltérése alapján is ugyanannyi
    jelkimaradásra következtetünk, akkor bármelyiket kiírhatja.</li>
 </ol>
-<p>Példa a szöveges kimenetek kialakításához: 
+<p>Példa a szöveges kimenetek kialakításához:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>2. feladat
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Adja meg a jel sorszámát! 3
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>x=126 y=639
@@ -1513,14 +1541,14 @@ esetben az ékezetmentes kiírás is elfogadott.</p>
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>6. feladat
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>Elmozdulás: 2007.677 egység
-</span></code></pre></div></p>
-<p>Minta a kimaradt.txt fájl tartalmára:
+</span></code></pre></div>
+<p>Minta a kimaradt.txt fájl tartalmára:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>4 25 33 időeltérés 1
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>4 55 33 koordináta-eltérés 1
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>5 5 33 időeltérés 1
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>6 22 42 időeltérés 2
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>6 32 42 koordináta-eltérés 2 
-</span></code></pre></div></p>
+</span></code></pre></div>
 <h2 id="epitmenyado">Építményadó</h2>
 <p>Egy Balaton-parti önkormányzat építményadót vezet be. Az adó mértéke a telken lévő
 építmény alapterületétől és a teleknek a Balatontól mért távolságától függ.</p>
@@ -1627,7 +1655,7 @@ három egész szám ír le: a számot, amelyet a játékos be akar írni, majd a
 ahova írni szeretné. A bemeneti fájl egy-egy sorában a számokat egy-egy szóköz választja el
 egymástól. A táblázat ellentmondásmentes, tehát megoldható feladatot ír le. A játékos által
 megtett lépések száma legalább 1, legfeljebb 10, közöttük lehet hibás.</p>
-<p>Például:
+<p>Például:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>0 0 0 0 0 0 0 0 6
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>0 0 7 0 0 0 2 0 0
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>3 8 9 5 0 0 0 0 0
@@ -1641,7 +1669,7 @@ megtett lépések száma legalább 1, legfeljebb 10, közöttük lehet hibás.</
 </span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>1 2 1
 </span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a>5 9 9
 </span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>7 2 2
-</span></code></pre></div></p>
+</span></code></pre></div>
 <figure>
 <p><img alt="" src="../img/img_43.png" width="300" /></p>
 </figure>
@@ -1653,7 +1681,8 @@ sorban már szerepel a 7-es szám.</p>
 <p>A jobb oldalon látható képen a körbe írt számok megadják, hogy az egyes 3×3 méretű
 résztáblákat milyen számmal azonosítjuk.</p>
 <p>Készítsen programot, amely a bemeneti állományok egyikét felhasználva (<a href="../resources/konnyu.txt">konnyu.txt</a>,
-<a href="../resources/kozepes.txt">kozepes.txt</a>, <a href="../resources/nehez.txt">nehez.txt</a>) az alábbi kérdésekre válaszol! A program forráskódját mentse
+<a href="../resources/kozepes.txt">kozepes.txt</a>, <a href="../resources/nehez.txt">nehez.txt</a>) az alábbi kérdésekre válaszol! A program
+forráskódját mentse
 sudoku néven! (A program megírásakor a felhasználó által megadott adatok helyességét,
 érvényességét nem kell ellenőriznie, feltételezheti, hogy a rendelkezésre álló adatok a
 leírtaknak megfelelnek.)</p>
@@ -1668,7 +1697,7 @@ képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogadott
    állományok egyikét!</li>
 <li>Írja ki a képernyőre, hogy a beolvasott sor és oszlop értékének megfelelő hely…<ul>
 <li>milyen értéket tartalmaz! Ha az adott helyen a 0 olvasható, akkor az „Az adott
-   helyet még nem töltötték ki.” szöveget jelenítse meg!</li>
+  helyet még nem töltötték ki.” szöveget jelenítse meg!</li>
 <li>melyik résztáblázathoz tartozik!</li>
 </ul>
 </li>
@@ -1687,7 +1716,7 @@ képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogadott
 </ul>
 </li>
 </ol>
-<p>Minta a szöveges kimenetek kialakításához: </p>
+<p>Minta a szöveges kimenetek kialakításához:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>1. feladat
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Adja meg a bemeneti fájl nevét! konnyu.txt
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Adja meg egy sor számát! 1
@@ -1710,6 +1739,199 @@ képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogadott
 </span><span id="__span-12-20"><a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>A kiválasztott sor: 7 oszlop: 9 a szám: 8
 </span><span id="__span-12-21"><a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>Az adott oszlopban már szerepel a szám. 
 </span></code></pre></div>
+<h2 id="godrok">Gödrök</h2>
+<p>Egy teljesen sík terepen a talaj olyan anyagból van, ami nem ereszti át a vizet. Ezen a
+területen egy egyenes mentén munkagépekkel 10 méter széles csatornát építenek. A munka
+még nem készült el, ezért a csatorna mélysége nem állandó, helyenként a felszín is érintetlen.
+A már elkészült résszel, mint különálló gödrök sorozatával foglalkozik a feladat. Az egyszerűbb
+kezelés érdekében a gödröket úgy tekintjük, hogy oldalfaluk függőleges, teljes szélességben
+azonos mélységű, így a keresztmetszeti kép jól leírja a terepviszonyokat.</p>
+<p>A <a href="../resources/melyseg.txt">melyseg.txt</a> fájlban méterenként rögzítették, hogy azon a szakaszon milyen
+mélyen van a gödör alja. Minden sor egy-egy egész számot tartalmaz, amely a mélység
+értékét mutatja – szintén méterben. A fájl legfeljebb 2000 számot tartalmaz, értékük
+legfeljebb 30 lehet. Tudjuk, hogy az első és az utolsó méteren sértetlen a felszín, tehát ott
+biztosan a 0 szám áll.</p>
+<p>Például:</p>
+<figure>
+<p><img alt="" src="../img/img_44.png" width="800" /></p>
+</figure>
+<p>A fenti példában látható keresztmetszeti képen a <em>melyseg.txt</em> bemeneti fájl tartalmának a
+kezdete látható. Az egyszerűbb szemléltetés miatt a forrásfájlban külön sorokban szereplő
+értékeket itt az ábrán egymás mellett szerepeltetjük. Leolvasható, hogy az első méteren 0 a
+mélység. Az első gödör a 7. méteren kezdődik. Az első gödör 16 méter hosszan tart, legnagyobb
+mélysége 4 méter, térfogata 440 m3. A második gödör a 26. méternél kezdődik, 3 méter hosszan
+tart, térfogata 60 m3.</p>
+<p>Készítsen programot, amely a <em>melyseg.txt</em> állományt felhasználva az alábbi kérdésekre
+válaszol! A program forráskódját mentse godor néven! (A program megírásakor a felhasználó
+által megadott adatok helyességét, érvényességét nem kell ellenőriznie, feltételezheti, hogy a
+rendelkezésre álló adatok a leírtaknak megfelelnek.)</p>
+<p>A képernyőre írást igénylő részfeladatok eredményének megjelenítése előtt írja a képernyőre
+a feladat sorszámát (például: 2. feladat)! Ha a felhasználótól kér be adatot, jelenítse meg a
+képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogadott.</p>
+<ol>
+<li>Olvassa be és tárolja el a melyseg.txt fájl tartalmát! Írja ki a képernyőre, hogy az
+   adatforrás hány adatot tartalmaz!</li>
+<li>Olvasson be egy távolságértéket, majd írja a képernyőre, hogy milyen mélyen van a gödör
+   alja azon a helyen! Ezt a távolságértéket használja majd a 6. feladat megoldása során is!</li>
+<li>Határozza meg, hogy a felszín hány százaléka maradt érintetlen és jelenítse meg 2 tizedes
+   pontossággal!</li>
+<li>
+<p>Írja ki a <em>godrok.txt</em> fájlba a gödrök leírását, azaz azokat a számsorokat, amelyek egy-egy
+   gödör méterenkénti mélységét adják meg! Minden gödör leírása külön sorba kerüljön! Az
+   állomány pontosan a gödrök számával egyező számú sort tartalmazzon!
+   A <em>godrok.txt</em> fájl első két sorának tartalma:
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>2 2 2 2 4 4 3 2 2 3 3 4 4 3 2 2
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>2 2 2
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>…
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Határozza meg a gödrök számát és írja a képernyőre!</p>
+</li>
+<li>Ha a 2. feladatban beolvasott helyen nincs gödör, akkor „Az adott helyen nincs gödör.”
+   üzenetet jelenítse meg, ha ott gödör található, akkor határozza meg, hogy<ul>
+<li>a) mi a gödör kezdő és végpontja! A meghatározott értékeket írja a képernyőre!
+   (Ha nem tudja meghatározni, használja a további részfeladatoknál a 7 és 22
+   értéket, mint a kezdő és a végpont helyét)</li>
+<li>b) a legmélyebb pontja felé mindkét irányból folyamatosan mélyül-e! Azaz a gödör
+   az egyik szélétől monoton mélyül egy pontig, és onnantól monoton emelkedik a
+   másik széléig. Az eredménytől függően írja ki a képernyőre a „Nem mélyül
+   folyamatosan.” vagy a „Folyamatosan mélyül.” mondatot!</li>
+<li>c) mekkora a legnagyobb mélysége! A meghatározott értéket írja a képernyőre!</li>
+<li>d) mekkora a térfogata, ha szélessége minden helyen 10 méternyi! A meghatározott
+   értéket írja a képernyőre!</li>
+<li>e) a félkész csatorna esőben jelentős mennyiségű vizet fogad be. Egy gödör annyi
+   vizet képes befogadni anélkül, hogy egy nagyobb szélvihar hatására se öntsön
+   ki, amennyi esetén a víz felszíne legalább 1 méter mélyen van a külső felszínhez
+   képest. Írja a képernyőre ezt a vízmennyiséget! </li>
+</ul>
+</li>
+</ol>
+<p>Minta a szöveges kimenetek kialakításához: 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>1. feladat
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>A fájl adatainak száma: 694
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>2. feladat
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>Adjon meg egy távolságértéket! 9
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Ezen a helyen a felszín 2 méter mélyen van.
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>3. feladat
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>Az érintetlen terület aránya 10.09%.
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>5. feladat
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>A gödrök száma: 22
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>6. feladat
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>a)
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>A gödör kezdete: 7 méter, a gödör vége: 22 méter.
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>b)
+</span><span id="__span-14-18"><a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>Nem mélyül folyamatosan.
+</span><span id="__span-14-19"><a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>c)
+</span><span id="__span-14-20"><a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a>A legnagyobb mélysége 4 méter.
+</span><span id="__span-14-21"><a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>d)
+</span><span id="__span-14-22"><a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>A térfogata 440 m^3.
+</span><span id="__span-14-23"><a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>e)
+</span><span id="__span-14-24"><a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>A vízmennyiség 280 m^3. 
+</span></code></pre></div></p>
+<h2 id="sorozatok">Sorozatok</h2>
+<p>Sok olyan sorozatrajongó van, aki folyamatosan követi a kedvelt sorozatait. Egy, az angol
+nyelvű sorozatokért rajongó személy feljegyzést készített egy nyolc hónapos időszak kedvenc
+sorozatairól.</p>
+<p>A <a href="../resources/lista.txt">lista.txt</a> fájl a rajongó által kedvelt sorozatok adásba
+kerülésének dátumát, a sorozat angol címét, az évadot és az epizód
+számát, az epizód hosszát percben és egy jelzést tartalmaz, hogy a lista
+készítője megnézte-e már azt az epizódot. Ezek az adatok egymás után
+külön sorokban szerepelnek. A fájlban biztosan 400-nál kevesebb
+epizódról van adat, epizódonként 5 sorban.</p>
+<p>A példában látható, hogy a Puzzles című sorozat 3. évadának 10. epizódja 2018. 01. 19-én került adásba. Az epizód 43 
+perces, és még nem nézte meg a lista készítője.</p>
+<ul>
+<li>A dátumokat mindig „éééé.hh.nn” formátumban rögzítették.
+Vannak olyan sorozatrészek, amelyeknek a lista rögzítésekor
+még nem tudták az adásba kerülésük idejét. Ezeknél a dátum
+helyett mindig az „NI” rövidítés szerepel.</li>
+<li>Az évad jelzése vezető nullák nélkül történik, az epizód számát pedig mindig két
+számjeggyel rögzítették. Az évad és az epizód számát egy „x” választja el egymástól.</li>
+<li>Az egyes sorozatok epizódjai mindig ugyanolyan hosszúak.</li>
+<li>Az epizóddal kapcsolatos utolsó adat értéke „0” vagy „1”. Az 1-es számjegy jelöli,
+hogy az adott részt már megtekintette a lista készítője, a 0 pedig azt, hogy még nem
+látta.</li>
+</ul>
+<p>Készítsen programot a <em>lista.txt</em> állomány adatainak feldolgozására! A program
+forráskódját mentse sorozatok néven! (A program megírásakor a felhasználó által megadott
+adatok helyességét, érvényességét nem kell ellenőriznie, feltételezheti, hogy a rendelkezésre
+álló adatok a leírtaknak megfelelnek.)</p>
+<p>A képernyőre írást igénylő részfeladatok eredményének megjelenítése előtt írja a képernyőre
+a feladat sorszámát (például 2. feladat:)! Ha a felhasználótól kér be adatot, jelenítse meg
+a képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogadott.</p>
+<ol>
+<li>Olvassa be és tárolja el a lista.txt fájl tartalmát!</li>
+<li>Írassa ki a képernyőre, hogy hány olyan epizód adatait tartalmazza a fájl, amelynek ismert
+   az adásba kerülési dátuma!</li>
+<li>Határozza meg, hogy a fájlban lévő epizódok hány százalékát látta már a listát rögzítő
+   személy! A százalékértéket a minta szerint, két tizedesjeggyel jelenítse meg a képernyőn!</li>
+<li>Számítsa ki, hogy összesen mennyi időt töltött a személy az epizódok megnézésével!
+   Az eredményt a minta szerint nap, óra, perc formában adja meg!</li>
+<li>Kérjen be a felhasználótól egy dátumot „éééé.hh.nn” formában! Határozza meg, hogy
+   az adott dátumig megjelent epizódokból melyeket nem látta még! Az aznapi epizódokat is
+   számolja bele! A feltételnek megfelelő epizódok esetén írja a képernyőre tabulátorral
+   elválasztva az évad- és az epizódszámot, valamint a sorozat címét a minta szerint!</li>
+<li>Készítse el az alábbi algoritmus alapján a hét napját meghatározó függvényt! A függvény
+   neve Hetnapja legyen! A függvény az év, hónap és nap megadása után szöveges
+   eredményként visszaadja, hogy az adott nap a hét melyik napja volt. (Az a és b egész
+   számok maradékos osztása esetén az a div b kifejezés adja meg a hányadost,
+   az a mod b pedig a maradékot, például 17 div 7 = 2 és 17 mod 7 = 3.)
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Függvény hetnapja(ev, ho, nap : Egész) : Szöveg
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>     napok: Tömb(0..6: Szöveg)= (″v″, ″h″, ″k″, ″sze″, ″cs″, ″p″, ″szo″)
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>     honapok: Tömb(0..11: Egész)= (0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4)
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>     Ha ho &lt; 3 akkor ev := ev -1
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>     hetnapja := napok[(ev + ev div 4 – ev div 100 + ev div 400 + honapok[ho-1] + nap) mod 7]
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Függvény vége
+</span></code></pre></div></li>
+<li>Kérjen be a felhasználótól egy napot az előző feladatban látható rövidített alakban!
+   A napokat egy (h, k, p, v), kettő (cs), vagy három (sze, szo) karakterrel adja meg! Határozza
+   meg, hogy a fájlban lévő sorozatok közül melyike(ke)t vetítik az adott napon! A sorozatok
+   nevét a minta szerint jelenítse meg a képernyőn! Ha az adott napon egy sorozatot sem adtak
+   adásba, akkor „Az adott napon nem kerül adásba sorozat.” üzenetet jelenítse meg!</li>
+<li>Határozza meg sorozatonként az epizódok összesített vetítési idejét és az epizódok számát!
+   A számításnál vegye figyelembe a vetítési dátummal nem rendelkező epizódokat is!
+   A megoldás során felhasználhatja, hogy egy sorozat epizódjainak adatai egymást követik
+   a forrásállományban. A listát írja ki a summa.txt fájlba! A fájl egy sorában a sorozat címe,
+   az adott sorozatra vonatkozó összesített vetítési idő percben és az epizódok száma
+   szerepeljen szóközzel elválasztva!</li>
+</ol>
+<p>Minta a szöveges kimenetek kialakításához:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>2. feladat
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>   A listában 202 db vetítési dátummal rendelkező epizód van.
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>3. feladat
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>   A listában lévő epizódok 45,66%-át látta.
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>4. feladat
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>   Sorozatnézéssel 2 napot 15 órát és 32 percet töltött.
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>5. feladat
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>   Adjon meg egy dátumot! Dátum= 2017.10.18
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>   7x01 The Fable
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>   7x02 The Fable
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>   15x04 Military Police
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>   5x03 Spy School
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>   5x04 Spy School
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a>   4x04 The Elite Minds
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>7. feladat
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>   Adja meg a hét egy napját (például cs)! Nap= cs
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>   The Hospital
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>   Spectacular Power
+</span><span id="__span-16-23"><a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>   Upper Story
+</span><span id="__span-16-24"><a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>   Chicago Flame
+</span><span id="__span-16-25"><a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>   Shrinktime
+</span></code></pre></div></p>
+<p>Minta a summa.txt fájl kialakításához: 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Games 420 7
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>The Fable 588 14
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>The IT Guy 450 10 
+</span></code></pre></div></p>
 
 
   
