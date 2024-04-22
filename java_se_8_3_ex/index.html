@@ -582,6 +582,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-feladat" class="md-nav__link">
+    9. Feladat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-feladat" class="md-nav__link">
+    10. Feladat
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1275,6 +1289,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#9-feladat" class="md-nav__link">
+    9. Feladat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-feladat" class="md-nav__link">
+    10. Feladat
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1408,7 +1436,8 @@ adatszerkezetbe.</p>
 </li>
 </ul>
 <h3 id="8-feladat">8. Feladat</h3>
-<p>Nézzük az alábbi <a href="../resources/otos.csv"><code>otos.csv</code></a> fájlt (ez egyébként a https://bet.szerencsejatek.hu/jatekok/otoslotto/sorsolasok
+<p>Nézzük az alábbi <a href="../resources/otos.csv"><code>otos.csv</code></a> fájlt (ez egyébként
+a https://bet.szerencsejatek.hu/jatekok/otoslotto/sorsolasok
 címről tölthető le), és olvasd be. A fájl pontosvesszővel (<code>;</code>) elválasztva tárolja a mezőket, az alábbi formátumban.</p>
 <table>
 <thead>
@@ -1482,6 +1511,84 @@ címről tölthető le), és olvasd be. A fájl pontosvesszővel (<code>;</code>
 <li>getNumbers(int year, int week) - Térjen vissza, az adott heti nyertes számokkal.</li>
 <li>numberStatistics() - Térjen vissza egy Map-el amiben minden számhoz rendeld hozzá, hogy hányszor lett kihúzva.</li>
 <li>numberStatistics_2() - Térjen vissza egy Map-el amiben minden számhoz rendeld hozzá, mely heteken kerültek kihúzásra.</li>
+</ul>
+<h3 id="9-feladat">9. Feladat</h3>
+<p>Készíts egy Java programot ami beolvassa az összes szót a <a href="../resources/random_words.txt">random_words.txt</a> ből és tárold
+azokat egy megfelelő adatszerkezetben.</p>
+<ul>
+<li>Írd ki egy more_than_10_chars.txt -be azokat a szavakat, amik több mint 10 karakterből állnak.</li>
+<li>Írd ki egy reversed.txt -be, az összes szót fordított abc sorredben.</li>
+<li>Írd ki egy occurences.txt -be, az összes szót abc sorrendben és az előfordulási számukat. (Minden szót, csak egyszer
+  kell kiírni.)</li>
+</ul>
+<h3 id="10-feladat">10. Feladat</h3>
+<p>Nézzük az alábbi <a href="../resources/usa_emission.csv"><code>usa_emission.csv</code></a> fájlt, és olvasd be. A fájl vesszővel (<code>,</code>)
+elválasztva.</p>
+<table>
+<thead>
+<tr>
+<th>year</th>
+<th>state-name</th>
+<th>sector-name</th>
+<th>fuel-name</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1970</td>
+<td>Alabama</td>
+<td>Industrial carbon dioxide emissions</td>
+<td>Coal</td>
+<td>26.721507</td>
+</tr>
+<tr>
+<td>1970</td>
+<td>Alabama</td>
+<td>Industrial carbon dioxide   emissions</td>
+<td>Petroleum</td>
+<td>3.577779</td>
+</tr>
+<tr>
+<td>1970</td>
+<td>Alabama</td>
+<td>Industrial carbon dioxide emissions</td>
+<td>Natural Gas</td>
+<td>8.944097</td>
+</tr>
+<tr>
+<td>1970</td>
+<td>Alabama</td>
+<td>Residential carbon dioxide   emissions</td>
+<td>Coal</td>
+<td>0.163635</td>
+</tr>
+<tr>
+<td>1970</td>
+<td>Alabama</td>
+<td>Residential carbon dioxide emissions</td>
+<td>Petroleum</td>
+<td>1.123947</td>
+</tr>
+</tbody>
+</table>
+<p>A feladatod az alábbi metódusok megvalósítása, a beolvasott értékek alapján. A rekordok tárolására hozz létre, egy
+<strong>EmissionRekord</strong> osztályt és vedd fel a szükséges attribútumokat és metódusokat.</p>
+<ul>
+<li><strong>mostEmitterSectorByStateAndYear</strong>(int year, String stateName) - Írja ki a konzolra, hogy az adott évben az adott
+  állam melyik szektora felelős a legtöbb széndioxid kibocsájtásért.</li>
+<li><strong>mostEmitterStateByYear</strong>(int year) - Írja ki a konzolra, hogy az adott évben melyik állam bocsájtotta ki a legtöbb
+  széndioxidot és mennyi volt az.</li>
+<li><strong>mostEmitterState</strong>() - Írja ki a konzolra, hogy évenként melyik állam bocsájtotta ki a legtöbb széndioxidot és
+  mennyi volt az.</li>
+<li><strong>emissionMixByYear</strong>(int year) - Írja ki a konzolra, hogy az adott évben az USA üzemanyag típusonként csoportosítva
+  mennyi széndioxidot juttatott a levegőbe.</li>
+<li><strong>emissionMix</strong>(int year) - Írja0 ki a konzolra, hogy az USA üzemanyag típusonként csoportosítva mennyi széndioxidot
+  juttatott a levegőbe.</li>
+<li><strong>mostEmitterFuelNameByState</strong>() - Írja ki a konzolra, minden államhoz, hogy melyik üzemanyag típus juttatta a legtöbb
+  széndioxidot a levegőbe az államban.</li>
+<li>Hozz létre egy <strong>emissionByYear.txt</strong> fájlt, amibe minden évhez írd bele a teljes USA széndioxid kibocsájtását.</li>
+<li>Hozz létre egy <strong>emissionByState.txt</strong> fájlt, amibe minden államhoz írd bele széndioxid kibocsájtását.</li>
 </ul>
 
 
