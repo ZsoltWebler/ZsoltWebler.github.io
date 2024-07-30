@@ -1122,6 +1122,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pizza-futar" class="md-nav__link">
+    Pizza futár
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vetelkedo" class="md-nav__link">
+    Vetélkedő
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1257,6 +1271,20 @@
         <li class="md-nav__item">
   <a href="#konyvek" class="md-nav__link">
     Könyvek
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pizza-futar" class="md-nav__link">
+    Pizza futár
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vetelkedo" class="md-nav__link">
+    Vetélkedő
   </a>
   
 </li>
@@ -1557,6 +1585,56 @@ egészséges feltéteknek kell lenniük, maximum 3 darab ugyan. A toString() has
 <li>Map<String, List\<Book>> findAllBooksGroupedByAuthor() : Térjen vissza a könyvekkel szerző alapján csoportosítva.</li>
 <li>Map<Boolean, List\<Book>> findAllBooksGroupedByAuthor() : Térjen vissza a könyvekkel elérhetőség alapján csoportosítva.</li>
 <li>Map<String, Integer> authorsWithBookCount() : Térjen vissza a szerzők álltal írt könyvek számával.</li>
+</ul>
+<h2 id="pizza-futar">Pizza futár</h2>
+<p>Adott az <a href="../resources/orders.txt">orders.txt</a> melyben pizza rendeléseket tárolunk. A fájl blokkokra van osztva, egy
+blokk egy napot jelöl, és minden ilyen blokk egy dátummal kezdődik. Ezután egy rendelés adatai két sorban találhatók. Az
+első sor a futár azonosítója, a második sorban irányítószám, utcanév, házszám és a szállítás pontos ideje található.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>2020.12.01
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>FUT_1
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>1113 Petőfi 12 12:30
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>FUT_2
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>1114 Kossuth 9 11:20
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>FUT_2
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>1211 Jókai 10 19:30
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>FUT_3
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>1191 Kossuth 9 18:12
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>FUT_1
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>1144 Tököly 11 16:33
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>2020.12.02
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>FUT_1
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>1123 Ady 12 12:30
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>....
+</span></code></pre></div>
+<p>Old meg az alábbi feladatokat az OOP alapelvek és a Clean Code előírásai szerint!</p>
+<ul>
+<li>Melyik napon volt a legkevesebb rendelés?</li>
+<li>Egy metódus várjon paraméterül egy dátumot, pontos időponttal és adjuk vissza a hozzá tartozó rendelést. Ha nincs
+  ilyen akkor dobjunk kivételt.</li>
+<li>Készíts statisztikát a futárok szállításiból, futáronként add vissza, hogy mennyi rendelést teljesítettek.</li>
+<li>Melyik címre szállították a legtöbb pizzát?</li>
+</ul>
+<h2 id="vetelkedo">Vetélkedő</h2>
+<p>Adott egy vetélkedő kérdésbankja a <a href="../resources/kerdesek.txt">kerdesek.txt</a> fájlban. A fájlban az egy kérdéshez tartozó adatok
+két sorban helyezkednek el. Első sorban a kérdés, a második sorban a válasz a pontszám és a téma, szóközzel
+elválasztava. Olvasd be a fájl tartalmát a memóriába, majd oldjátok meg a lenti feladatokat.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Mikor volt a mohacsi vesz?
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1526 1 tortenelem
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Melyik evben bomlott fel a Nyugat-Romai Birodalom?
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>476 1 tortenelem
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Melyik a legkisebb primszam?
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>2 1 matematika
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Mennyi 64 kobgyoke?
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>4 2 matematika
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>...
+</span></code></pre></div>
+<p>Old meg az alábbi feladatokat az OOP alapelvek és a Clean Code előírásai szerint!</p>
+<ul>
+<li>Írj egy metódust, melynek paramétere a téma és add vissza, az összes kérdést abban a témában. (Csak a kérdéseket)</li>
+<li>Írj egy metódust, ami random sorsol ki n darab kérdést, és adja vissza annak összes adatát. (Nem lehetnek egyezőek)</li>
+<li>Készíts egy metódust ami rendszerezi a kérdéseket témakörönként. Visszatér egy adatszerkezetben amelyben témánként
+  megtalálható az összes kérdés, összes adata.</li>
+<li>Az előző feladat segítségével határozd meg, hogy melyik téma kérdései érik a legtöbb pontot (összpontszám)!</li>
 </ul>
 
 
