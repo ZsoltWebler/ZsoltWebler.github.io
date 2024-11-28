@@ -1162,6 +1162,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#meteorologiai-jelentes" class="md-nav__link">
+    Meteorológiai jelentés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eutazas" class="md-nav__link">
+    eUtazás
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1255,6 +1269,20 @@
         <li class="md-nav__item">
   <a href="#sorozatok" class="md-nav__link">
     Sorozatok
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#meteorologiai-jelentes" class="md-nav__link">
+    Meteorológiai jelentés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eutazas" class="md-nav__link">
+    eUtazás
   </a>
   
 </li>
@@ -1931,6 +1959,270 @@ a képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogado
 <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Games 420 7
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>The Fable 588 14
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>The IT Guy 450 10 
+</span></code></pre></div></p>
+<h2 id="meteorologiai-jelentes">Meteorológiai jelentés</h2>
+<p>Az ország területén néhány városból rendszeres időközönként időjárás táviratokat küldenek.
+A távirat egy rövid szöveges üzenet, amely a főbb időjárási információkat tartalmazza.
+Rendelkezésünkre áll az ország területéről egy adott nap összes távirata.
+A <a href="../resources/tavirathu13.txt">tavirathu13.txt</a> szövegállomány egy adott hónap 13. napjának időjárás adatait
+tartalmazza. Egy távirat adatai egy sorban találhatóak egymástól szóközzel elválasztva. Egy
+sorban 4 adat szerepel a következőképpen. </p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>település</td>
+<td>szöveg (2 karakter)</td>
+<td>A település kétbetűs kódja</td>
+</tr>
+<tr>
+<td>idő</td>
+<td>szöveg (óópp formátumban)</td>
+<td>A mérés időpontja</td>
+</tr>
+<tr>
+<td>szélirány és -erősség</td>
+<td>szöveg (5 karakter) szélirány 3 karakter, -erősség 2 karakter</td>
+<td>A szél iránya fokban vagy szöveggel és sebessége csomóban megadva</td>
+</tr>
+<tr>
+<td>hőmérséklet</td>
+<td>egész szám (2 karakter)</td>
+<td>Mért hőmérséklet (nem negatív)</td>
+</tr>
+</tbody>
+</table>
+<p>A sorok száma legfeljebb 500. Az adatok idő szerint rendezettek.</p>
+<p><strong>Például:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a> BP 0300 32007 21
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a> PA 0315 35010 19
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a> PR 0315 32009 19
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a> SM 0315 01015 20
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a> DC 0315 VRB01 21
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a> SN 0315 00000 21 
+</span></code></pre></div></p>
+<p>A példában látható, hogy 03:15-kor PR településen 320 fokos irányból 9 csomós szél fújt.
+A hőmérséklet 19 °C volt. Ugyanekkor DC településen változó (VRB) szélirány volt 1 csomós
+szélsebességgel, a hőmérséklet 21 °C volt. </p>
+<p>Készítsen programot, amely a tavirathu13.txt állomány adatait felhasználva az alábbi
+kérdésekre válaszol! A program forráskódját mentse metjelentes néven! (A program
+megírásakor a felhasználó által megadott adatok helyességét, érvényességét nem kell
+ellenőriznie, feltételezheti, hogy a rendelkezésre álló adatok a leírtaknak megfelelnek.)
+A képernyőre írást igénylő részfeladatok eredményének megjelenítése előtt írja a képernyőre
+a feladat sorszámát (például: 3. feladat)! Ha a felhasználótól kér be adatot, jelenítse meg
+a képernyőn, hogy milyen értéket vár! Az ékezetmentes kiírás is elfogadott.
+Az eredmény megjelenítését és a felhasználóval való kommunikációt a feladatot követő
+minta alapján valósítsa meg! </p>
+<ol>
+<li>Olvassa be és tárolja el a tavirathu13.txt állomány adatait!</li>
+<li>Kérje be a felhasználótól egy város kódját! Adja meg, hogy az adott városból mikor érkezett
+   az utolsó mérési adat! A kiírásban az időpontot óó:pp formátumban jelenítse meg!</li>
+<li>Határozza meg, hogy a nap során mikor mérték a legalacsonyabb és a legmagasabb
+   hőmérsékletet! Jelenítse meg a méréshez kapcsolódó település nevét, az időpontot és
+   a hőmérsékletet! Amennyiben több legnagyobb vagy legkisebb érték van, akkor elég
+   az egyiket kiírnia.</li>
+<li>Határozza meg, azokat a településeket és időpontokat, ahol és amikor a mérések idején
+   szélcsend volt! (A szélcsendet a táviratban 00000 kóddal jelölik.) Ha nem volt ilyen, akkor
+   a „Nem volt szélcsend a mérések idején.” szöveget írja ki! A kiírásnál a település kódját és
+   az időpontot jelenítse meg.</li>
+<li>Határozza meg a települések napi középhőmérsékleti adatát és a hőmérséklet-ingadozását!
+   A kiírásnál a település kódja szerepeljen a sor elején a minta szerint! A kiírásnál csak
+   a megoldott feladatrészre vonatkozó szöveget és értékeket írja ki!
+   a. A középhőmérséklet azon hőmérsékleti adatok átlaga, amikor a méréshez tartozó óra
+   értéke 1., 7., 13., 19. Ha egy településen a felsorolt órák valamelyikén nem volt mérés,
+   akkor a kiírásnál az „NA” szót jelenítse meg! Az adott órákhoz tartozó összes adat
+   átlagaként határozza meg a középhőmérsékletet, azaz minden értéket azonos súllyal
+   vegyen figyelembe! A középhőmérsékletet egészre kerekítve jelenítse meg!
+   b. A hőmérséklet-ingadozás számításhoz az adott településen a napi legmagasabb és
+   legalacsonyabb hőmérséklet különbségét kell kiszámítania! (Feltételezheti, hogy
+   minden település esetén volt legalább két mérési adat.)</li>
+<li>Hozzon létre településenként egy szöveges állományt, amely első sorában a település kódját
+   tartalmazza! A további sorokban a mérési időpontok és a hozzá tartozó szélerősségek
+   jelenjenek meg! A szélerősséget a minta szerint a számértéknek megfelelő számú
+   kettőskereszttel (#) adja meg! A fájlban az időpontokat és a szélerősséget megjelenítő
+   kettőskereszteket szóközzel válassza el egymástól! A fájl neve X.txt legyen, ahol
+   az X helyére a település kódja kerüljön! </li>
+</ol>
+<p><strong>Minta a szöveges kimenetek kialakításához:</strong> 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>2. feladat
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Adja meg egy település kódját! Település: SM
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Az utolsó mérési adat a megadott településről 23:45-kor érkezett.
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>3. feladat
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>A legalacsonyabb hőmérséklet: SM 23:45 16 fok.
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>A legmagasabb hőmérséklet: DC 13:15 35 fok.
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>4. feladat
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>BP 01:00
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>DC 02:15
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>SN 03:15
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>BC 04:45
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>DC 04:45
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>SN 05:15
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>SN 05:45
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>KE 08:45
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>BC 11:45
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>5. feladat
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>BP Középhőmérséklet: 23; Hőmérséklet-ingadozás: 8
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a>DC Középhőmérséklet: 29; Hőmérséklet-ingadozás: 15
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>SM Középhőmérséklet: 22; Hőmérséklet-ingadozás: 8
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>PA Középhőmérséklet: 21; Hőmérséklet-ingadozás: 7
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a>SN Középhőmérséklet: 26; Hőmérséklet-ingadozás: 13
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23" href="#__codelineno-19-23"></a>PR Középhőmérséklet: 21; Hőmérséklet-ingadozás: 8
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24" href="#__codelineno-19-24"></a>BC NA; Hőmérséklet-ingadozás: 14
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25" href="#__codelineno-19-25"></a>PP NA; Hőmérséklet-ingadozás: 6
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26" href="#__codelineno-19-26"></a>KE NA; Hőmérséklet-ingadozás: 13
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27" href="#__codelineno-19-27"></a>6. feladat
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28" href="#__codelineno-19-28"></a>A fájlok elkészültek. 
+</span></code></pre></div></p>
+<p><strong>A</strong> <em>BC.txt</em> <strong>fájl tartalma:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>BC
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>00:45 ###
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>01:45 ####
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>02:45 ######
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>03:45 ##
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>04:45
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>05:45 ####
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>11:45
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>17:45 ######## 
+</span></code></pre></div></p>
+<h2 id="eutazas">eUtazás</h2>
+<p>Egyre több országban fordul elő, hogy a közlekedési eszközökön használatos bérleteket és
+jegyeket valamilyen elektronikus eszközön (például: chipes kártya) tárolják. Egy nagyváros
+ilyen rendszert szeretne bevezetni a helyi közlekedésben, amelyet néhány buszjáraton
+tesztelnek. Ezekre a buszokra csak az első ajtónál lehet felszállni, ahol egy ellenőrző eszközhöz
+kell érinteni a kártyát, amelynek chipje tartalmazza a jegy vagy bérlet információkat.</p>
+<p>A busz ellenőrző eszköze statisztikai és fejlesztési célból rögzíti a felszállók kártyájának
+adatait. Az <a href="../resources/utasadat.txt">utasadat.txt</a> szóközökkel tagolt állomány egy, a tesztelésben részt vevő busz
+végállomástól-végállomásig tartó útjának adatait tartalmazza.</p>
+<p>Az utasadat.txt állomány legfeljebb 2000 sort tartalmaz és minden sorában 5 adat
+szerepel. Ezek:</p>
+<ul>
+<li>a megálló sorszáma (0-29; 0 az indulás helye és a 30 a végállomás, ahol már nem lehet
+felszállni.) </li>
+<li>a felszállás dátuma és időpontja (ééééhhnn-óópp formátumban, kötőjellel elválasztva
+a dátum és az idő)</li>
+<li>a kártya egyedi azonosítója (hétjegyű szám), egy utas a járaton legfeljebb egyszer utazik </li>
+<li>a jegy vagy bérlet típusa:</li>
+</ul>
+<figure>
+<table>
+<thead>
+<tr>
+<th>Azonosító</th>
+<th>Megnevezés</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FEB</td>
+<td>Felnőtt bérlet</td>
+</tr>
+<tr>
+<td>TAB</td>
+<td>Tanulóbérlet (kedvezményes)</td>
+</tr>
+<tr>
+<td>NYB</td>
+<td>Nyugdíjas bérlet (kedvezményes)</td>
+</tr>
+<tr>
+<td>NYP</td>
+<td>65 év feletti bérlet (ingyenes)</td>
+</tr>
+<tr>
+<td>RVS</td>
+<td>Rokkant, vak, siket vagy kísérő bérlet (ingyenes)</td>
+</tr>
+<tr>
+<td>GYK</td>
+<td>Iskolakezdés előtti gyerekbérlet (ingyenes)</td>
+</tr>
+<tr>
+<td>JGY</td>
+<td>Jegy</td>
+</tr>
+</tbody>
+</table>
+</figure>
+<ul>
+<li>a bérlet érvényességi ideje, vagy a felhasználható jegyek száma. A bérlet esetén a dátum
+ééééhhnn formátumban szerepel, jegy esetén egy 0-10 közötti szám szerepel. </li>
+</ul>
+<p><strong>Például:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>0 20190326-0700 6572582 RVS 20210101
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>0 20190326-0700 8808290 JGY 7
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>0 20190326-0700 1680423 TAB 20190420
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>12 20190326-0716 3134404 FEB 20190301
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>12 20190326-0716 9529716 JGY 0
+</span></code></pre></div></p>
+<p>A fenti példában szereplő adatoknál látható, hogy az induló állomáson (0. állomás)
+2019. 03. 26-án 7:00-kor a 1680423 kártyaazonosítójú utas tanulóbérlettel szállt fel, amely
+2019. 04. 20-ig érvényes. A 12. állomáson 2019. 03. 26-án 7:16-kor a 9529716
+kártyaazonosítójú utas jeggyel szállt volna fel, de már elhasználta az összes jegyét (0). </p>
+<p>Készítsen programot, amely az utasadat.txt állomány felhasználásával a következő
+kérdésekre válaszol! A program forráskódját eutazas néven mentse! (A program megírásakor
+a felhasználó által megadott adatok helyességét, érvényességét nem kell ellenőriznie,
+feltételezheti, hogy a rendelkezésre álló adatok a leírtaknak megfelelnek.)</p>
+<p>A képernyőre írást igénylő részfeladatok eredményének megjelenítése előtt írja a képernyőre a
+feladat sorszámát (például 2. feladat)! A részfeladatok eredményeit a mintán látható
+formában jelenítse meg! Az ékezetmentes kiírás is elfogadott.</p>
+<ol>
+<li>Olvassa be és tárolja el az utasadat.txt fájl tartalmát!</li>
+<li>Adja meg, hogy hány utas szeretett volna felszállni a buszra!</li>
+<li>A közlekedési társaság szeretné, ha a járművőn csak az érvényes jeggyel vagy bérlettel
+   rendelkezők utaznának. Ezért a jegyeket és bérleteket a buszvezető a felszálláskor ellenőrzi.
+   (A bérlet még érvényes a lejárat napján.) Adja meg, hogy hány esetben kellett
+   a buszvezetőnek elutasítania az utas felszállását, mert lejárt a bérlete vagy már nem volt
+   jegye!</li>
+<li>Adja meg, hogy melyik megállóban próbált meg felszállni a legtöbb utas! (Több azonos
+   érték esetén a legkisebb sorszámút adja meg!)</li>
+<li>A közlekedési társaságnak kimutatást kell készítenie, hogy hányszor utaztak valamilyen
+   kedvezménnyel a járművön. Határozza meg, hogy hány kedvezményes és hány ingyenes
+   utazó szállt fel a buszra! (Csak az érvényes bérlettel rendelkező szállhatott fel a buszra!)</li>
+<li>Készítsen függvényt napokszama néven az alábbi algoritmus alapján. Az algoritmus
+   a paraméterként megadott két dátumhoz (év, hónap, nap) megadja a közöttük eltelt napok
+   számát! (A MOD a maradékos osztást, a DIV az egészrészes osztást jelöli.) 
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Függvény napokszama(e1:egész, h1:egész, n1: egész, e2:egész,
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a> h2: egész, n2: egész): egész
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a> h1 = (h1 + 9) MOD 12
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a> e1 = e1 - h1 DIV 10
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a> d1 = 365*e1 + e1 DIV 4 - e1 DIV 100 + e1 DIV 400 +
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a> (h1*306 + 5) DIV 10 + n1 - 1
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a> h2 = (h2 + 9) MOD 12
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a> e2 = e2 - h2 DIV 10
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a> d2 = 365*e2 + e2 DIV 4 - e2 DIV 100 + e2 DIV 400 +
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a> (h2*306 + 5) DIV 10 + n2 - 1
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a> napokszama:= d2-d1
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>Függvény vége 
+</span></code></pre></div></li>
+<li>A közlekedési társaság azoknak az utasoknak, akiknek még érvényes, de 3 napon belül lejár
+   a bérlete, figyelmeztetést szeretne küldeni e-mailben. (Például, ha a felszállás időpontja 2019. február 5., és a bérlet érvényessége 2019. február 8., akkor már kap az utas levelet,
+  ha 2019. február 9. az érvényessége, akkor még nem kap levelet.) Válogassa ki és írja a
+figyelmeztetes.txt állományba ezen utasok kártyaazonosítóját és a bérlet
+érvényességi idejét (éééé-hh-nn formátumban) szóközzel elválasztva! </li>
+</ol>
+<p><strong>Minta a szöveges kimenetek kialakításához: </strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>2. feladat
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>A buszra 699 utas akart felszállni.
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>3. feladat
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>A buszra 21 utas nem szállhatott fel.
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>4. feladat
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>A legtöbb utas (39 fő) a 8. megállóban próbált felszállni.
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>5. feladat
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>Ingyenesen utazók száma: 133 fő
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>A kedvezményesen utazók száma: 200 fő
+</span></code></pre></div></p>
+<p><strong>Minta a</strong> <em>figyelmeztetes.txt</em> <strong>állomány kialakításához:</strong> 
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>3023275 2019-03-29
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>2960983 2019-03-26
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>1581897 2019-03-27
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>2761792 2019-03-28
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>...
 </span></code></pre></div></p>
 
 
